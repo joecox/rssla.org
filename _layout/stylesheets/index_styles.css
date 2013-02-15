@@ -1,0 +1,25 @@
+.event {
+   margin-bottom: 20px;
+}
+
+.event .time {
+   font-style: italic;
+}
+.event .place {font-style: italic;}
+
+.event a {
+   color: black;
+   text-decoration: none;
+}
+
+.event a:hover {color: #a9a9a9;}
+
+.announcement {
+   margin-bottom: 20px;
+}
+
+.announcement a {
+   color: black;
+   text-decoration: none;
+}
+.announcement a:hover {color: #a9a9a9;}
