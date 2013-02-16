@@ -33,7 +33,7 @@
             <a href="/">
                <div class="navitem">Events</div>
             </a>
-            <a href="/members/classpoints.php">
+            <a href="/">
                <div class="navitem">Volunteering</div>
             </a>
          </div>
@@ -49,9 +49,6 @@
          <div>
             <a href="/">
                <div class="navitem">Opportunities</div>
-            </a>
-            <a href="/members/classpoints.php">
-               <div class="navitem">Class Points</div>
             </a>
             <a href="/">
                <div class="navitem">Committees</div>

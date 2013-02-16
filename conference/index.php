@@ -9,7 +9,7 @@
       <div class="main clearfix with-banner">
          <div class="bannerwrap">
             <img class="photobanner" src="/resources/images/conference/roycehall.jpg">
-            <div class="bannertext">The Inter-UC Conference</div>
+            <div class="bannertext">The Inter-UC Conference<br><span style="font-size: 2rem">May 3-5, 2013</span></div>
          </div>
          <div class="cont third left">
             <div class="blocktitle">Stuff</div>
