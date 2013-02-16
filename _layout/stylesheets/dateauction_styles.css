@@ -1,0 +1,45 @@
+.main {position: relative;}
+
+.solo {
+   height: 600px;
+}
+
+.profileframe {
+   display: none;
+   margin: 0 20px;
+}
+
+#currentframe {
+   display: block;
+}
+
+.nextframe {
+   position: absolute;
+   right: 40px;
+   top: 288px;
+   width: 64px;
+   height: 64px;
+   background-image: url("/resources/images/UI/nextbutton.png");
+   opacity: 0.6;
+   -webkit-transition: opacity 0.25s;
+      -moz-transition: opacity 0.25s;
+        -o-transition: opacity 0.25s;
+           transition: opacity 0.25s;
+}
+
+.nextframe:hover {opacity: 1.0;}
+
+.prevframe {
+   display: none;
+   position: absolute;
+   left: 40px;
+   top: 288px;
+   width: 64px;
+   height: 64px;
+   opacity: 0.6;
+   -webkit-transition: opacity 0.25s;
+      -moz-transition: opacity 0.25s;
+        -o-transition: opacity 0.25s;
+           transition: opacity 0.25s;
+}
+.prevframe:hover {opacity: 1.0;}
