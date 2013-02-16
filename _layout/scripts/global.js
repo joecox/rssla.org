@@ -23,8 +23,6 @@ $(document).ready(function()
 
    $(".nextframe").click(function() 
    {
-      $(".prevframe").fadeIn();
-
       $("#currentframe").fadeOut(200, function()
       {
          $("#currentframe").attr("id", "frame" + currentframe);
@@ -35,6 +33,7 @@ $(document).ready(function()
          $("#frame" + currentframe).fadeIn(200);
          $("#frame" + currentframe).attr("id", "currentframe");
 
+         $(".prevframe").show();
 
          if (!($("#frame" + nextframe).length))
             $(".nextframe").hide();
@@ -43,8 +42,6 @@ $(document).ready(function()
 
    $(".prevframe").click(function() 
    {
-      $(".nextframe").show();
-
       $("#currentframe").fadeOut(200, function() 
       {
          $("#currentframe").attr("id", "frame" + currentframe);
@@ -54,6 +51,8 @@ $(document).ready(function()
 
          $("#frame" + currentframe).fadeIn(200);
          $("#frame" + currentframe).attr("id", "currentframe");
+
+         $(".nextframe").show();
 
          if (!($("#frame" + prevframe).length))
             $(".prevframe").hide();
