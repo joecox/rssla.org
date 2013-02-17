@@ -9,16 +9,16 @@ $u = "rssatucla@gmail.com";
 $p = "spaghettisquash";
  
 $ss = new Google_Spreadsheet($u,$p);
-$ss->useSpreadsheet("Test");
+$ss->useSpreadsheet("Spreadsheet");
  
 // if not setting worksheet, "Sheet1" is assumed
 // $ss->useWorksheet("worksheetName");
- 
+
 $row = array
 (
-    "name" => "John Doe", 
-    "email" => "john@example.com", 
-    "comments" => "Hello world"
+    "var1" => $_POST['var1'], 
+    "var2" => $_POST['var2'], 
+    "var3" => $_POST['var3']
 );
  
 if ($ss->addRow($row)) echo "Form data successfully stored using Google Spreadsheet";
