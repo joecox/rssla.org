@@ -8,8 +8,22 @@
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/header.php"); ?>
       <div class="main clearfix">
          <div class="cont solo">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-         </div>
+			<div class="blocktitlecenter">Our Mission</div>
+			<br>
+			<div>RSSLA is a society created for those who have been awarded the Regents Scholarship, the highest award that can be bestowed on an incoming undergraduate. Its function is to:</div>
+			<ul>
+			<li>Promote academic excellence amongst the recipients of the scholarship</li>
+			<li>Provide community service opportunities for those who wish to take advantage of them</li>
+			<li>Foster interpersonal growth amongst Regents Scholars at UCLA</li>
+			<li>Provide resources and guidance to incoming Regents Scholars</li>
+			<li>Promote interaction between Regents Scholars across all University of California campuses</li> 
+			</ul>
+			All current Regents Scholars at UCLA are eligible for membership in the society, and there are no entrance requirements save the receipt of the scholarship. Contact <?php $pres_FL ?> PHPCODE for further information?
+			<div class="blocktitlecenter">The Three Pillars (not final graphic)</div>
+			
+			<b>notes to self-use whitespace in image - pointy top does not go on middle of page, etc.</b>
+<img src="pillars.png">
+		 </div>
       </div>
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/footer.php"); ?>
    </div>
