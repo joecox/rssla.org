@@ -5,7 +5,7 @@ $(document).ready(function ()
    {
       numInput = numInput + 1;
 
-      var newInput = '<div class="input">' +
+      var newInput = '<div class="input" id="q' + numInput + '">' +
                         '<label for="label' + numInput + '">Input Label: </label>' +
                         '<input type="text" name="label' + numInput + '" class="labelinput">' + 
                      
@@ -17,6 +17,9 @@ $(document).ready(function ()
                            '<option value="checkbox">Checkboxes</option>' +
                            '<option value="select">Drop-down List</option>' +
                         '</select>' +
+                        '<div class="button del">' +
+                           '<span>Remove</span>' +
+                        '</div>' +
                         '<div class="optionwrap">' +
                         '</div>' +
                         '<div class="button" id="addoption">' +
@@ -35,10 +38,25 @@ $(document).ready(function ()
             var newOption = '<div class="option">' +
                                '<label for="q' + numInput + 'opt' + numOptions + '">Option ' + numOptions + ': </label>' +
                                '<input type="text" name="q' + numInput + 'opt' + numOptions + '" class="optioninput">' +
+/*
+                               '<div class="button del" id="del-opt' + numOptions + '">' +
+                                  '<span>Remove</span>' +
+                               '</div>' +
+*/
                             '</div>';
 
             $(newOption).appendTo($(this).siblings(".optionwrap")).hide().slideDown();
             $(this).siblings('input[type="hidden"]').attr("value", numOptions);
+
+/*
+            $(this).siblings(".optionwrap").children(".option").children(".del").click(function () 
+            {
+               $(this).parents(".option").slideUp(400, function () {$(this).remove();});
+
+               numOptions = numOptions - 1;
+               $(this).parents(".option").parents(".optionwrap").siblings('input[type="hidden"]').attr("value", numOptions);
+            });
+*/
          });
 
          $(this).siblings('input[type="hidden"]').attr("value", numInput);
@@ -56,6 +74,14 @@ $(document).ready(function ()
             }
             else
                $(this).siblings(".button#addoption").slideDown().css("display", "inline-block");
+         });
+
+         $(this).children(".del").click(function () 
+         {
+            $(this).parents(".input").slideUp(400, function () {$(this).remove();});
+
+            numInput = numInput - 1;
+            $(this).parents(".input").siblings('input[type="hidden"]').attr("value", numInput);
          });
       });
    });

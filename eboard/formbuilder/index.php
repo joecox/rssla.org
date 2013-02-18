@@ -27,6 +27,11 @@
             </div>
             <br><br><br>
             <div class="blocktitlecenter" style="font-family: Helvetica; font-size:1rem">Step 2: Link with a spreadsheet</div>
+            <div class="contentblock" style="text-align:center">
+               <div class="button" id="submit">
+                     <span>Submit</span>
+               </div>
+            </div>
          </div>
       </div>
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/footer.php"); ?>

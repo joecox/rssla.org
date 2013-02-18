@@ -1,6 +1,6 @@
 .button {
    display: inline-block;
-   margin: 20px auto 0;
+   margin: 20px 5px 0;
    border: 1px solid rgb(200, 200, 200);
    border-radius: 2px;
    background-color: rgb(241, 241, 241);
@@ -25,6 +25,10 @@
    font-style: normal;
 }
 
+.button.del {
+   margin-left: 20px;
+}
+
 
 
 div.input {
@@ -34,6 +38,7 @@ div.input {
    font-style: italic;
    border-bottom: 1px solid rgb(150, 150, 150);
    padding-bottom: 20px;
+   width: 80%;
 }
 
 .input label {
