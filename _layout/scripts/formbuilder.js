@@ -1,17 +1,62 @@
 $(document).ready(function ()
 {
    var numInput = 0;
-   $(".addinput").click(function ()
+   $("#addinput").click(function ()
    {
-      var newInput = '<div class="input">' +
-                     '<label for="input' +
-                     numInput +
-                     '">Input Label: </label>' +
-                     '<input type="text" name="input' +
-                     numInput + 
-                     '" class="labelinput"></div>';
-      $(newInput).appendTo("form");
-
       numInput = numInput + 1;
+
+      var newInput = '<div class="input">' +
+                        '<label for="label' + numInput + '">Input Label: </label>' +
+                        '<input type="text" name="label' + numInput + '" class="labelinput">' + 
+                     
+                        '<label for="type' + numInput + '">Type: </label>' +
+                        '<select name="type' + numInput + '" id="typeinput">' +
+                           '<option value="text">Text</option>' +
+                           '<option value="paragraph">Paragraph</option>' +
+                           '<option value="radio">Radio buttons</option>' +
+                           '<option value="checkbox">Checkboxes</option>' +
+                           '<option value="select">Drop-down List</option>' +
+                        '</select>' +
+                        '<div class="optionwrap">' +
+                        '</div>' +
+                        '<div class="button" id="addoption">' +
+                           '<span>Add option</span>' +
+                        '</div>' +
+                        '<input type="hidden" name="q' + numInput + 'numOpt" value="0">' +
+                     '</div>';
+
+      $(newInput).appendTo(".contentblock form").hide().slideDown(400, function ()
+      {
+         var numOptions = 0;
+         $(this).children("#addoption").click(function()
+         {
+            numOptions = numOptions + 1;
+
+            var newOption = '<div class="option">' +
+                               '<label for="q' + numInput + 'opt' + numOptions + '">Option ' + numOptions + ': </label>' +
+                               '<input type="text" name="q' + numInput + 'opt' + numOptions + '" class="optioninput">' +
+                            '</div>';
+
+            $(newOption).appendTo($(this).siblings(".optionwrap")).hide().slideDown();
+            $(this).siblings('input[type="hidden"]').attr("value", numOptions);
+         });
+
+         $(this).siblings('input[type="hidden"]').attr("value", numInput);
+
+         $(this).children("#typeinput").change(function ()
+         {
+            if ($(this).find('option:selected').val() == "text" || $(this).find('option:selected').val() == "paragraph")
+            {
+               $(this).siblings(".button#addoption").slideUp();
+               $(this).siblings(".optionwrap").children(".option").slideUp(400, function() {
+                  $(this).remove();
+               });
+               $(this).siblings('input[type="hidden"]').attr("value", 0);
+               numOptions = 0;
+            }
+            else
+               $(this).siblings(".button#addoption").slideDown().css("display", "inline-block");
+         });
+      });
    });
 });
