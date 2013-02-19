@@ -6,6 +6,7 @@ function fadeIn(obj) {
 
 /* MAIN */
 
+
 $(document).ready(function () 
 {
    var maxHeight = Math.max.apply(null, $(".cont").map(function ()
@@ -15,6 +16,7 @@ $(document).ready(function ()
    
    $(".cont").css("min-height", maxHeight);
 });
+
 
 // frame sliding
 $(document).ready(function()

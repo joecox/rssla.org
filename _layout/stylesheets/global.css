@@ -179,7 +179,7 @@ div#col7 {left: 875px;}
    visibility: hidden;
 }
 
-.cont img {width: 100%; margin-bottom: 10px;}
+.cont img {width: 292px; margin-bottom: 10px;}
 
 /* FOOTER */
 
@@ -232,6 +232,7 @@ div#col7 {left: 875px;}
 .cont {
    border-left: 1px solid #cccccc;
    float: left;
+   height: 100%;
 }
 .solo {
    margin: 0 auto;

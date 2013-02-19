@@ -80,7 +80,97 @@
          <div class="cont third">
             <div class="blocktitle">OSP</div>
             <div class="contentblock">
-               <img src="/resources/images/osp/session4_2011.jpg">
+               <!--<img src="/resources/images/osp/session4_2011.jpg">-->
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+               Blah<br>
+
                <div>The Overnight Stay Program with RSS is a fantastic way for potential Regents Scholars to learn more about UCLA and have an immersive UCLA experience.</div>
             </div>
             <a href="/" class="moreinfo">
@@ -88,7 +178,7 @@
             </a>
             <div class="blocktitle">Conference</div>
             <div class="contentblock">
-               <img src="/resources/images/royce.jpg">
+               <!--<img src="/resources/images/royce.jpg">-->
                <div>The Inter-UC Conference is coming!  Scholars throughout the UC system will convene in Los Angeles for a weekend of scholar-ing.</div>
             </div>
             <a href="/" class="moreinfo">

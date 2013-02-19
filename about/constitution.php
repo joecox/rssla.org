@@ -6,9 +6,10 @@
 <body>
    <div id="wrapper">
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/header.php"); ?>
+      <div class="main clearfix">
       <div class="cont solo">
-	  <h1>Constitution</h1><br>
-	  <div>
+	  		<h1>Constitution</h1><br>
+	  				<div>
 						<header><h2>I. Name and Purposes</h2></header>
 							<ol class="listA">
 								<li><b>Name</b>: The name of the organization is Regents Scholar Society at UCLA.</li>
@@ -244,6 +245,7 @@
 						</ol>
 					</div>
       </div>
+   </div>
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/footer.php"); ?>
    </div>
 </body>
