@@ -3,6 +3,7 @@
 <head>
    <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/head.php"); ?>
    <link rel="stylesheet" type="text/css" href="/_layout/stylesheets/store_styles.css">
+   <script type="text/javascript" src="/_layout/scripts/store.js"></script>
 </head>
 <body>
    <div id="wrapper">
@@ -20,6 +21,7 @@
                   <div class="merchrow">
                      <div class="merch left">
                         <img src="/resources/images/gear/PEE_front.jpg">
+                        <div class="merchtext">Shirt 1 blah blah</div>
                      </div>
                      <div class="merch mid">
                         <img src="/resources/images/gear/PEE_front.jpg">
@@ -52,6 +54,9 @@
                   </div>
                </div>
             </div>
+         </div>
+         <div class="veil"></div>
+         <div class="overlay">
          </div>
       </div>
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/footer.php"); ?>
