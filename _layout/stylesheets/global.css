@@ -151,7 +151,7 @@ div#col7 {left: 875px;}
 .photobanner {
    opacity: 0.8;
    border-bottom: 1px solid #aeaeae;
-   margin-bottom: 10px;
+   margin-bottom: 30px;
    box-shadow: 5px 0 20px -5px black,
                -5px 0 20px -5px black;
 }
@@ -251,6 +251,9 @@ div#col7 {left: 875px;}
 }
 .quarter {
    width: 249px;
+}
+.three-quarters {
+   width: 749px;
 }
 .sixth {
    width: 165px;

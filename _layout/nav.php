@@ -88,7 +88,7 @@
       </a>
    </span>
    <span class="navcol">
-      <a href="/events/">
+      <a href="/store/">
          <div class="navbutton">
             <div class="oneline">STORE</div>
          </div>

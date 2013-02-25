@@ -1,0 +1,39 @@
+.optionbar {
+   float: left;
+   width: 175px;
+   min-height: 650px;
+}
+
+.pagewrap { margin-top: 30px; }
+.merchwrap {
+   float: right;
+   width: 600px;
+}
+
+.merchrow {
+   position: relative;
+   height: 200px;
+}
+
+.merch {
+   position: absolute;
+   width: 200px;
+   height: 200px;
+   -webkit-transition: box-shadow 0.25s;
+   cursor: pointer;
+}
+
+.merch:hover {
+   box-shadow: 5px 0 30px -5px black,
+               -5px 0 30px -5px black;
+   z-index: 10;
+}
+
+.merch.left {left: 0;}
+.merch.mid {left: 200px;}
+.merch.right {right: 0;}
+
+.merch img{
+   width: 200px;
+   height: 200px;
+}
