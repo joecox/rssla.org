@@ -10,4 +10,10 @@ $(document).ready(function () {
       $(this).fadeOut();
       $("body").removeClass("dialog-open");
    });
+
+   $(".merch").hover(function() {
+      $(this).children(".merchtext").fadeIn(200);
+   }, function() {
+      $(this).children(".merchtext").fadeOut(200);
+   });
 });

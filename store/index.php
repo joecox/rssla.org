@@ -8,47 +8,43 @@
 <body>
    <div id="wrapper">
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/header.php"); ?>
-      <div class="main clearfix with-banner">
-         <div class="bannerwrap">
-            <img class="photobanner" src="/resources/images/gear/storebannerfull.png">
-            <div class="bannertext">The RSS Store</div>
-         </div>
+      <div class="main clearfix">
          <div class="cont solo">
             <div class="pagewrap">
                <div class="optionbar">
                </div>
                <div class="merchwrap">
                   <div class="merchrow">
-                     <div class="merch left">
+                     <div class="merch left tee">
                         <img src="/resources/images/gear/PEE_front.jpg">
                         <div class="merchtext">Shirt 1 blah blah</div>
                      </div>
-                     <div class="merch mid">
+                     <div class="merch mid tee">
                         <img src="/resources/images/gear/PEE_front.jpg">
                      </div>
-                     <div class="merch right">
+                     <div class="merch right tee">
                         <img src="/resources/images/gear/PEE_front.jpg">
                      </div>
                   </div>
                   <div class="merchrow">
-                     <div class="merch left">
+                     <div class="merch left other">
                         <img src="/resources/images/gear/tee_Nerd_bk.jpg">
                      </div>
-                     <div class="merch mid">
+                     <div class="merch mid tee">
                         <img src="/resources/images/gear/tee_Nerd_bk.jpg">
                      </div>
-                     <div class="merch right">
+                     <div class="merch right tee">
                         <img src="/resources/images/gear/tee_Nerd_bk.jpg">
                      </div>
                   </div>
                   <div class="merchrow">
-                     <div class="merch left">
+                     <div class="merch left tee">
                         <img src="/resources/images/gear/tee_Nerd_bk.jpg">
                      </div>
-                     <div class="merch mid">
+                     <div class="merch mid other">
                         <img src="/resources/images/gear/tee_Nerd_bk.jpg">
                      </div>
-                     <div class="merch right">
+                     <div class="merch right tee">
                         <img src="/resources/images/gear/tee_Nerd_bk.jpg">
                      </div>
                   </div>
