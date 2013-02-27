@@ -4,38 +4,46 @@
    min-height: 650px;
 }
 
-.pagewrap { margin-top: 30px; }
+.pagewrap {
+   width: 860px;
+   margin: 80px auto 0;
+}
 .merchwrap {
-   float: right;
-   width: 618px;
+   width: 860px;
    margin-bottom: 30px;
 }
 
 .merchrow {
    position: relative;
-   height: 306px;
+   height: 400px;
 }
 
 .merch {
    position: absolute;
    width: 200px;
-   height: 300px;
-   -webkit-transition: box-shadow 0.25s,
-                       z-index 0.25s;
-   cursor: pointer;
+   height: 400px;
 }
 
-.merch:hover {
-   box-shadow: 5px 0 30px -5px black,
-               -5px 0 30px -5px black;
+.productwrap:hover {
+   box-shadow: 5px 0 40px -5px black,
+               -5px 0 40px -5px black;
    z-index: 1;
 }
 
 .merch.left {left: 0;}
-.merch.mid {left: 206px;}
+.merch.mid-left {left: 220px;}
+.merch.mid-right {right: 220px;}
 .merch.right {right: 0;}
 
-.merch img{
+.productwrap {
+   position: relative;
+   -webkit-transition: box-shadow 0.25s,
+                       z-index 0.25s;
+   width: 200px;
+   height: 300px;
+   cursor: pointer;
+}
+.product{
    width: 200px;
    height: 300px;
 }
@@ -49,10 +57,30 @@
    width: 150px;
    margin-left: -75px;
    color: black;
-   background-image: -webkit-radial-gradient(center center, ellipse farthest-corner, #eaeaea, white);
 }
 
-/* MERCH TYPES */
+.merchprice {
+   text-align: center;
+   font-weight: 400;
+   color: white;
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   width: 65px;
+   background-color: #137ae3;
+}
+
+.divider {
+   position: absolute;
+   bottom: 5px;
+   left: 209px;
+   height: 90px;
+   width: 2px;
+   background-color: #eaeaea;
+   border-radius: 1px;
+}
+
+/* MERCH TYPES ****************************************************************
 .tee {
    border: 3px solid #137ae3;
 }
@@ -62,6 +90,21 @@
 .other {
    border: 3px solid #2bae28;
 }
+
+/* BADGES ********************************************************************/
+.badge {
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 75px;
+   width: 75px;
+   background-size: 100%;
+}
+
+.new { background-image: url("/resources/images/UI/new.png"); }
+.soldout { background-image: url("/resources/images/UI/soldout.png"); }
+
+/* OVERLAY *******************************************************************/
 
 .veil {
    display: none;
@@ -90,4 +133,13 @@
    border-radius: 5px;
 
    z-index: 7;
+}
+
+.overlaywrap {
+   margin: 50px 30px;
+}
+
+.overlay img {
+   width: 400px;
+   height: 600px;
 }
