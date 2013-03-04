@@ -1,10 +1,15 @@
 <div id="footer" class="clearfix">
-   <div class="footerwrap half left">
+   <div class="footerwrap two-thirds left">
       <div class="footertitle left">Sponsors</div>
-      <div class="footercontent left" id="sponsor-logos">
-         <div>
-            <img src="/resources/images/sponsors/kaplan_transparent.png" style="margin-left: 0">
+      <div class="footercontent left">
+         <div class="sponsor-logos">
+            <img src="/resources/images/sponsors/kaplan_transparent.png">
+            <img src="/resources/images/sponsors/Ralphs_transparent.png">
             <img src="/resources/images/sponsors/uPrinting_transparent.png">
+         </div>
+         <div class="sponsor-logos" id="circular">
+            <img src="/resources/images/sponsors/LaughFactory_transparent.png">
+            <img src="/resources/images/sponsors/CoffeeBean_transparent.png">
          </div>
       </div>
    </div>
@@ -47,6 +52,7 @@
          <a href="/"><div>More...</div></a>
       </div>
    </div>
+<!--
    <div class="footerwrap sixth">
       <div class="footertitle">Search</div>
       <div class="footercontent right" style="margin-right: 0;">
@@ -56,6 +62,7 @@
          </form>
       </div>
    </div>
+-->
    <div class="clear"></div>
    <div id="copyright">&copy 2013 Regents Scholar Society at UCLA</div>
 </div>

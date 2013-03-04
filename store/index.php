@@ -21,7 +21,6 @@
                         <div class="merchprice">$15</div>
                      </div>
                   </div>
-                  <div class="divider"></div>
                   <div class="merch mid-left tee">
                      <div class="productwrap">
                         <div class="badge soldout"></div>

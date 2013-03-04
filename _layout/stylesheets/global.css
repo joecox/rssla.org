@@ -3,7 +3,7 @@
 body {
    background-color: #eaeaea;
    margin: 0;
-   font-family: 'Lato', 'Helvetica', sans-serif;
+   font-family: 'ProximaNova', 'Helvetica', sans-serif;
 }
 
 body.dialog-open { overflow: hidden; }
@@ -54,21 +54,22 @@ body.dialog-open { overflow: hidden; }
 
 #banner {
    text-align: right;
-   font-size: 1.125rem;
+   font-size: 1.2rem;
+   font-weight: 400;
    position: absolute;
    top: 40px;
    height: 50px;
-   width: 500px;
+   width: 505px;
    box-shadow: 4px 4px 25px black;
-   background-color: rgba(62,108,163,0.9);
+   background-color: rgba(61,106,162,0.9);
    border-radius: 10px;
    z-index: 3;
    cursor: default;
 }
 
 #banner div {
-   margin-right: 20px;
-   padding: 14px 0;
+   margin-right: 15px;
+   padding: 15px 0;
 }
 
 #photobar-overlay {
@@ -91,7 +92,7 @@ body.dialog-open { overflow: hidden; }
    bottom: 0;
    text-align: center;
    z-index: 2;
-   background-color: rgba(62,108,163,0.85);
+   background-color: rgba(61,106,162,0.85);
    border-radius: 10px;
    box-shadow: 0 12px 10px -10px black;
 }
@@ -113,8 +114,8 @@ body.dialog-open { overflow: hidden; }
    border-radius: 0;
 }
 .navcol:hover .drop-down {display: block;}
-.navbutton div.oneline {padding: 15px 0;}
-.navbutton div.twoline {padding: 6px 0;}
+.navbutton div.oneline {padding: 16px 0;}
+.navbutton div.twoline {padding: 7px 0;}
 
 .navcol {}
 
@@ -148,6 +149,7 @@ div#col7 {left: 875px;}
    padding: 20px 0;
    font-weight: 300;
 }
+
 .with-banner {padding-top: 0;}
 .bannerwrap {position: relative;}
 .photobanner {
@@ -187,15 +189,15 @@ div#col7 {left: 875px;}
    margin: 20px auto;
    padding: 20px 0;
    width: 100%;
-   height: 175px;
-   font-weight: 300;
+   height: 200px;
+   font-weight: 400;
 }
 
 #footer a {color: black; text-decoration: none;}
 #footer a:hover {color: #a9a9a9;}
 
 .footerwrap {
-   height: 175px;
+   height: 200px;
    border-left: 1px solid #acacac;
    float: left;
 }
@@ -210,7 +212,12 @@ div#col7 {left: 875px;}
 }
 .footertitle.left {margin-left: 0;}
 
-#sponsor-logos img {height: 45px; margin-left: 20px;}
+.sponsor-logos {
+  margin-bottom: 15px;
+  text-align: center;
+}
+.sponsor-logos img {height: 45px; margin: 0 30px;}
+.sponsor-logos#circular img {height: 75px; margin: 0 50px;}
 
 .social-link {margin-bottom: 5px; position: relative;}
 .social-link img {width: 25px;}
@@ -266,10 +273,10 @@ div#col7 {left: 875px;}
 }
 
 .blocktitle {
-   font-size: 1.25rem;
+   font-size: 1.5rem;
    margin-left: 20px;
 }
-
+.subtitle {margin-left: 20px;}
 .blocktitlecenter {
    font-size: 1.5rem;
    text-align: center;
@@ -315,6 +322,24 @@ a.moreinfo:visited {color: blue;}
   font-style: italic;
   font-weight: 400;
   src: local('Lato Italic'), local('Lato-Italic'), url(http://themes.googleusercontent.com/licensed/font?kit=SAxt20QJL1p0_cZGS4TMfXgShx1I3EQEk3P0UXxV4G1dxlT5RfGIy95sQWGkHIXZT_wDREvo4O6_6v9ljamcpjDjNODm32iLRYw2SNTAhDi20L9efk2PUOdb5H1Th4EY) format('woff');
+}
+
+@font-face { 
+  font-family:'ProximaNova'; src:url('/resources/fonts/ProximaNova/proximanova-light.eot'); src:url('/resources/fonts/ProximaNova/proximanova-light.eot?#iefix') format('embedded-opentype'),url('/resources/fonts/ProximaNova/proximanova-light.woff') format('woff'),url('/resources/fonts/ProximaNova/proximanova-light.ttf') format('truetype'); 
+  font-weight:300; 
+  font-style:normal; 
+}
+
+@font-face { 
+  font-family:'ProximaNova'; src:url('/resources/fonts/ProximaNova/proximanova-regular.eot'); src:url('/resources/fonts/ProximaNova/proximanova-regular.eot?#iefix') format('embedded-opentype'),url('/resources/fonts/ProximaNova/proximanova-regular.woff') format('woff'),url('/resources/fonts/ProximaNova/proximanova-regular.ttf') format('truetype'); 
+  font-weight:400; 
+  font-style:normal; 
+}
+
+@font-face { 
+font-family:'ProximaNova'; src:url('/resources/fonts/ProximaNova/proximanova-semibold.eot'); src:url('/resources/fonts/ProximaNova/proximanova-semibold.eot?#iefix') format('embedded-opentype'),url('/resources/fonts/ProximaNova/proximanova-semibold.woff') format('woff'),url('/resources/fonts/ProximaNova/proximanova-semibold.ttf') format('truetype'); 
+  font-weight:600; 
+  font-style:normal; 
 }
 
 /* UTILITY */

@@ -1,12 +1,11 @@
 .optionbar {
-   float: left;
-   width: 175px;
-   min-height: 650px;
+   height: 30px;
+   margin-bottom: 20px;
 }
 
 .pagewrap {
    width: 860px;
-   margin: 80px auto 0;
+   margin: 20px auto 80px;
 }
 .merchwrap {
    width: 860px;

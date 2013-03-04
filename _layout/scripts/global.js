@@ -17,6 +17,11 @@ $(document).ready(function ()
    $(".cont").css("min-height", maxHeight);
 });
 
+$(document).ready(function () 
+{
+   $(".photobanner[src='']").parent(".bannerwrap").css("display", "none");
+});
+
 
 // frame sliding
 $(document).ready(function()

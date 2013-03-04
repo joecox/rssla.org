@@ -7,11 +7,8 @@
    </a>
    <div id="banner">
       <div>
-         <span style="margin-left:5px">REGENTS</span>
-         <span style="margin-left:5px">SCHOLAR</span>
-         <span style="margin-left:5px">SOCIETY</span>
-         <span style="margin-left:5px">at</span>
-         <span style="margin-left:5px; color: #ebc62f;">UCLA</span>
+         REGENTS SCHOLAR SOCIETY AT
+         <span style="color: #ebc62f;">UCLA</span>
       </div>
    </div>
    <div id="photobar-overlay"></div>
