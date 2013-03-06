@@ -6,6 +6,10 @@ body {
    font-family: 'ProximaNova', 'Helvetica', sans-serif;
 }
 
+a {
+   text-decoration: none;
+   color: black;
+}
 body.dialog-open { overflow: hidden; }
 
 #wrapper {
@@ -275,7 +279,7 @@ div#col7 {left: 875px;}
 .pagetitle {
    font-size: 2rem;
    font-weight: 400;
-   margin-left: 20px;
+   margin: 0 20px 30px;
    color: rgb(36, 114, 211);
 }
 
@@ -305,6 +309,7 @@ div#col7 {left: 875px;}
    font-size: 1.2rem;
    font-style: italic;
    color: rgb(76, 156, 255);
+   margin: 1rem 0;
 }
 
 .moreinfo {
@@ -312,14 +317,56 @@ div#col7 {left: 875px;}
    position: relative;
    text-align: left;
    font-size: 1.2rem;
+   margin: 1.5rem 0;
+}
+.moreinfo span {
+   padding: 5px;
+   border-top: solid 1px rgb(96, 167, 253);
+   border-bottom: solid 1px rgb(41, 80, 128);
+   border-radius: 3px;
+
+   background-image: linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
+   background-image: -o-linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
+   background-image: -moz-linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
+   background-image: -webkit-linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
+   background-image: -ms-linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
+
+   background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0.85, rgb(36,115,211)),
+      color-stop(0.22, rgb(59,147,247))
+   );
+}
+.moreinfo span:hover {
+   background-image: none;
+   background-color: rgb(36,115,211);
+}
+.moreinfo a:active span {
+   background-image: none;
+   background-color: rgb(42, 100, 170);
 }
 .moreinfo a {
    text-decoration: none;
-   color: black;
+   color: white;
 }
-.moreinfo a:hover {text-decoration: underline;}
-.moreinfo a:active {color: gray;}
-.moreinfo a:visited {color: black;}
+
+.sidenavitem {
+   font-size: 1.2rem;
+   font-weight: 400;
+   margin-bottom: 5px;
+   cursor: pointer;
+}
+.sidenavitem:hover {
+   background-color: #eff2f7;
+}
+.sidenavitem.selected {
+   background-color: #d8dfea;
+}
+.sidenavitem span {
+   margin-left: 20px;
+}
 
 /* CUSTOM FONTS */
 

@@ -17,7 +17,7 @@
             </a>
             <div class="sidenav">
                <a href="/prospective/osp">
-                  <div class="sidenavitem">
+                  <div class="sidenavitem selected">
                      <span>OSP</span>
                   </div>
                </a>
