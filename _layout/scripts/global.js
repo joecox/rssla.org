@@ -6,26 +6,20 @@ function fadeIn(obj) {
 
 /* MAIN */
 
-
 $(document).ready(function () 
 {
+   // set min-heights to max
    var maxHeight = Math.max.apply(null, $(".cont").map(function ()
    {
       return $(this).height();
    }).get());
    
    $(".cont").css("min-height", maxHeight);
-});
 
-$(document).ready(function () 
-{
+   // initially hide the photobanner
    $(".photobanner[src='']").parent(".bannerwrap").css("display", "none");
-});
 
-
-// frame sliding
-$(document).ready(function()
-{
+   // frame sliding
    var currentframe = 0;
 
    $(".nextframe").click(function() 
@@ -64,5 +58,19 @@ $(document).ready(function()
          if (!($("#frame" + prevframe).length))
             $(".prevframe").hide();
       });
+   });
+
+   // Rowtitle side-line
+   $(".rowtitle").append("<div></div>");
+   $(".rowtitle").children("div").css("position", "absolute");
+   $(".rowtitle").children("div").css("right", "0");
+   $(".rowtitle").children("div").css("background-color", "#ccc");
+   $(".rowtitle").children("div").css("height", "1px");
+   $(".rowtitle").each(function () 
+   {
+      var width = 690 - $(this).children("span").width();
+      $(this).children("div").css("width", width + "px");
+      var bottom = ($(this).children("span").height() / 2) - 1;
+      $(this).children("div").css("bottom", bottom);
    });
 });

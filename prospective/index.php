@@ -15,7 +15,8 @@
             <div class="pagetitle">PROSPECTIVE<br>SCHOLARS</div>
          </div>
          <div class="cont three-quarters">
-            
+            <div class="rowtitle"><span>Overnight Stay Program</span></div>
+            <div class="rowtitle"><span>Mentors</span></div>
          </div>
       </div>
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/footer.php"); ?>
