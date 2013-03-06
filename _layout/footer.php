@@ -5,7 +5,7 @@
          <div class="sponsor-logos">
             <img src="/resources/images/sponsors/kaplan_transparent.png">
             <img src="/resources/images/sponsors/Ralphs_transparent.png">
-            <img src="/resources/images/sponsors/uPrinting_transparent.png">
+            <img class="right" src="/resources/images/sponsors/uPrinting_transparent.png">
          </div>
          <div class="sponsor-logos" id="circular">
             <img src="/resources/images/sponsors/LaughFactory_transparent.png">
