@@ -301,8 +301,25 @@ div#col7 {left: 875px;}
    font-size: 0.85rem;
 }
 
-.moreinfo div {margin: 0 0 30px 20px;}
-a.moreinfo:visited {color: blue;}
+.highlight {
+   font-size: 1.2rem;
+   font-style: italic;
+   color: rgb(76, 156, 255);
+}
+
+.moreinfo {
+   font-family: 'ProximaNova', 'Helvetica', sans-serif;
+   position: relative;
+   text-align: left;
+   font-size: 1.2rem;
+}
+.moreinfo a {
+   text-decoration: none;
+   color: black;
+}
+.moreinfo a:hover {text-decoration: underline;}
+.moreinfo a:active {color: gray;}
+.moreinfo a:visited {color: black;}
 
 /* CUSTOM FONTS */
 

@@ -7,6 +7,7 @@
 .profileframe {
    display: none;
    margin: 0 20px;
+   position: relative;
 }
 
 #currentframe {
@@ -43,3 +44,10 @@
            transition: opacity 0.25s;
 }
 .prevframe:hover {opacity: 1.0;}
+
+img.side {
+   position: absolute;
+   left: 0;
+   top: 0;
+   height: 600px;
+}

@@ -25,7 +25,7 @@
    <span class="navcol">
       <a href="/events/">
          <div class="navbutton">
-            <div class="oneline">HAPPENINGS</div>
+            <div class="twoline">EVENTS & OUTREACH</div>
          </div>
       </a>
       <div class="drop-down" id="col1">

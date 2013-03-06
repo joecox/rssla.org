@@ -73,4 +73,9 @@ $(document).ready(function ()
       var bottom = ($(this).children("span").height() / 2) - 1;
       $(this).children("div").css("bottom", bottom);
    });
+
+   // moreinfo arrow move
+   $(".moreinfo").hover(function () {
+      $(this).children("img").css("right", "0px");
+   })
 });

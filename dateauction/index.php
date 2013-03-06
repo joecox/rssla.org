@@ -13,7 +13,7 @@
          </a>
          <div class="cont solo">
             <div class="profileframe" id="currentframe">
-            Frame 1
+               <img class="side" src="/resources/images/dateauction/dylan_black.jpg">
             </div>
             <div class="profileframe" id="frame1">
             Frame 2
