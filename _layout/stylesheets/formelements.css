@@ -1,28 +1,38 @@
+.buttonwrap {
+   font-family: 'ProximaNova', 'Helvetica', sans-serif;
+   text-align: left;
+   font-size: 1.2rem;
+   margin: 1.3rem 0;
+}
 .button {
-   display: inline-block;
-   margin: 20px 5px 0;
-   border: 1px solid rgb(200, 200, 200);
-   border-radius: 2px;
-   background-color: rgb(241, 241, 241);
-   min-height: 30px;
+   padding: 5px 15px;
+   border-top: solid 1px rgb(96, 167, 253);
+   border-bottom: solid 1px rgb(41, 80, 128);
+   border-radius: 3px;
    cursor: pointer;
-}
+   color: white;
 
+   background-image: linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
+   background-image: -o-linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
+   background-image: -moz-linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
+   background-image: -webkit-linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
+   background-image: -ms-linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
+
+   background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0.85, rgb(36,115,211)),
+      color-stop(0.22, rgb(59,147,247))
+   );
+}
 .button:hover {
-   border: 1px solid rgb(180, 180, 180);
-   background-color: rgb(230, 230, 230);
+   background-image: none;
+   background-color: rgb(36,115,211);
 }
-
 .button:active {
-   border: 1px solid rgb(160, 160, 160);
-   background-color: rgb(190, 190, 190);
-}
-
-.button span {
-   margin: 10px;
-   line-height: 30px;
-   font-size: 0.85rem;
-   font-style: normal;
+   background-image: none;
+   background-color: rgb(42, 100, 170);
 }
 
 .button.del {

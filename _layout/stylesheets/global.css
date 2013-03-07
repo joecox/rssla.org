@@ -10,6 +10,18 @@ a {
    text-decoration: none;
    color: black;
 }
+
+a.norm {
+   text-decoration: underline;
+   color: blue;
+   cursor: pointer;
+}
+a.norm:active {color: gray;}
+a.norm:visited {color: blue;}
+
+li {
+   margin-bottom: 10px;
+}
 body.dialog-open { overflow: hidden; }
 
 #wrapper {
@@ -302,6 +314,7 @@ div#col7 {left: 875px;}
 .contentblock {
    font-family: Helvetica, sans-serif;
    margin: 20px;
+   margin-bottom: 40px;
    font-size: 0.85rem;
 }
 
@@ -314,13 +327,12 @@ div#col7 {left: 875px;}
 
 .moreinfo {
    font-family: 'ProximaNova', 'Helvetica', sans-serif;
-   position: relative;
    text-align: left;
    font-size: 1.2rem;
-   margin: 1.5rem 0;
+   margin: 1.3rem 0;
 }
 .moreinfo span {
-   padding: 5px;
+   padding: 5px 15px;
    border-top: solid 1px rgb(96, 167, 253);
    border-bottom: solid 1px rgb(41, 80, 128);
    border-radius: 3px;
@@ -359,10 +371,10 @@ div#col7 {left: 875px;}
    cursor: pointer;
 }
 .sidenavitem:hover {
-   background-color: #eff2f7;
+   background-color: #d8dfea;
 }
 .sidenavitem.selected {
-   background-color: #d8dfea;
+   background-color: rgb(161, 177, 201);
 }
 .sidenavitem span {
    margin-left: 20px;

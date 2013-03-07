@@ -78,4 +78,12 @@ $(document).ready(function ()
    $(".moreinfo").hover(function () {
       $(this).children("img").css("right", "0px");
    })
+
+
+
+   /* FORM ACTIONS */
+   $(".button#submit").click(function ()
+   {
+      $(this).parent().parents("form").submit();
+   })
 });

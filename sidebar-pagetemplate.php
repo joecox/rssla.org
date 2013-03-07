@@ -12,6 +12,7 @@
             <div class="bannertext"></div>
          </div>
          <div class="cont quarter left" id="sidebar">
+            <div class="pagetitle">PAGE TITLE</div>
          </div>
          <div class="cont three-quarters">
          </div>
