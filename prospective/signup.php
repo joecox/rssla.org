@@ -3,6 +3,7 @@
 <head>
    <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/head.php"); ?>
    <link rel="stylesheet" type="text/css" href="/_layout/stylesheets/formelements.css">
+   <script src="/_layout/scripts/forms.js"></script>
 </head>
 <body>
    <div id="wrapper">
@@ -24,25 +25,25 @@
                   <p>Thank you for your interest in the Regents Scholar Society at UCLA's Overnight Stay Program! Fill out this form if you have been offered the Regents Scholarship at UCLA and are interested in spending a few nights in our dorms with current Regents Scholars to get a true feel for what life at UCLA is like.</p>
                   <p>If you have any questions, please email <?php echo $outrFL; ?>, the Outreach Director, at <a class="norm" href="mailto:outreach@rssla.org">outreach@rssla.org</a>.</p>
                   <div class="highlight">We look forward to seeing you!</div>
-                  <p style="margin:30px 0">1. Select an OSP Session:</p>
-                  <input class="hidden" type="radio" name="session" value="1">
-                  <input class="hidden" type="radio" name="session" value="2">
-                  <input class="hidden" type="radio" name="session" value="3">
-                  <input class="hidden" type="radio" name="session" value="4">
-                  <input class="hidden" type="radio" name="session" value="5">
-                  <input class="hidden" type="radio" name="session" value="6">
-                  <div class="selectbar">
-                     <span class="button radio" value="1">Session 1: April 4 - 6</span>
-                     <span class="button radio" value="2">Session 2: April 6 - 8</span>
-                     <span class="button radio" value="3">Session 3: April 11 - 13</span>
-                     <span class="button radio" value="4">Session 4: April 13 - 15</span>
-                  </div>
-                  <div class="selectbar">
-                     <span class="button radio" value="5">Session 5: April 20 - 22</span>
-                     <span class="button radio" value="6">Transfer: May 11 - 12</span>
-                  </div>
-                  <p style="margin:30px 0">2. Please fill out the following information.  Fields marked <span style="color:red">*</span> are required.</p>
                </div>
+               <p style="margin:30px 0 10px 20px">1. Select an OSP Session:</p>
+               <div class="selectbar required">
+                  <div class="radiowrap">
+                     <input class="hidden" type="radio" name="session" value="1">
+                     <input class="hidden" type="radio" name="session" value="2">
+                     <input class="hidden" type="radio" name="session" value="3">
+                     <input class="hidden" type="radio" name="session" value="4">
+                     <input class="hidden" type="radio" name="session" value="5">
+                     <input class="hidden" type="radio" name="session" value="6">
+                  </div>
+                  <span class="button radio" value="1">Session 1</span>
+                  <span class="button radio" value="2">Session 2</span>
+                  <span class="button radio" value="3">Session 3</span>
+                  <span class="button radio" value="4">Session 4</span>
+                  <span class="button radio" value="5">Session 5</span>
+                  <span class="button radio" value="6">Transfer</span>
+               </div>
+               <p style="margin:30px 0 0 20px">2. Please fill out the following information.  Fields marked <span style="color:red">*</span> are required.</p>
                <div class="inputwrap">
                   <label class="required" for="first">First name</label>
                   <input class="required" type="text" name="first">
@@ -66,18 +67,22 @@
                </div>
                <div class="inputwrap">
                   <label class="required" for="gender">Your gender</label>
-                  <input class="required" type="radio" name="gender" value="Male"><span class="radio-check-label">Male</span><br>
-                  <input class="required" type="radio" name="gender" value="Female"><span class="radio-check-label">Female</span><br>
-                  <input class="required" type="radio" name="gender" value="Other"><span class="radio-check-label">Other:</span>
+                  <span class="radiowrap required">
+                     <input type="radio" name="gender" value="Male"><span class="radio-check-label">Male</span><br>
+                     <input type="radio" name="gender" value="Female"><span class="radio-check-label">Female</span><br>
+                     <input type="radio" name="gender" value="Other"><span class="radio-check-label">Other:</span>
+                  </span>
                   <input type="text" name="optgender">
                </div>
                <div class="inputwrap">
                   <label class="required" for="tshirt">T-shirt size?</label>
                   <div class="sublabel">Oh, you know, just in case we happen to be giving away free OSP T-shirts... :)</div>
-                  <input class="required" type="radio" name="tshirt" value="S"><span class="radio-check-label">S</span><br>
-                  <input class="required" type="radio" name="tshirt" value="M"><span class="radio-check-label">M</span><br>
-                  <input class="required" type="radio" name="tshirt" value="L"><span class="radio-check-label">L</span><br>
-                  <input class="required" type="radio" name="tshirt" value="XL"><span class="radio-check-label">XL</span><br>
+                  <div class="radiowrap required">
+                     <input type="radio" name="tshirt" value="S"><span class="radio-check-label">S</span><br>
+                     <input type="radio" name="tshirt" value="M"><span class="radio-check-label">M</span><br>
+                     <input type="radio" name="tshirt" value="L"><span class="radio-check-label">L</span><br>
+                     <input type="radio" name="tshirt" value="XL"><span class="radio-check-label">XL</span><br>
+                  </div>
                </div>
                <div class="inputwrap">
                   <label for="dietary">Any dietary restrictions?</label>
@@ -102,7 +107,9 @@
                <div class="inputwrap">
                   <label class="required" for="isscholar">I confirm that I have been offered the Regents Scholarship at UCLA.</label>
                   <div class="sublabel" style="margin-bottom:20px">At this time, our Overnight Stay Programs are for prospective Regents Scholars only. If you are not a prospective Regents Scholar, there are many other overnight stay programs available. Email <?php echo $outrFL; ?> at <a class="norm" href="mailto:outreach@rssla.org">outreach@rssla.org</a> if you have any questions.</div>
-                  <input class="required" type="checkbox" name="isscholar" value="Yes, I verify that I am a prospective Regents Scholar!" style="margin-left:10px"><span class="radio-check-label">Yes, I verify that I am a prospective Regents Scholar!</span>
+                  <div class="checkwrap required">
+                     <input type="checkbox" name="isscholar" value="Yes, I verify that I am a prospective Regents Scholar!" style="margin-left:10px"><span class="radio-check-label">Yes, I verify that I am a prospective Regents Scholar!</span>
+                  </div>
                </div>
                <div class="buttonwrap" style="margin:40px 20px 10px">
                   <span class="button" id="submit">Submit & Pay</span>

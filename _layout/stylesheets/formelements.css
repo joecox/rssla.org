@@ -7,26 +7,18 @@
    font-family: 'ProximaNova', 'Helvetica', sans-serif;
    text-align: center;
    padding: 5px 15px;
-   border-top: solid 1px rgb(96, 167, 253);
    border-bottom: solid 1px rgb(41, 80, 128);
    border-radius: 3px;
    cursor: pointer;
    color: white;
    position: relative;
-
-   background-image: linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
-   background-image: -o-linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
-   background-image: -moz-linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
-   background-image: -webkit-linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
-   background-image: -ms-linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
-
-   background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      color-stop(0.85, rgb(36,115,211)),
-      color-stop(0.22, rgb(59,147,247))
-   );
+   
+   background-color: #268fff;
+   background-image: -webkit-gradient(linear, left top, left bottom, from(#268fff), to(#1b65b5));
+   background-image: -webkit-linear-gradient(top, #268fff, #1b65b5);
+   background-image:    -moz-linear-gradient(top, #268fff, #1b65b5);
+   background-image:      -o-linear-gradient(top, #268fff, #1b65b5);
+   background-image:         linear-gradient(to bottom, #268fff, #1b65b5);
 }
 .button:hover {
    background-image: none;
@@ -42,6 +34,7 @@
 }
 
 .selectbar {
+   padding: 20px 0;
    margin-bottom: 20px;
    text-align: center;
 }
