@@ -1,16 +1,18 @@
 .buttonwrap {
-   font-family: 'ProximaNova', 'Helvetica', sans-serif;
    text-align: left;
    font-size: 1.2rem;
    margin: 1.3rem 0;
 }
 .button {
+   font-family: 'ProximaNova', 'Helvetica', sans-serif;
+   text-align: center;
    padding: 5px 15px;
    border-top: solid 1px rgb(96, 167, 253);
    border-bottom: solid 1px rgb(41, 80, 128);
    border-radius: 3px;
    cursor: pointer;
    color: white;
+   position: relative;
 
    background-image: linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
    background-image: -o-linear-gradient(top, rgb(36,115,211) 85%, rgb(59,147,247) 22%);
@@ -39,8 +41,47 @@
    margin-left: 20px;
 }
 
+.selectbar {
+   margin-bottom: 20px;
+   text-align: center;
+}
 
+.inputwrap {
+   padding: 10px 20px;
+   margin: 5px 0;
+}
 
+input {
+   outline: none;
+   border: 1px solid rgb(180,180,180);
+   margin-left: 0;
+}
+input:focus {
+   box-shadow: 0 0 5px 2px rgb(30, 139, 235);
+}
+input[type="text"] {
+   height: 20px;
+}
+label {
+   display: block;
+   margin-bottom: 5px;
+}
+.sublabel {
+   font-size: 0.8rem;
+   margin-bottom: 10px;
+   color: gray;
+}
+.radio-check-label {
+   margin-left: 5px;
+}
+textarea {
+   outline: none;
+   border: 1px solid rgb(180,180,180);
+   margin: 0;
+}
+textarea:focus {
+   box-shadow: 0 0 5px 2px rgb(30, 139, 235);
+}
 div.input {
    margin: 20px auto;
    text-align: center;
@@ -64,6 +105,31 @@ div.input {
 
 .input input[type="text"].title {width: 300px;}
 .input input[type="text"].labelinput {width: 150px;}
+
+input.hidden {
+   display: none;
+}
+.button.radio {font-size: 1rem;}
+.button.radio.selected {
+   color: black;
+   background-color: #ccc;
+   border-bottom: solid 1px rgb(220,220,220);
+   border-top: solid 1px rgb(180,180,180);
+   background-image: linear-gradient(bottom, rgb(240,240,240) 1%, rgb(196,196,196) 76%);
+   background-image: -o-linear-gradient(bottom, rgb(240,240,240) 1%, rgb(196,196,196) 76%);
+   background-image: -moz-linear-gradient(bottom, rgb(240,240,240) 1%, rgb(196,196,196) 76%);
+   background-image: -webkit-linear-gradient(bottom, rgb(240,240,240) 1%, rgb(196,196,196) 76%);
+   background-image: -ms-linear-gradient(bottom, rgb(240,240,240) 1%, rgb(196,196,196) 76%);
+
+   background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.01, rgb(240,240,240)),
+      color-stop(0.76, rgb(196,196,196))
+   );
+
+}
 
 .optionwrap {
    margin-top: 10px;

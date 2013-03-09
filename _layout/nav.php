@@ -25,16 +25,23 @@
    <span class="navcol">
       <a href="/events/">
          <div class="navbutton">
-            <div class="twoline">EVENTS & OUTREACH</div>
+            <div class="twoline">CALENDAR OF EVENTS</div>
          </div>
       </a>
-      <div class="drop-down" id="col1">
+   </span>
+   <span class="navcol">
+      <a href="/members/">
+         <div class="navbutton">
+            <div class="oneline">OUTREACH</div>
+         </div>
+      </a>
+      <div class="drop-down" id="col2">
          <div>
             <a href="/">
-               <div class="navitem">Events</div>
+               <div class="navitem">Volunteering</div>
             </a>
             <a href="/">
-               <div class="navitem">Volunteering</div>
+               <div class="navitem">LAMP</div>
             </a>
          </div>
       </div>
@@ -45,7 +52,7 @@
             <div class="oneline">MEMBERS</div>
          </div>
       </a>
-      <div class="drop-down" id="col2">
+      <div class="drop-down" id="col3">
          <div>
             <a href="/">
                <div class="navitem">Opportunities</div>
@@ -77,13 +84,6 @@
       <a href="/sponsors/">
          <div class="navbutton">
             <div class="oneline">SPONSORS</div>
-         </div>
-      </a>
-   </span>
-   <span class="navcol">
-      <a href="/media/">
-         <div class="navbutton">
-            <div class="oneline">MEDIA</div>
          </div>
       </a>
    </span>

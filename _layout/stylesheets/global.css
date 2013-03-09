@@ -312,10 +312,9 @@ div#col7 {left: 875px;}
 }
 
 .contentblock {
-   font-family: Helvetica, sans-serif;
    margin: 20px;
    margin-bottom: 40px;
-   font-size: 0.85rem;
+   font-size: 1rem;
 }
 
 .highlight {
