@@ -1,5 +1,6 @@
 .sponsorrow {
    padding-bottom: 40px;
+   text-align: center;
 }
 
 .sponsorrow img {
@@ -18,4 +19,5 @@
 .blurb {
    width: 475px;
    float: right;
+   text-align: justify;
 }

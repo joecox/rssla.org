@@ -74,8 +74,20 @@ $(document).ready(function ()
       $(this).children("div").css("bottom", bottom);
    });
 
-   // moreinfo arrow move
-   $(".moreinfo").hover(function () {
-      $(this).children("img").css("right", "0px");
+   // sponsors align
+   $(".blurb").each(function () 
+   {
+      var margin_top = ($(this).height() / 2) - ($(this).siblings("a").children("img").css("height") / 2);
+      if ($(this).height() > $(this).siblings("a").children("img").css("height"))
+         $(this).siblings("a").children("img").css("margin-top", margin_top);
+      else
+         $(this).css("margin-top", margin_top);
+   });
+
+   // auto picture resizing
+   $("img").each(function ()
+   {
+      if ($(this).width() > $(this).parent().width())
+         $(this).width = $(this).parent().width();
    });
 });

@@ -12,9 +12,10 @@
             <div class="bannertext"></div>
          </div>
          <div class="cont quarter left" id="sidebar">
-            <div class="pagetitle">PAGE TITLE</div>
+            <div class="pagetitle">RSSLA.ORG</div>
          </div>
-         <div class="cont three-quarters">
+         <div class="cont three-quarters" style="height: 400px">
+            <div class="rowtitle"><span>Regents Scholar Society</span></div>
          </div>
       </div>
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/footer.php"); ?>

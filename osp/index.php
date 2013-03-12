@@ -12,21 +12,21 @@
             <div class="bannertext"></div>
          </div>
          <div class="cont quarter left" id="sidebar">
-            <a href="/prospective/">
+            <a href="/osp/">
                <div class="pagetitle">PROSPECTIVE<br>SCHOLARS</div>
             </a>
             <div class="sidenav">
-               <a href="/prospective/#overview">
+               <a href="/osp/#overview">
                   <div class="sidenavitem">
                      <span>Overview</span>
                   </div>
                </a>
-               <a href="/prospective/#signup">
+               <a href="/osp/#signup">
                   <div class="sidenavitem">
                      <span>Sign up</span>
                   </div>
                </a>
-               <a href="/prospective/#prepare">
+               <a href="/osp/#prepare">
                   <div class="sidenavitem">
                      <span>Preparing for your visit</span>
                   </div>
@@ -48,12 +48,13 @@
                </p>
                <p>For more complete session itineraries, please refer to the individual session schedules below.</p>
                <p>
+                  <b>Itineraries: </b>
                   <a class="norm" href="/resources/docs/osp/OSP_Session1_Itinerary_2013.pdf">Session 1</a> | 
                   <a class="norm" href="/resources/docs/osp/OSP_Session2_Itinerary_2013.pdf">Session 2</a> | 
                   <a class="norm" href="/resources/docs/osp/OSP_Session3_Itinerary_2013.pdf">Session 3</a> | 
                   <a class="norm" href="/resources/docs/osp/OSP_Session4_Itinerary_2013.pdf">Session 4</a> | 
                   <a class="norm" href="/resources/docs/osp/OSP_Session5_Itinerary_2013.pdf">Session 5</a> | 
-                  <a class="norm" href="/resources/docs/osp/OSP_Transfer_Itinerary_2013.pdf">Transfer OSP</a>
+                  <span style="color:gray">Transfer OSP: Coming Soon</span>
                </p>
             </div>
             <div class="rowtitle" id="signup"><span>Sign up for OSP</span></div>
@@ -68,9 +69,10 @@
                   <li>Transfer Session: May 11 - 12 <span style="font-style: italic">(Saturday - Sunday)</span></li>
                </ul>
                <p>Once you've chosen the session to want to attend, sign up through the link below.  The registration period opens for each session on March 20th, and closes when a session is less than 3 days away.</p>
-               <div class="moreinfo">
+               <p><b>The fee for this year's OSP sessions is $20</b>, payable by PayPal. This helps us cover almost all of your meals, bus fares, your OSP T-shirt, and much more. You will be redirected to PayPal upon signing up for your session.</p>
+               <div class="buttonwrap">
                   <a href="signup.php">
-                     <span>Sign up for OSP</span>
+                     <span class="button">Sign up for OSP</span>
                   </a>
                </div>
             </div>

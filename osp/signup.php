@@ -2,7 +2,6 @@
 <html>
 <head>
    <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/head.php"); ?>
-   <link rel="stylesheet" type="text/css" href="/_layout/stylesheets/formelements.css">
    <script src="/_layout/scripts/forms.js"></script>
 </head>
 <body>
@@ -14,19 +13,19 @@
             <div class="bannertext"></div>
          </div>
          <div class="cont quarter left" id="sidebar">
-            <a href="/prospective/">
+            <a href="/osp/">
                <div class="pagetitle">PROSPECTIVE SCHOLARS</div>
             </a>
          </div>
          <div class="cont three-quarters">
             <div class="rowtitle"><span>OSP Signup Form</span></div>
-            <form action="signup_process.php" method="post" id="form">
+            <form action="signup_process.php" method="post" id="form" style="font-weight: 400">
                <div class="contentblock">
                   <p>Thank you for your interest in the Regents Scholar Society at UCLA's Overnight Stay Program! Fill out this form if you have been offered the Regents Scholarship at UCLA and are interested in spending a few nights in our dorms with current Regents Scholars to get a true feel for what life at UCLA is like.</p>
                   <p>If you have any questions, please email <?php echo $outrFL; ?>, the Outreach Director, at <a class="norm" href="mailto:outreach@rssla.org">outreach@rssla.org</a>.</p>
-                  <div class="highlight">We look forward to seeing you!</div>
+                  <div style="text-align:center"><div class="highlight">We look forward to seeing you!</div></div>
                </div>
-               <p style="margin:30px 0 10px 20px">1. Select an OSP Session:</p>
+               <p id="dir" style="margin:20px 0 10px 20px; padding-top:10px">1. Select an OSP Session:</p>
                <div class="selectbar required">
                   <div class="radiowrap">
                      <input class="hidden" type="radio" name="session" value="1">

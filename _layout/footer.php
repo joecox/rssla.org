@@ -64,5 +64,5 @@
    </div>
 -->
    <div class="clear"></div>
-   <div id="copyright">&copy 2013 Regents Scholar Society at UCLA</div>
+   <div id="copyright">&copy; 2013 Regents Scholar Society at UCLA</div>
 </div>
