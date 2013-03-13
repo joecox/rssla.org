@@ -55,7 +55,7 @@
             </div>
             <div class="sponsorrow">
                <div class="contentblock">
-                  <a href="http://www.uprinting.com">
+                  <a href="http://www.uprinting.com" alt="online printing">
                      <img style="width: 200px; height: 45px" src="/resources/images/sponsors/uprinting_transparent.png">
                   </a>
                   <div class="blurb">uPrinting.com is an online printing service that serves thousands of orders a day. Relying on both a stream-lined order system and helpful customer service, they are built around user-friendliness.  They are also committed to social responsibility, using eco-friendly printing techniques and providing free services to non-profit organizations such as RSS.</div>

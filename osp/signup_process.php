@@ -51,14 +51,15 @@ $ss->addRow($row);
 
 ?>
 
-<form id="form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<form id="form" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
+<!--
 <input type="hidden" name="hosted_button_id" value="EJZZXRCSJMPAQ">
-<input type="hidden" name="cancel_return" value="http://www.rssla.org/osp/">
-<!-- return variables
-<input type="hidden" name="return" value="http://www.rssla.org/osp/success.php">
-<input type="hidden" name="rm" value="2">
 -->
+<input type="hidden" name="hosted_button_id" value="G5WX4E864NP5U"
+<input type="hidden" name="cancel_return" value="http://localhost/osp/">
+<input type="hidden" name="return" value="http://localhost/osp/success.php">
+<input type="hidden" name="rm" value="2">
 </form>
 
 <script>

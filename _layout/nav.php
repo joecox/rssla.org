@@ -1,10 +1,11 @@
 <div class="nav">
    <span class="navcol">
-      <a href="/about/">
-         <div class="navbutton">
+      <a href="#">
+         <div class="navbutton coming" meta="COMING 3/22">
             <div class="oneline">ABOUT</div>
          </div>
       </a>
+<!--
       <div class="drop-down" id="col0">
          <div>
             <a href="/about/society.php">
@@ -21,20 +22,22 @@
             </a>
          </div>
       </div>
+-->
    </span>
    <span class="navcol">
-      <a href="/events/">
-         <div class="navbutton">
+      <a href="#">
+         <div class="navbutton coming" meta="COMING 3/29">
             <div class="twoline">CALENDAR OF EVENTS</div>
          </div>
       </a>
    </span>
    <span class="navcol">
-      <a href="/members/">
-         <div class="navbutton">
+      <a href="#">
+         <div class="navbutton coming" meta="COMING 4/3">
             <div class="oneline">OUTREACH</div>
          </div>
       </a>
+<!--
       <div class="drop-down" id="col2">
          <div>
             <a href="/">
@@ -45,13 +48,15 @@
             </a>
          </div>
       </div>
+-->
    </span>
    <span class="navcol">
-      <a href="/members/">
-         <div class="navbutton">
+      <a href="#">
+         <div class="navbutton coming" meta="COMING 4/5">
             <div class="oneline">MEMBERS</div>
          </div>
       </a>
+<!--
       <div class="drop-down" id="col3">
          <div>
             <a href="/">
@@ -65,6 +70,7 @@
             </a>
          </div>
       </div>
+-->
    </span>
    <span class="navcol">
       <a href="/osp/">
@@ -74,8 +80,8 @@
       </a>
    </span>
    <span class="navcol">
-      <a href="/alumni/">
-         <div class="navbutton">
+      <a href="#">
+         <div class="navbutton coming" meta="COMING SOON">
             <div class="oneline">ALUMNI</div>
          </div>
       </a>
@@ -88,8 +94,8 @@
       </a>
    </span>
    <span class="navcol">
-      <a href="/store/">
-         <div class="navbutton">
+      <a href="#">
+         <div class="navbutton coming" meta="COMING 4/7">
             <div class="oneline">STORE</div>
          </div>
       </a>

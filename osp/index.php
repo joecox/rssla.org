@@ -36,6 +36,7 @@
          <div class="cont three-quarters">
             <div class="rowtitle" id="overview"><span>Overnight Stay Program</span></div>
             <div class="contentblock">
+               <img src="/resources/images/osp/osp_banner.png">
                <p>The goal of the Overnight Stay Program is to allow prospective Regents Scholars the opportunity to get to know the UCLA campus and its surroundings as well as meet current Regents Scholars. A short walking tour of the campus cannot even begin to convey all the advantages UCLA has to offer. Thus, we hope that an overnight stay will help you to experience many more of the unique and endearing qualities of UCLA.</p>
                <div class="highlight">At OSP you will:</div>
                <p>
@@ -68,7 +69,7 @@
                   <li>Session 5: April 20 - 22 <span style="font-style: italic">(Saturday - Monday)</span></li>
                   <li>Transfer Session: May 11 - 12 <span style="font-style: italic">(Saturday - Sunday)</span></li>
                </ul>
-               <p>Once you've chosen the session to want to attend, sign up through the link below.  The registration period opens for each session on March 20th, and closes when a session is less than 3 days away.</p>
+               <p>Once you've chosen the session to want to attend, sign up through the link below.  The registration periods for each session are now open, and close when a session is less than 3 days away.</p>
                <p><b>The fee for this year's OSP sessions is $20</b>, payable by PayPal. This helps us cover almost all of your meals, bus fares, your OSP T-shirt, and much more. You will be redirected to PayPal upon signing up for your session.</p>
                <div class="buttonwrap">
                   <a href="signup.php">

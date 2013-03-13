@@ -3,13 +3,23 @@
       <div class="footertitle left">Sponsors</div>
       <div class="footercontent left">
          <div class="sponsor-logos">
-            <img src="/resources/images/sponsors/kaplan_transparent.png">
-            <img src="/resources/images/sponsors/Ralphs_transparent.png">
-            <img class="right" src="/resources/images/sponsors/uPrinting_transparent.png">
+            <a href="http://www.kaplan.com">
+               <img src="/resources/images/sponsors/kaplan_transparent.png">
+            </a>
+            <a href="http://www.ralphs.com">
+               <img src="/resources/images/sponsors/Ralphs_transparent.png">
+            </a>
+            <a href="http://www.uprinting.com" alt="online printing">
+               <img class="right" src="/resources/images/sponsors/uPrinting_transparent.png">
+            </a>
          </div>
          <div class="sponsor-logos" id="circular">
-            <img src="/resources/images/sponsors/LaughFactory_transparent.png">
-            <img src="/resources/images/sponsors/CoffeeBean_transparent.png">
+            <a href="http://www.laughfactory.com">
+               <img src="/resources/images/sponsors/LaughFactory_transparent.png">
+            </a>
+            <a href="http://www.coffeebean.com">
+               <img src="/resources/images/sponsors/CoffeeBean_transparent.png">
+            </a>
          </div>
       </div>
    </div>
@@ -46,10 +56,9 @@
       <div class="footertitle">Contact</div>
       <div class="footercontent" id="footercontact">
          <a href="mailto:rssla@ucla.edu"><div>Email the Society</div></a>
-         <a href="/"><div>Mailing Lists</div></a>
          <a href="mailto:communications@rssla.org"><div>Email the Webmaster</div></a>
          <div style="height: 18px;"></div>
-         <a href="/"><div>More...</div></a>
+         <div>More contact info coming...</div>
       </div>
    </div>
 <!--
