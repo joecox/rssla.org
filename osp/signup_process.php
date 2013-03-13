@@ -56,10 +56,11 @@ $ss->addRow($row);
 <!--
 <input type="hidden" name="hosted_button_id" value="EJZZXRCSJMPAQ">
 -->
-<input type="hidden" name="hosted_button_id" value="G5WX4E864NP5U"
+<input type="hidden" name="hosted_button_id" value="G5WX4E864NP5U">
 <input type="hidden" name="cancel_return" value="http://localhost/osp/">
 <input type="hidden" name="return" value="http://localhost/osp/success.php">
 <input type="hidden" name="rm" value="2">
+<input type="hidden" name="cm" value=<?php echo $_POST['email']; ?>>
 </form>
 
 <script>

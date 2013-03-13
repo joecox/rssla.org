@@ -20,4 +20,5 @@
    width: 475px;
    float: right;
    text-align: justify;
+   display: inline-block;
 }
