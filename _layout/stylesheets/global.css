@@ -128,7 +128,9 @@ body.dialog-open { overflow: hidden; }
    z-index: 3;
    cursor: default;
 }
-
+#banner:hover {
+   opacity: 1;
+}
 #banner div {
    margin-right: 15px;
    padding: 15px 0;

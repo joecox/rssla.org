@@ -6,10 +6,12 @@
       </div>
    </a>
    <div id="banner">
-      <div>
-         REGENTS SCHOLAR SOCIETY AT
-         <span style="color: #ebc62f;">UCLA</span>
-      </div>
+      <a href="/">
+         <div>
+            REGENTS SCHOLAR SOCIETY AT
+            <span style="color: #ebc62f;">UCLA</span>
+         </div>
+      </a>
    </div>
    <div id="photobar-overlay"></div>
    <div id="photobar">

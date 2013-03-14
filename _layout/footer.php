@@ -7,18 +7,18 @@
                <img src="/resources/images/sponsors/kaplan_transparent.png">
             </a>
             <a href="http://www.ralphs.com">
-               <img src="/resources/images/sponsors/Ralphs_transparent.png">
+               <img src="/resources/images/sponsors/ralphs_transparent.png">
             </a>
             <a href="http://www.uprinting.com" alt="online printing">
-               <img class="right" src="/resources/images/sponsors/uPrinting_transparent.png">
+               <img class="right" src="/resources/images/sponsors/uprinting_transparent.png">
             </a>
          </div>
          <div class="sponsor-logos" id="circular">
             <a href="http://www.laughfactory.com">
-               <img src="/resources/images/sponsors/LaughFactory_transparent.png">
+               <img src="/resources/images/sponsors/laughfactory_transparent.png">
             </a>
             <a href="http://www.coffeebean.com">
-               <img src="/resources/images/sponsors/CoffeeBean_transparent.png">
+               <img src="/resources/images/sponsors/coffeebean_transparent.png">
             </a>
          </div>
       </div>

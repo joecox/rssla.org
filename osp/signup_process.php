@@ -16,7 +16,7 @@ $ss = new Google_Spreadsheet($u,$p);
 if ($_POST['session'] == 6)
    $spreadsheet = "OSP13_Transfer";
 else
-   $spreadsheet = "Copy of OSP13_Session".$_POST['session'];
+   $spreadsheet = "OSP13_Session".$_POST['session'];
  
 $ss->useSpreadsheet($spreadsheet);
 

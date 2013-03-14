@@ -36,5 +36,6 @@
       </div>
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/footer.php"); ?>
    </div>
+   <script src="/_layout/scripts/analytics.js"></script>
 </body>
 </html>
