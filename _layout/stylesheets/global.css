@@ -33,6 +33,47 @@ body.dialog-open { overflow: hidden; }
    width: 1000px;
    min-height: 100vh;
 }
+.veil {
+   display: none;
+   background-color: rgba(90,90,90, 0.7);
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   z-index: 6;
+}
+.overlay {
+   display: none;
+   background-color: white;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   text-align: center;
+   box-shadow: 5px 0 30px -5px black,
+               -5px 0 30px -5px black;
+   border-radius: 5px;
+
+   z-index: 7;
+}
+.overlay.processing {
+   margin-top: -100px;
+   margin-left: -200px;
+   width: 400px;
+   height: 200px;
+}
+.overlaytext {
+   font-size: 1.5rem;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   height: 26px;
+   margin-top: -20px;
+}
+.overlaytext.processing {
+   width: 116px;
+   margin-left: -58px;
+}
 
 /* HEADER */
 
@@ -318,7 +359,6 @@ div#col7 {left: 875px;}
 
 .contentblock {
    margin: 20px;
-   margin-bottom: 40px;
    font-size: 1rem;
    font-weight: 400;
 }

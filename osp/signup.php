@@ -118,5 +118,13 @@
       </div>
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/footer.php"); ?>
    </div>
+   <div class="veil">
+   </div>
+   <div class="overlay processing">
+      <div class="overlaytext processing">
+         Processing
+         <img style="margin-left:-5px" src="/resources/images/UI/loading.gif">
+      </div>
+   </div>
 </body>
 </html>

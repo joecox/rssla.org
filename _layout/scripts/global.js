@@ -85,13 +85,14 @@ $(document).ready(function ()
          $(this).css("margin-top", margin_top);
    });
 */
+/*
    // auto picture resizing
    $("img").each(function ()
    {
       if ($(this).width() > $(this).parent().width())
          $(this).width = $(this).parent().width();
    });
-
+*/
    // coming soon nav items
    $(".navbutton.coming").hover(function ()
    {

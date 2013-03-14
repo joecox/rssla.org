@@ -14,7 +14,7 @@ $p = "spaghettisquash";
  
 $ss = new Google_Spreadsheet($u,$p);
 if ($_POST['session'] == 6)
-   $spreadsheet = "Copy of OSP13_Transfer";
+   $spreadsheet = "OSP13_Transfer";
 else
    $spreadsheet = "Copy of OSP13_Session".$_POST['session'];
  
@@ -24,7 +24,7 @@ $ss->useSpreadsheet($spreadsheet);
 // $ss->useWorksheet("worksheetName");
 
 if ($_POST['gender'] == "Other")
-   $gender = "Other: " + $_POST['optgender'];
+   $gender = "Other: " . $_POST['optgender'];
 else
    $gender = $_POST['gender'];
 
@@ -50,20 +50,28 @@ $row = array
 $ss->addRow($row);
 
 ?>
-
-<form id="form" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+<div class="overlay processing" style="display: block">
+   <div class="overlaytext" style="width: 270px; margin-left:-135px">
+      Redirecting you to PayPal
+      <img style="margin-left:-10px" src="/resources/images/UI/loading.gif">
+   </div>
+</div>
+<form id="form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
-<!--
 <input type="hidden" name="hosted_button_id" value="EJZZXRCSJMPAQ">
--->
+<!--
 <input type="hidden" name="hosted_button_id" value="G5WX4E864NP5U">
-<input type="hidden" name="cancel_return" value="http://localhost/osp/">
-<input type="hidden" name="return" value="http://localhost/osp/success.php">
+-->
+<input type="hidden" name="cancel_return" value="http://www.rssla.org/osp/">
+<input type="hidden" name="return" value="http://www.rssla.org/osp/success.php">
 <input type="hidden" name="rm" value="2">
-<input type="hidden" name="cm" value=<?php echo $_POST['email']; ?>>
+<input type="hidden" name="custom" value=<?php echo $_POST['email']."98fdgdDB7dfkt".$_POST['session']; ?>>
 </form>
 
 <script>
-   $('#form').submit();
+   setTimeout(function ()
+   {
+      $('#form').submit();
+   }, 1000);
 </script>
 </html>

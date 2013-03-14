@@ -21,6 +21,15 @@ $(document).ready(function ()
                $(this).parents(".inputwrap").css("background-color", "white");
          }
       });
+
+      if (!($("input[name='email']").val().match('^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$')))
+      {
+         anyBad = true;
+         $("input[name='email']").parents(".inputwrap").css("background-color", "rgba(255,0,0,0.2)");
+      }
+      else
+         $("input[name='email']").parents(".inputwrap").css("background-color", "white");
+
       $(".radiowrap.required").each(function () 
       {
          var nonechecked = true;
@@ -91,7 +100,12 @@ $(document).ready(function ()
             $(this).css("background-color", "white");
       });
       if (!anyBad)
+      {
+         $("body").css("overflow", "hidden");
+         $(".veil").fadeIn(100);
+         $(".overlay.processing").fadeIn(200);
          $(this).parent().parents("form").submit();
+      }
       else
       {
          if ($("[style$='rgba(255, 0, 0, 0.2);']").first().hasClass("selectbar"))
@@ -102,8 +116,6 @@ $(document).ready(function ()
    });
 
    
-
-
    $(".button.radio").click(function ()
    {
       $(".button.radio.selected").each(function ()
