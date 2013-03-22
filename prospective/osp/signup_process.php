@@ -49,6 +49,44 @@ $row = array
  
 $ss->addRow($row);
 
+$subj = "OSP Signup Confirmation";
+$from_addr = "From: website@rssla.org";
+if ($session == 6)
+{
+   $msg = "Thank you for signing up for Transfer OSP!  We have recorded your information.  Once you've paid, you're all set to go.  Within a few days you will receive an email from one of the student coordinators of your session with more information regarding OSP.";
+}
+else
+{
+   $msg = "Thank you for signing up for OSP Session ".$session."!  We have recorded your information.  Once you've paid, you're all set to go.  Within a few days you will receive an email from one of the student coordinators of your session with more information regarding OSP.";
+}
+mail($addr, $subj, $msg, $from_addr);
+
+$msg = 'Prospie '.$_POST['first'].' '.$_POST['last'].' has signed up for your session.  Payment status will be updated shortly.';
+$subj = "OSP Payment";
+switch($session)
+{
+   case 1:
+      mail("emparker58@gmail.com", $subj, $msg, $from_addr);
+      break;
+   case 2:
+      mail("sedinaalicic@yahoo.com", $subj, $msg, $from_addr);
+      break;
+   case 3:
+      mail("vishal_s_yadav@yahoo.com", $subj, $msg, $from_addr);
+      break;
+   case 4:
+      mail("joeyalancox@gmail.com", $subj, $msg, $from_addr);
+      break;
+   case 5:
+      mail("brennanchang@outlook.com", $subj, $msg, $from_addr);
+      break;
+   case 6:
+      mail("outreach@rssla.org", $subj, $msg, $from_addr);
+}
+
+mail("joeyalancox@gmail.com", "OSP Check for Payment", $_POST['first'].' '.$_POST['last'].' has signed up, please check for payment.', $from_addr);
+
+
 ?>
 <div class="overlay processing" style="display: block">
    <div class="overlaytext" style="width: 270px; margin-left:-135px">
@@ -61,11 +99,12 @@ $ss->addRow($row);
 <input type="hidden" name="hosted_button_id" value="EJZZXRCSJMPAQ">
 <!--
 <input type="hidden" name="hosted_button_id" value="G5WX4E864NP5U">
--->
+
 <input type="hidden" name="cancel_return" value="http://www.rssla.org/osp/">
 <input type="hidden" name="return" value="http://www.rssla.org/osp/success.php">
 <input type="hidden" name="rm" value="2">
 <input type="hidden" name="custom" value=<?php echo $_POST['email']."98fdgdDB7dfkt".$_POST['session']; ?>>
+-->
 </form>
 
 <script>

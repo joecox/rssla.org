@@ -116,7 +116,7 @@ $(document).ready(function ()
    });
 
    
-   $(".button.radio").click(function ()
+   $(".button.radio.open").click(function ()
    {
       $(".button.radio.selected").each(function ()
       {

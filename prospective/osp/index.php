@@ -12,21 +12,21 @@
             <div class="bannertext"></div>
          </div>
          <div class="cont quarter left" id="sidebar">
-            <a href="/osp/">
+            <a href="/prospective/osp/">
                <div class="pagetitle">PROSPECTIVE<br>SCHOLARS</div>
             </a>
             <div class="sidenav">
-               <a href="/osp/#overview">
+               <a href="/prospective/osp/#overview">
                   <div class="sidenavitem">
                      <span>Overview</span>
                   </div>
                </a>
-               <a href="/osp/#signup">
+               <a href="/prospective/osp/#signup">
                   <div class="sidenavitem">
                      <span>Sign up</span>
                   </div>
                </a>
-               <a href="/osp/#prepare">
+               <a href="/prospective/osp/#prepare">
                   <div class="sidenavitem">
                      <span>Preparing for your visit</span>
                   </div>
@@ -55,7 +55,7 @@
                   <a class="norm" href="/resources/docs/osp/OSP_Session3_Itinerary_2013.pdf">Session 3</a> | 
                   <a class="norm" href="/resources/docs/osp/OSP_Session4_Itinerary_2013.pdf">Session 4</a> | 
                   <a class="norm" href="/resources/docs/osp/OSP_Session5_Itinerary_2013.pdf">Session 5</a> | 
-                  <span style="color:gray">Transfer OSP: Coming Soon</span>
+                  <a class="norm" href="/resources/docs/osp/OSP_Transfer_Itinerary_2013.pdf">Transfer</a>
                </p>
             </div>
             <div class="rowtitle" id="signup"><span>Sign up for OSP</span></div>
@@ -66,11 +66,12 @@
                   <li>Session 2: April 6 - 8 <span style="font-style: italic">(Saturday - Monday)</span></li>
                   <li>Session 3: April 11 - 13 <span style="font-style: italic">(Thursday - Saturday)</span></li>
                   <li>Session 4: April 13 - 15 <span style="font-style: italic">(Saturday - Monday)</span></li>
-                  <li>Session 5: April 20 - 22 <span style="font-style: italic">(Saturday - Monday)</span></li>
-                  <li>Transfer Session: May 11 - 12 <span style="font-style: italic">(Saturday - Sunday)</span></li>
+                  <li>Session 5: April 18 - 20 <span style="font-style: italic">(Saturday - Monday)</span></li>
+                  <li>Transfer Session: May 10 - 11 <span style="font-style: italic">(Saturday - Sunday)</span></li>
                </ul>
                <p>Once you've chosen the session to want to attend, sign up through the link below.  The registration periods for each session are now open, and close when a session is less than 3 days away.</p>
                <p><b>The fee for this year's OSP sessions is $20</b>, payable by PayPal. This helps us cover almost all of your meals, bus fares, your OSP T-shirt, and much more. You will be redirected to PayPal upon signing up for your session.</p>
+               <p>Because it is our priority to provide an OSP experience that is tailored to the individual needs of each prospective student, <b>each session will be limited to 30 prospective scholars</b>, after which it will be listed as full. Our program tends to be quite popular, so make sure to sign up early. If a session is full and you are absolutely unable to make it to any of the other available sessions, please email Jeff Lewis, the Outreach Director, at <a class="norm" href="mailto:outreach@rssla.org">outreach@rssla.org</a>, with a brief explanation of your circumstances. </p>
                <div class="buttonwrap">
                   <a href="signup.php">
                      <span class="button">Sign up for OSP</span>
@@ -105,6 +106,10 @@
                      <li><span style="font-style: italic">If you're driving yourself,</span> you can buy parking permits daily for $9 at the entrance to Lot 4.  Ask for Sunset Village, Sunset Recreation Center, or Lot 11 parking.  Remember to purchase a new permit each day.</li>
                   </ul>
                </p>
+            </div>
+            <div class="rowtitle"><span></span></div>
+            <div class="contentblock">
+               <img src="/resources/images/osp/prospie_process_final.jpg" style="width:100%">
             </div>
          </div>
       </div>

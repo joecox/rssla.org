@@ -73,7 +73,7 @@
 -->
    </span>
    <span class="navcol">
-      <a href="/osp/">
+      <a href="/prospective/osp/">
          <div class="navbutton">
             <div class="twoline">PROSPECTIVE SCHOLARS</div>
          </div>

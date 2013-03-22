@@ -18,15 +18,14 @@
             </div>
          </div>
          <div class="cont three-quarters">
-            <div class="rowtitle"><span>The Society</span></div>
-            <div class="contentblock">
+            <div class="contentblock" style="margin-top: 0">
                <img src="/resources/images/society/2GM_F12.png" style="width:709px">
             </div>
             <div class="rowtitle"><span>Overnight Stay Program</span></div>
             <div class="contentblock">
                Looking to sign up for the Overnight Stay Program?  It's a fantastic way to decide if UCLA is right for you.
                <div class="buttonwrap">
-                  <a href="/osp/">
+                  <a href="prospective/osp/">
                      <span class="button">Sign up here</span>
                   </a>
                </div>

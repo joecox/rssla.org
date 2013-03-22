@@ -46,15 +46,15 @@
          $from_addr = "From: website@rssla.org";
          if ($session == 6)
          {
-            $msg = "Thank you for signing up for Transfer OSP!  We have recorded your information and your payment has been processed.  You're all set to go.  Within a few days you will receive an email from one of the student coordinators of your session with more information regarding OSP.";
+            $msg = "Thank you for signing up for Transfer OSP!  We have recorded your information.  Once you've paid, you're all set to go.  Within a few days you will receive an email from one of the student coordinators of your session with more information regarding OSP.";
          }
          else
          {
-            $msg = "Thank you for signing up for OSP Session ".$session."!  We have recorded your information and your payment has been processed.  You're all set to go.  Within a few days you will receive an email from one of the student coordinators of your session with more information regarding OSP.";
+            $msg = "Thank you for signing up for OSP Session ".$session."!  We have recorded your information.  Once you've paid, you're all set to go.  Within a few days you will receive an email from one of the student coordinators of your session with more information regarding OSP.";
          }
          mail($addr, $subj, $msg, $from_addr);
 
-         $msg = 'Prospie with email "'.$addr."' has paid.";
+         $msg = 'Prospie '.$_POST['first'].' '.$_POST['last'].' has signed up for your session.  Payment status will be updated shortly.';
          $subj = "OSP Payment";
          switch($session)
          {

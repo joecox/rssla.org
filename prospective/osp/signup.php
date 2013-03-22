@@ -13,7 +13,7 @@
             <div class="bannertext"></div>
          </div>
          <div class="cont quarter left" id="sidebar">
-            <a href="/osp/">
+            <a href="/prospective/osp/">
                <div class="pagetitle">PROSPECTIVE SCHOLARS</div>
             </a>
          </div>
@@ -35,12 +35,12 @@
                      <input class="hidden" type="radio" name="session" value="5">
                      <input class="hidden" type="radio" name="session" value="6">
                   </div>
-                  <span class="button radio" value="1">Session 1</span>
-                  <span class="button radio" value="2">Session 2</span>
-                  <span class="button radio" value="3">Session 3</span>
-                  <span class="button radio" value="4">Session 4</span>
-                  <span class="button radio" value="5">Session 5</span>
-                  <span class="button radio" value="6">Transfer</span>
+                  <span class="button radio open" value="1">Session 1</span>
+                  <span class="button radio open" value="2">Session 2</span>
+                  <span class="button radio open" value="3">Session 3</span>
+                  <span class="button radio open" value="4">Session 4</span>
+                  <span class="button radio open" value="5">Session 5</span>
+                  <span class="button radio open" value="6">Transfer</span>
                </div>
                <p style="margin:30px 0 0 20px">2. Please fill out the following information.  Fields marked <span style="color:red">*</span> are required.</p>
                <div class="inputwrap">
