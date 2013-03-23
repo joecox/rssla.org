@@ -27,6 +27,8 @@
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/footer.php"); ?>
    </div>
    
+<script type="text/javascript" charset="utf-8" 
+        src="/_layout/scripts/events_objects.js"></script>
 <script type="text/javascript" charset="utf-8" src="/_layout/scripts/events.js"></script>
 </body>
 </html>
