@@ -75,3 +75,4 @@
    <div class="clear"></div>
    <div id="copyright">&copy; 2013 Regents Scholar Society at UCLA</div>
 </div>
+<script src="/_layout/scripts/analytics.js"></script>

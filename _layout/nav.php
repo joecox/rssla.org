@@ -1,7 +1,7 @@
 <div class="nav">
    <span class="navcol">
       <a href="#">
-         <div class="navbutton coming" meta="COMING 3/22">
+         <div class="navbutton coming" meta="COMING SOON">
             <div class="oneline">ABOUT</div>
          </div>
       </a>
@@ -26,14 +26,14 @@
    </span>
    <span class="navcol">
       <a href="#">
-         <div class="navbutton coming" meta="COMING 3/29">
+         <div class="navbutton coming" meta="COMING SOON">
             <div class="twoline">CALENDAR OF EVENTS</div>
          </div>
       </a>
    </span>
    <span class="navcol">
-      <a href="#">
-         <div class="navbutton coming" meta="COMING 4/3">
+      <a href="/outreach/">
+         <div class="navbutton">
             <div class="oneline">OUTREACH</div>
          </div>
       </a>
@@ -52,7 +52,7 @@
    </span>
    <span class="navcol">
       <a href="#">
-         <div class="navbutton coming" meta="COMING 4/5">
+         <div class="navbutton coming" meta="COMING SOON">
             <div class="oneline">MEMBERS</div>
          </div>
       </a>
@@ -88,14 +88,14 @@
    </span>
    <span class="navcol">
       <a href="#">
-         <div class="navbutton coming" meta="COMING 3/25">
+         <div class="navbutton coming" meta="COMING SOON">
             <div class="oneline">SPONSORS</div>
          </div>
       </a>
    </span>
    <span class="navcol">
       <a href="#">
-         <div class="navbutton coming" meta="COMING 4/7">
+         <div class="navbutton coming" meta="COMING SOON">
             <div class="oneline">STORE</div>
          </div>
       </a>

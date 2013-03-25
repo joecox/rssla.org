@@ -1,17 +1,46 @@
 .main {position: relative;}
 
 .solo {
-   height: 600px;
+   height: 670px;
 }
 
-.profileframe {
-   display: none;
-   margin: 0 20px;
+.profilenav {
+   height: 30px;
+   text-align: center;
+   border-bottom: 1px solid #e6e6e6;
+   margin-bottom: 20px;
+}
+
+.profilenavitem {
+   padding: 5px 4px;
+   cursor: pointer;
+}
+.profilenavitem:hover {
+   background-color: #dadada;
+}
+
+.profilewrap {
    position: relative;
 }
 
+.profileframe {
+   margin: 0 20px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 380px;
+   height: 600px;
+   z-index: 0;
+}
+
 #currentframe {
-   display: block;
+   left: 380px;
+}
+
+.frametitle {
+   font-size: 1.5rem;
+   color: rgb(76, 156, 255);
+   margin: 15px 0;
 }
 
 .nextframe {
@@ -37,6 +66,7 @@
    top: 288px;
    width: 64px;
    height: 64px;
+   background-image: url("/resources/images/UI/prevbutton.png");
    opacity: 0.6;
    -webkit-transition: opacity 0.25s;
       -moz-transition: opacity 0.25s;
@@ -45,9 +75,21 @@
 }
 .prevframe:hover {opacity: 1.0;}
 
-img.side {
+.profile {
    position: absolute;
-   left: 0;
-   top: 0;
+   width: 350px;
    height: 600px;
+   text-align: center;
+   padding-left: 30px;
+}
+
+
+.profilewrap img {
+   position: absolute;
+   width: 380px;
+   height: 600px;
+   margin-left: 20px;
+   box-shadow: 5px 0 40px -5px black,
+               -5px 0 40px -5px black;
+   z-index: 10;
 }

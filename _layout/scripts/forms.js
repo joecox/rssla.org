@@ -1,4 +1,4 @@
-   /* FORM ACTIONS */
+/* FORM ACTIONS */
 $(document).ready(function ()
 {
    // Form validation
@@ -168,7 +168,7 @@ $(document).ready(function ()
    $(".button.radio[value='5']").hover(function () 
    {
       $(this).css("padding", "5px 6px");
-      $(this).text("April 20 - 22");
+      $(this).text("April 18 - 20");
    }, function ()
    {
       $(this).css("padding", "5px 15px");
@@ -177,7 +177,7 @@ $(document).ready(function ()
    $(".button.radio[value='6']").hover(function () 
    {
       $(this).css("padding", "5px 8px");
-      $(this).text("May 11 - 12");
+      $(this).text("May 10 - 11");
    }, function ()
    {
       $(this).css("padding", "5px 15px");

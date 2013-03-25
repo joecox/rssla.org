@@ -13,8 +13,26 @@
          </div>
          <div class="cont quarter left" id="sidebar">
             <div class="pagetitle">RSSLA.ORG</div>
+            <div class="sidenav">
+               <a href="/prospective/osp/#overview">
+                  <div class="sidenavitem">
+                     <span>Overview</span>
+                  </div>
+               </a>
+               <a href="/prospective/osp/#signup">
+                  <div class="sidenavitem">
+                     <span>Sign up</span>
+                  </div>
+               </a>
+               <a href="/prospective/osp/#prepare">
+                  <div class="sidenavitem">
+                     <span>Preparing for your visit</span>
+                  </div>
+               </a>
+            </div>
          </div>
-         <div class="cont three-quarters" style="height: 400px">
+         </div>
+         <div class="cont three-quarters">
             <div class="rowtitle"><span>Regents Scholar Society</span></div>
          </div>
       </div>

@@ -19,47 +19,6 @@ $(document).ready(function ()
    // initially hide the photobanner
    $(".photobanner[src='']").parent(".bannerwrap").css("display", "none");
 
-   // frame sliding
-   var currentframe = 0;
-
-   $(".nextframe").click(function() 
-   {
-      $("#currentframe").fadeOut(200, function()
-      {
-         $("#currentframe").attr("id", "frame" + currentframe);
-
-         currentframe = currentframe + 1;
-         var nextframe = currentframe + 1;
-
-         $("#frame" + currentframe).fadeIn(200);
-         $("#frame" + currentframe).attr("id", "currentframe");
-
-         $(".prevframe").show();
-
-         if (!($("#frame" + nextframe).length))
-            $(".nextframe").hide();
-      });
-   });
-
-   $(".prevframe").click(function() 
-   {
-      $("#currentframe").fadeOut(200, function() 
-      {
-         $("#currentframe").attr("id", "frame" + currentframe);
-
-         currentframe = currentframe - 1;
-         var prevframe = currentframe - 1;
-
-         $("#frame" + currentframe).fadeIn(200);
-         $("#frame" + currentframe).attr("id", "currentframe");
-
-         $(".nextframe").show();
-
-         if (!($("#frame" + prevframe).length))
-            $(".prevframe").hide();
-      });
-   });
-
    // Rowtitle side-line
    $(".rowtitle").append("<div></div>");
    $(".rowtitle").children("div").css("position", "absolute");

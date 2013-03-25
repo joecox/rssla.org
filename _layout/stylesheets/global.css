@@ -1,4 +1,5 @@
 /* ========== GLOBAL STYLES ========== */
+html {font-size: 16px;}
 
 body {
    background-color: #eaeaea;
@@ -217,7 +218,6 @@ div#col7 {left: 875px;}
 .with-banner {padding-top: 0;}
 .bannerwrap {position: relative;}
 .photobanner {
-   opacity: 0.8;
    border-bottom: 1px solid #aeaeae;
    margin-bottom: 30px;
    box-shadow: 5px 0 20px -5px black,
@@ -305,6 +305,11 @@ div#col7 {left: 875px;}
    float: left;
    height: 100%;
 }
+.subcont {
+   border-left: 1px solid #cccccc;
+   float: left;
+   height: 200px;
+}
 .solo {
    margin: 0 auto;
    float: none;
@@ -331,6 +336,9 @@ div#col7 {left: 875px;}
 }
 .eighth {
    width: 124px;
+}
+.three-eighths {
+   width: 374px
 }
 .left {
    border-left: none;
@@ -424,8 +432,14 @@ div#col7 {left: 875px;}
 .sidenavitem.selected {
    background-color: rgb(161, 177, 201);
 }
-.sidenavitem span {
+.sidenavitem span, .sidenavitem div {
    margin-left: 20px;
+}
+
+.caption {
+   margin-top: 0;
+   text-align: center;
+   font-size: 0.75rem;
 }
 
 /* CUSTOM FONTS */

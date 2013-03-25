@@ -59,7 +59,7 @@ else
 {
    $msg = "Thank you for signing up for OSP Session ".$session."!  We have recorded your information.  Once you've paid, you're all set to go.  Within a few days you will receive an email from one of the student coordinators of your session with more information regarding OSP.";
 }
-mail($addr, $subj, $msg, $from_addr);
+mail($_POST['email'], $subj, $msg, $from_addr);
 
 $msg = 'Prospie '.$_POST['first'].' '.$_POST['last'].' has signed up for your session.  Payment status will be updated shortly.';
 $subj = "OSP Payment";
