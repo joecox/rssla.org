@@ -65,7 +65,7 @@ function build_cal_frame(pos, calObj)
 
   calObj.framediv = cal[0]
 
-  calObj.daydivs.length = 0;
+  calObj.days.length = 0;
 
   calObj.titlediv = $("<div>")
                       .addClass("cal_title")
@@ -107,14 +107,14 @@ function build_cal_frame(pos, calObj)
                        .addClass("col"+ii)
                        .addClass("index" + (index*7+ii))
                        .css({top: "0px", left: (ii*DAY_WIDTH)+"px"})
-                       .mouseover(build_day_over_handler(ii*DAY_WIDTH))
-                       .mouseout(build_day_out_handler(ii*DAY_WIDTH))
+                       .mouseenter(build_day_over_handler(ii*DAY_WIDTH))
+                       .mouseleave(build_day_out_handler(ii*DAY_WIDTH))
                        .append(
                          $("<div>")
                            .addClass("datenum"));
 
         $(this).append(newDay);
-        calObj.daydivs.push(newDay[0]);
+        calObj.days.push({$div: newDay, events: []});
       }
     }
   );
@@ -146,6 +146,7 @@ function slide_cal_left()
   build_cal_frame(1, rightCal).addClass("cal_right");
 
   rightCal.setMonth(monyearup(centerMonYear));
+  if (eventsReceived) rightCal.fillMonth();
 
 }
 
@@ -172,31 +173,45 @@ function slide_cal_right()
   build_cal_frame(-1, leftCal).addClass("cal_left");
 
   leftCal.setMonth(monyeardown(centerMonYear));
+  if (eventsReceived) leftCal.fillMonth();
 
 }
 
 var eventsObj = 
 {
- 
 };
+
+var eventsReceived = false;
 
 function gotEvents(data)
 {
+  eventsReceived = true;
   var entries = data.feed.entry;
   for (var e = 0; e < entries.length; e++)
   {
     var startDateEls;
-    startDateEls= entries[3].gd$when.startTime.split("-");
+    startDateEls= entries[e].gd$when[0].startTime.split("-");
     var ymstring = startDateEls[0].concat(startDateEls[1]);
     if (!eventsObj.hasOwnProperty(ymstring))
     {
       eventsObj[ymstring] = [];
     }
-    //eventsObj[ymstring].push
+    
+    eventsObj[ymstring].push(
+    {
+      date:   entries[e].gd$when[0].startTime.substr(8,2),
+      shr:    entries[e].gd$when[0].startTime.substr(11,2),
+      smin:   entries[e].gd$when[0].startTime.substr(14,2),
+      ehr:    entries[e].gd$when[0].endTime.substr(11,2),
+      emin:   entries[e].gd$when[0].endTime.substr(14,2),
+      title:  entries[e].title.$t
+    });
   }
 
+  centerCal.fillMonth();
+  rightCal.fillMonth();
+  leftCal.fillMonth();
 
-  alert("yay");
 }
 
 
@@ -240,3 +255,34 @@ function monyearup(monyear)
   return ret;
 }
 
+/*
+var clientId = '660311823487';
+
+var apikey = 'AIzaSyAvwV-sCraZiJtOYjy8tOVJ8lTWH_R9cWA';
+
+var scope = 'https://www.googleapis.com/auth/calendar.readonly';
+
+function apiLoad()
+{
+  gapi.client.setApiKey(apikey);
+  window.setTimeout(doAuth,1);
+//  gapi.client.load('calendar', 'v3', clientLoad);
+}
+
+function doAuth()
+{
+  gapi.auth.authorize({client_id: clientId, scope: scope, immediate: false},
+                      handleAuthResult);
+}
+
+function handleAuthResult(authResult)
+{
+  alert('result');
+}
+
+function clientLoad()
+{
+//  var request = gapi.client.plus.calendar.get({
+  alert('meh');
+}
+*/

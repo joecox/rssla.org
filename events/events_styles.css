@@ -101,6 +101,7 @@ div.cal_day
   margin: 0px;
   padding: 0px;
   outline: 1px solid #cccccc;
+  overflow: hidden;
 }
 
 div.cal_day.col0,
@@ -130,6 +131,22 @@ div.datenum {
   right: 6px;
   font-weight: bold;
   font-size: 1.1em;
+}
+
+div.cal_event {
+  position: absolute;
+  left: 2px;
+  height: 14px;
+  margin: 1px;
+  color: black;
+  outline: 1px solid #c2c2c2;
+  background: #c0c0fd;
+  text-align: left;
+  width: 94px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8em;
 }
 
 

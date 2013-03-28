@@ -3,7 +3,7 @@
 <head>
    <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/head.php"); ?>
 </head>
-<link href="/_layout/stylesheets/events_styles.css" rel="stylesheet" type="text/css"/>
+<link href="events_styles.css" rel="stylesheet" type="text/css"/>
 <body>
    <div id="wrapper">
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/header.php"); ?>
@@ -27,13 +27,12 @@
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/footer.php"); ?>
    </div>
    
-<script type="text/javascript" charset="utf-8" 
-        src="/_layout/scripts/events_objects.js"></script>
-<script type="text/javascript" charset="utf-8" src="/_layout/scripts/events.js"></script>
+<script type="text/javascript" charset="utf-8" src="events_objects.js"></script>
+<script type="text/javascript" charset="utf-8" src="events.js"></script>
 <script type="text/javascript" charset="utf-8"
         src="https://www.google.com/calendar/feeds/932agq27os62bh2qo2gg0k3cak%40group.calendar.google.com/public/full?alt=json-in-script&callback=gotEvents">
 </script>
-
+<!--<script src="https://apis.google.com/js/client.js?onload=apiLoad"></script>-->
 
 </body>
 </html>
