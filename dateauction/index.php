@@ -33,7 +33,7 @@
                      <div class="frametitle">Welcome to the RSS Date Auction page!</div>
                      <p>The Date Auction is a fundraiser traditionally held at the first general meeting of spring quarter. At this exciting contest, you and your fellow students will bid for a date with one of our eight RSS auctionees (one girl and one boy from each class). Everyone has a swell time - and it's a great way to start off your new quarter with us!</p>
                      <div class="highlight">Hosted this year by our very own Brennan Chang and Krishan Patel!</div>
-                     <p>Where: UCLA Career Center, Strathmore Building, 3rd Floor</br>
+                     <p>Where: Ackerman 3517</br>
                         When: April 10th, 2013, 7:00 PM</p>
                      <p>Click the arrow on your right to take a peek at our auctionees.</p>
                      <div class="highlight">WARNING: You must be 18 years or older or younger to continue</div>

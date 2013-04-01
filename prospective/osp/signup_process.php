@@ -62,29 +62,45 @@ else
 mail($_POST['email'], $subj, $msg, $from_addr);
 
 $msg = 'Prospie '.$_POST['first'].' '.$_POST['last'].' has signed up for your session.  Payment status will be updated shortly.';
-$subj = "OSP Payment";
+$subj = "OSP Signup";
 switch($session)
 {
    case 1:
       mail("emparker58@gmail.com", $subj, $msg, $from_addr);
+      mail("christinawchung@yahoo.com", $subj, $msg, $from_addr);
+      mail("sgrant24@sbcglobal.net", $subj, $msg, $from_addr);
+      mail("dale.y.everett@gmail.com", $subj, $msg, $from_addr);
       break;
    case 2:
       mail("sedinaalicic@yahoo.com", $subj, $msg, $from_addr);
+      mail("mfsu1993@gmail.com", $subj, $msg, $from_addr);
+      mail("Crystal.lin1@verizon.net", $subj, $msg, $from_addr);
+      mail("cbliu@ucla.edu", $subj, $msg, $from_addr);
       break;
    case 3:
       mail("vishal_s_yadav@yahoo.com", $subj, $msg, $from_addr);
+      mail("killianjackson@yahoo.com", $subj, $msg, $from_addr);
+      mail("dylcharredor@yahoo.com", $subj, $msg, $from_addr);
+      mail("krishanpatel@ucla.edu", $subj, $msg, $from_addr);
       break;
    case 4:
       mail("joeyalancox@gmail.com", $subj, $msg, $from_addr);
+      mail("anna.dornisch@gmail.com", $subj, $msg, $from_addr);
+      mail("z.jonathanhan@gmail.com", $subj, $msg, $from_addr);
+      mail("zhuofanwen@ucla.edu", $subj, $msg, $from_addr);
+      mail("sharonabada1@gmail.com", $subj, $msg, $from_addr);
+      mail("kdern@ucla.edu", $subj, $msg, $from_addr);
       break;
    case 5:
       mail("brennanchang@outlook.com", $subj, $msg, $from_addr);
+      mail("isabelmartin@ucla.edu", $subj, $msg, $from_addr);
+      mail("alzhou421@gmail.com", $subj, $msg, $from_addr);
       break;
    case 6:
       mail("outreach@rssla.org", $subj, $msg, $from_addr);
 }
 
-mail("joeyalancox@gmail.com", "OSP Check for Payment", $_POST['first'].' '.$_POST['last'].' has signed up, please check for payment.', $from_addr);
+mail("joeyalancox@gmail.com", "OSP Check for Payment", $_POST['first'].' '.$_POST['last'].' has signed up for session '.$session.', please check for payment.', $from_addr);
 
 
 ?>

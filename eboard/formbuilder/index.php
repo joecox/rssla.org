@@ -21,16 +21,12 @@
                      <input type="text" name="title" class="title">
                   </div>
                </form>
-               <div class="button" id="addinput">
-                  <span>Add input</span>
-               </div>
+               <span class="button" id="addinput">Add Input</span>
             </div>
             <br><br><br>
             <div class="blocktitlecenter" style="font-family: Helvetica; font-size:1rem">Step 2: Link with a spreadsheet</div>
             <div class="contentblock" style="text-align:center">
-               <div class="button" id="submit">
-                     <span>Submit</span>
-               </div>
+               <span class="button" id="submit">Submit</span>
             </div>
          </div>
       </div>

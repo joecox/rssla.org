@@ -17,18 +17,14 @@ $(document).ready(function ()
                            '<option value="checkbox">Checkboxes</option>' +
                            '<option value="select">Drop-down List</option>' +
                         '</select>' +
-                        '<div class="button del">' +
-                           '<span>Remove</span>' +
-                        '</div>' +
+                        '<span class="button del">Remove</span>' +
                         '<div class="optionwrap">' +
                         '</div>' +
-                        '<div class="button" id="addoption">' +
-                           '<span>Add option</span>' +
-                        '</div>' +
+                        '<span class="button" id="addoption">Add option</span>' +
                         '<input type="hidden" name="q' + numInput + 'numOpt" value="0">' +
                      '</div>';
 
-      $(newInput).appendTo(".contentblock form").hide().slideDown(400, function ()
+      $(newInput).appendTo(".contentblock form").hide().fadeIn(400, function ()
       {
          var numOptions = 0;
          $(this).children("#addoption").click(function()
@@ -45,7 +41,7 @@ $(document).ready(function ()
 */
                             '</div>';
 
-            $(newOption).appendTo($(this).siblings(".optionwrap")).hide().slideDown();
+            $(newOption).appendTo($(this).siblings(".optionwrap")).hide().fadeIn();
             $(this).siblings('input[type="hidden"]').attr("value", numOptions);
 
 /*
@@ -65,20 +61,20 @@ $(document).ready(function ()
          {
             if ($(this).find('option:selected').val() == "text" || $(this).find('option:selected').val() == "paragraph")
             {
-               $(this).siblings(".button#addoption").slideUp();
-               $(this).siblings(".optionwrap").children(".option").slideUp(400, function() {
+               $(this).siblings(".button#addoption").fadeOut();
+               $(this).siblings(".optionwrap").children(".option").fadeOut(400, function() {
                   $(this).remove();
                });
                $(this).siblings('input[type="hidden"]').attr("value", 0);
                numOptions = 0;
             }
             else
-               $(this).siblings(".button#addoption").slideDown().css("display", "inline-block");
+               $(this).siblings(".button#addoption").fadeIn().css("display", "inline-block");
          });
 
          $(this).children(".del").click(function () 
          {
-            $(this).parents(".input").slideUp(400, function () {$(this).remove();});
+            $(this).parents(".input").fadeOut(400, function () {$(this).remove();});
 
             numInput = numInput - 1;
             $(this).parents(".input").siblings('input[type="hidden"]').attr("value", numInput);
