@@ -1,14 +1,14 @@
 <div class="nav">
    <span class="navcol">
       <a href="#">
-         <div class="navbutton coming" meta="COMING 3/22">
+         <div class="navbutton">
             <div class="oneline">ABOUT</div>
          </div>
       </a>
-<!--
+
       <div class="drop-down" id="col0">
          <div>
-            <a href="/about/society.php">
+            <a href="/about/index.php">
                <div class="navitem">Society</div>
             </a>
             <a href="/about/scholarship.php">
@@ -22,7 +22,7 @@
             </a>
          </div>
       </div>
--->
+
    </span>
    <span class="navcol">
       <a href="#">
