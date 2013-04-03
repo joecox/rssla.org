@@ -24,18 +24,18 @@
                   <p>Thank you for your interest in the Regents Scholar Society at UCLA's Overnight Stay Program! Fill out this form if you have been offered the Regents Scholarship at UCLA and are interested in spending a few nights in our dorms with current Regents Scholars to get a true feel for what life at UCLA is like.</p>
                   <p>If you have any questions, please email <?php echo $outrFL; ?>, the Outreach Director, at <a class="norm" href="mailto:outreach@rssla.org">outreach@rssla.org</a>.</p>
                   <div style="text-align:center"><div class="highlight">We look forward to seeing you!</div></div>
+                  <p style="text-align:center"><b>Please note, signups for the following sessions are now closed:<br>
+                     Session 1</b></p>
                </div>
                <p id="dir" style="margin:20px 0 10px 20px; padding-top:10px">1. Select an OSP Session:</p>
                <div class="selectbar required">
                   <div class="radiowrap">
-                     <input class="hidden" type="radio" name="session" value="1">
                      <input class="hidden" type="radio" name="session" value="2">
                      <input class="hidden" type="radio" name="session" value="3">
                      <input class="hidden" type="radio" name="session" value="4">
                      <input class="hidden" type="radio" name="session" value="5">
                      <input class="hidden" type="radio" name="session" value="6">
                   </div>
-                  <span class="button radio open" value="1">Session 1</span>
                   <span class="button radio open" value="2">Session 2</span>
                   <span class="button radio open" value="3">Session 3</span>
                   <span class="button radio open" value="4">Session 4</span>
