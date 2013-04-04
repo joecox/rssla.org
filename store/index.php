@@ -9,9 +9,13 @@
    <div id="wrapper">
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/header.php"); ?>
       <div class="main clearfix">
+         <div class="pagetitle wrap">
+            <span style="font-size: 2.5rem">STORE</span>
+            <span class="optionbar">
+               <span class="option"></span>
+            </span>
+         </div>
          <div class="pagewrap">
-            <div class="optionbar">
-            </div>
             <div class="merchwrap">
                <div class="merchrow">
                   <div class="merch left tee">
