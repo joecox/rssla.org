@@ -63,7 +63,7 @@
                <p>We offer six different sessions:</p>
                <ul>
                   <li>Session 1: April 4 - 6 <span style="font-style: italic">(Thursday - Saturday)</span><b style="padding-left: 10px">Session signups closed</b></li>
-                  <li>Session 2: April 6 - 8 <span style="font-style: italic">(Saturday - Monday)</span></li>
+                  <li>Session 2: April 6 - 8 <span style="font-style: italic">(Saturday - Monday)</span><b style="padding-left: 10px">Session signups closed</b></li>
                   <li>Session 3: April 11 - 13 <span style="font-style: italic">(Thursday - Saturday)</span></li>
                   <li>Session 4: April 13 - 15 <span style="font-style: italic">(Saturday - Monday)</span></li>
                   <li>Session 5: April 18 - 20 <span style="font-style: italic">(Thursday - Saturday)</span></li>
