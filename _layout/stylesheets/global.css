@@ -350,6 +350,10 @@ div#col7 {left: 875px;}
    margin: 0 20px 30px;
    color: rgb(36, 114, 211);
 }
+.pagetitle.wrap {
+   padding-bottom: 10px;
+   border-bottom: 1px solid #ccc;
+}
 
 .blocktitle {
    font-size: 1.5rem;

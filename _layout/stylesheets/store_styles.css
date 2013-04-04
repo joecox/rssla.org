@@ -4,11 +4,9 @@
 }
 
 .pagewrap {
-   width: 860px;
-   margin: 20px auto 80px;
+   margin: 20px 20px 80px;
 }
 .merchwrap {
-   width: 860px;
    margin-bottom: 30px;
 }
 
@@ -18,9 +16,10 @@
 }
 
 .merch {
-   position: absolute;
-   width: 200px;
-   height: 400px;
+   width: 225px;
+   height: 300px;
+   margin-right: 20px;
+   float: left
 }
 
 .productwrap:hover {
@@ -29,21 +28,18 @@
    z-index: 1;
 }
 
-.merch.left {left: 0;}
-.merch.mid-left {left: 220px;}
-.merch.mid-right {right: 220px;}
-.merch.right {right: 0;}
+.merch.right {margin-right: 0;}
 
 .productwrap {
    position: relative;
    -webkit-transition: box-shadow 0.25s,
                        z-index 0.25s;
-   width: 200px;
+   width: 225px;
    height: 300px;
    cursor: pointer;
 }
 .product{
-   width: 200px;
+   width: 225px;
    height: 300px;
 }
 
