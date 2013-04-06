@@ -305,6 +305,20 @@ div#col7 {left: 875px;}
    float: left;
    height: 100%;
 }
+.aboutblock {
+margin: 20px;
+height: 20em;
+font-size: 1rem;
+font-weight: 400;
+}
+
+#aboutimage{
+width: 13em; 
+height: auto;
+}
+
+
+
 .solo {
    margin: 0 auto;
    float: none;
@@ -345,7 +359,7 @@ div#col7 {left: 875px;}
 
 .blocktitle {
    font-size: 1.5rem;
-   margin-left: 20px;
+   margin-left: 20px;	
 }
 .subtitle {margin-left: 20px;}
 
