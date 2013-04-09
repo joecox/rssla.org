@@ -22,12 +22,12 @@
          </div>
          <div class="cont three-quarters">
             <div class="sponsorrow">
-               <div class="contentblock">
+               <div class="picwrap">
                   <a href="http://www.kaplan.com">
                      <img src="/resources/images/sponsors/kaplan_transparent.png" style="height:50px">
                   </a>
-                  <div class="blurb">Established in 1938, Kaplan Test Prep is the premier preparation resource for students across the country. Kaplan offers preparation courses and materials for the SAT, GRE, MCAT, LSAT (and may more). Starting in 2012, they have even added a Test Center at Lu Valle Commons in UCLA. Giving back to their surrounding community, they have donated materials for our LAMP programs.</div>
                </div>
+               <div class="blurb">Established in 1938, Kaplan Test Prep is the premier preparation resource for students across the country. Kaplan offers preparation courses and materials for the SAT, GRE, MCAT, LSAT (and may more). Starting in 2012, they have even added a Test Center at Lu Valle Commons in UCLA. Giving back to their surrounding community, they have donated materials for our LAMP programs.</div>
             </div>
             <div class="sponsorrow">
                <div class="contentblock">
@@ -40,7 +40,7 @@
             <div class="sponsorrow">
                <div class="contentblock">
                   <a href="http://www.laughfactory.com">
-                     <img src="/resources/images/sponsors/laughfactory_transparent_large.png" style="129px">
+                     <img src="/resources/images/sponsors/laughfactory_transparent_large.png">
                   </a>
                   <div class="blurb">The World Famous LaughFactory is a comedy club started by comedian Jamie Masada in 1979. It is steeped in a comic history that includes Richard Pryor, Dave Chappelle, and Dane Cook. The LaughFactory has consistently served as a great introduction to the art form for thousands of fans; today they continue this mission through their generous discounts for RSS.</div>
                </div>
@@ -59,6 +59,14 @@
                      <img style="width: 200px; height: 45px" src="/resources/images/sponsors/uprinting_transparent.png">
                   </a>
                   <div class="blurb">uPrinting.com is an online printing service that serves thousands of orders a day. Relying on both a stream-lined order system and helpful customer service, they are built around user-friendliness.  They are also committed to social responsibility, using eco-friendly printing techniques and providing free services to non-profit organizations such as RSS.</div>
+               </div>
+            </div>
+            <div class="sponsorrow">
+               <div class="contentblock">
+                  <a href="http://www.barneysbeanery.com">
+                     <img src="/resources/images/sponsors/barneys_transparent_large.png">
+                  </a>
+                  <div class="blurb">Since its foundation in 1920, Barney's Beanery has served high-end meals to satisfy the lucky SoCal palette. Classic movie stars such as Clark Gable and Rita Howard were well known for their attendance at this gastropub. Barney's Beanery supports RSS through both generous donations and dinner fundraisers.</div>
                </div>
             </div>
          </div>

@@ -1,11 +1,12 @@
 .sponsorrow {
-   padding-bottom: 40px;
-   text-align: center;
+   margin: 20px;
+   position: relative;
+   height: 150px
 }
 
 .sponsorrow img {
    width: 148px;
-   margin-right: 20px;
+   margin: 0 20px 0 15px;
 }
 
 .sponsorrow a:visited {
@@ -18,7 +19,14 @@
 
 .blurb {
    width: 475px;
-   float: right;
+   position: absolute;
+   right: 20px;
    text-align: justify;
+   display: inline-block;
+}
+
+.picwrap {
+   height:150px;
+   width: 250px;
    display: inline-block;
 }

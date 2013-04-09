@@ -8,7 +8,7 @@
 <body>
    <div id="wrapper">
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/header.php"); ?>
-      <div class="main clearfix">
+      <div class="main clearfix" style="position: relative">
          <div class="wrap border-bottom shadow-bottom">
             <span class="pagetitle" style="font-size: 2.5rem">STORE</span>
             <span class="helptext v-align">Click a product image to see more information.</span>
@@ -33,6 +33,9 @@
                   <span class="button v-align h-align">Go to checkout</span>
                </div>
             </div>
+         </div>
+         <div class="item-add-frame">
+            <img class="item-add-sprite" src="/resources/images/gear/item-sprite.png">
          </div>
          <div class="pagewrap">
             <div class="merchwrap">

@@ -97,6 +97,23 @@
    border-radius: 1px;
 }
 
+/* ADD ANIMATION *************************************************************/
+.item-add-frame {
+   position: absolute;
+   top: 25px;
+   right: 60px;
+   height: 200px;
+   width: 830px;
+   z-index: 20;
+}
+.item-add-sprite {
+   display: none;
+   position: absolute;
+   top: 160px;
+   right: 790px;
+   width: 40px;
+}
+
 /* CART **********************************************************************/
 .cart-min {
    position: absolute;

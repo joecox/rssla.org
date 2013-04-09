@@ -20,6 +20,9 @@
             <a href="http://www.coffeebean.com">
                <img src="/resources/images/sponsors/coffeebean_transparent.png">
             </a>
+            <a href="http://www.barneysbeanery.com/">
+               <img src="/resources/images/sponsors/barneys_transparent.png">
+            </a>
          </div>
       </div>
    </div>

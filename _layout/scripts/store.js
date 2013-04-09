@@ -33,5 +33,14 @@ $(document).ready(function () {
       $(this).animate({opacity: 0}, 200, function () {
          $(this).css("z-index", -99);
       });
-   })
+   });
+   
+   // Item add animation
+   $(".add-to-cart").click(function () {
+      $(".item-add-sprite").fadeIn(100, function () {
+         $(this).animate({top: 0, right: 0}, function () {
+            $(this).fadeOut(100);
+         });
+      });
+   });
 });
