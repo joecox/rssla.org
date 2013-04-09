@@ -1,6 +1,5 @@
 $(document).ready(function () {
-   $(".productwrap").click(function() {
-      $("body").addClass("dialog-open");
+   $(".product").click(function() {
       $(".veil").fadeIn();
 
       var source = $(this).children("img").attr("src");
@@ -22,5 +21,17 @@ $(document).ready(function () {
    });
 
    // temp
-   $(".productwrap").children(".product").attr("src", "/resources/images/gear/merch_placeholder.png");
+   $(".product").attr("src", "/resources/images/gear/merch_placeholder.png");
+
+   // Cart UI
+   $(".cart-min").hover(function () {
+      $(".cart").css("z-index", 10);
+      $(".cart").animate({opacity: 1.0}, 200);
+   }, function () {});
+
+   $(".cart").hover(function () {}, function () {
+      $(this).animate({opacity: 0}, 200, function () {
+         $(this).css("z-index", -99);
+      });
+   })
 });

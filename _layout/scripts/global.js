@@ -8,6 +8,46 @@ function fadeIn(obj) {
 
 $(document).ready(function () 
 {
+   // Vertical aligning
+   $(".v-align").each(function() {
+      if($(this).parent().css("position") == "absolute")
+         ;
+      else
+         $(this).parent().css("position", "relative");
+      var top = ($(this).parent().height() / 2) - ($(this).height() / 2);
+      $(this).css("top", top);
+   });
+
+   $(".button.v-align").each(function() {
+      if($(this).parent().css("position") == "absolute")
+         ;
+      else
+         $(this).parent().css("position", "relative");
+      var top = ($(this).parent().height() / 2) - ($(this).height() / 2)
+                                                - parseInt($(this).css("padding-top"), 10);
+      $(this).css("top", top);
+   });
+
+   // Horizontal aligning
+   $(".h-align").each(function() {
+      if($(this).parent().css("position") == "absolute")
+         ;
+      else
+         $(this).parent().css("position", "relative");
+      var left = ($(this).parent().width() / 2) - ($(this).width() / 2);
+      $(this).css("left", left);
+   });
+
+   $(".button.h-align").each(function() {
+      if($(this).parent().css("position") == "absolute")
+         ;
+      else
+         $(this).parent().css("position", "relative");
+      var left = ($(this).parent().width() / 2) - ($(this).width() / 2)
+                                                - parseInt($(this).css("padding-left"), 10);
+      $(this).css("left", left);
+   });
+
    // set min-heights to max
    var maxHeight = Math.max.apply(null, $(".cont").map(function ()
    {

@@ -1,5 +1,13 @@
 /* ========== GLOBAL STYLES ========== */
-html {font-size: 16px;}
+html {
+   font-size: 16px;
+   -webkit-touch-callout: none;
+     -webkit-user-select: none;
+      -khtml-user-select: none;
+        -moz-user-select: none;
+         -ms-user-select: none;
+             user-select: none;
+}
 
 body {
    background-color: #eaeaea;
@@ -12,6 +20,7 @@ a {
    color: black;
 }
 
+.wrap {position: relative;}
 a.norm {
    text-decoration: underline;
    color: blue;
@@ -350,9 +359,12 @@ div#col7 {left: 875px;}
    margin: 0 20px 30px;
    color: rgb(36, 114, 211);
 }
-.pagetitle.wrap {
-   padding-bottom: 10px;
+.border-bottom {
+   padding-bottom: 15px;
    border-bottom: 1px solid #ccc;
+}
+.shadow-bottom {
+   box-shadow: 0 5px 5px -5px #ccc;
 }
 
 .blocktitle {
@@ -446,6 +458,7 @@ div#col7 {left: 875px;}
    font-size: 0.75rem;
 }
 
+.v-align, .h-align {position: absolute;}
 /* CUSTOM FONTS */
 
 @font-face {
@@ -516,7 +529,6 @@ font-family:'ProximaNova'; src:url('/resources/fonts/ProximaNova/proximanova-sem
    border-radius: 3px;
    cursor: pointer;
    color: white;
-   position: relative;
    
    background-color: #268fff;
    background-image: -webkit-gradient(linear, left top, left bottom, from(#268fff), to(#1b65b5));
@@ -524,6 +536,10 @@ font-family:'ProximaNova'; src:url('/resources/fonts/ProximaNova/proximanova-sem
    background-image:    -moz-linear-gradient(top, #268fff, #1b65b5);
    background-image:      -o-linear-gradient(top, #268fff, #1b65b5);
    background-image:         linear-gradient(to bottom, #268fff, #1b65b5);
+}
+.button.small {
+   padding: 4px 7px;
+   font-size: 1rem;
 }
 .button:hover {
    background-image: none;
@@ -555,7 +571,7 @@ input {
    margin-left: 0;
 }
 input:focus {
-   box-shadow: 0 0 5px 2px rgb(30, 139, 235);
+   box-shadow: 0 0 3px 1px rgb(30, 139, 235);
 }
 input[type="text"] {
    height: 20px;
@@ -578,7 +594,7 @@ textarea {
    margin: 0;
 }
 textarea:focus {
-   box-shadow: 0 0 5px 2px rgb(30, 139, 235);
+   box-shadow: 0 0 3px 1px rgb(30, 139, 235);
 }
 div.input {
    margin: 20px auto;
