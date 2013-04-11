@@ -21,6 +21,8 @@ a {
 }
 
 .wrap {position: relative;}
+.center {text-align: center;}
+.helptext {padding-left: 20px; font-style: italic;}
 a.norm {
    text-decoration: underline;
    color: blue;
