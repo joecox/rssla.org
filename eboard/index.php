@@ -11,8 +11,6 @@
             <img class="photobanner" src="">
             <div class="bannertext"></div>
          </div>
-<<<<<<< HEAD
-=======
          <div class="wrap border-bottom shadow-bottom">
             <span class="pagetitle">EBOARD SERVICES</span>
             <span class="helptext v-align">Services for Eboard members only.</span>
@@ -43,7 +41,6 @@
                </form>
             </div>
          </div>
->>>>>>> S13_wk03_sat_02
       </div>
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/footer.php"); ?>
    </div>
