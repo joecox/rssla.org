@@ -110,3 +110,46 @@ $(document).ready(function ()
       $(this).children().text(set_text);
    });
 });
+
+/* EBOARD SIGNIN *************************************************************/
+$(document).ready(function () {
+   var login_box_open = false;
+
+   $(".selector").click(function () {
+      if (!login_box_open)
+      {
+         $(".wrapper-dropdown").addClass("active");
+         $(this).addClass("active");
+         $(".drop-down").animate({'max-height': "257px"}, 200);
+         login_box_open = true;
+      }
+      else if (login_box_open)
+      {
+         $(".drop-down").animate({'max-height': 0}, 200);
+         $(".wrapper-dropdown").removeClass("active");
+         $(this).removeClass("active");
+         login_box_open = false;
+      }
+   });
+
+   $(".drop-down").children("li").click(function () {
+      var text = "Login as: " + $(this).text();
+      $(".selector").text(text);
+      $(".drop-down").animate({'max-height': 0}, 200);
+      $(".wrapper-dropdown").removeClass("active");
+      $(".selector").removeClass("active");
+      login_box_open = false;
+   });
+
+   $(document).click(function () {
+      $(".drop-down").animate({'max-height': 0}, 200);
+      $(".wrapper-dropdown").removeClass("active");
+      $(".selector").removeClass("active");
+      login_box_open = false;
+   });
+
+   $(".wrapper-dropdown").click(function(event) {
+      event.stopPropagation();
+   });
+});
+
