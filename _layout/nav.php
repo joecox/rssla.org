@@ -52,13 +52,16 @@
    </span>
    <span class="navcol">
       <a href="#">
-         <div class="navbutton coming" meta="COMING SOON">
+         <div class="navbutton">
             <div class="oneline">MEMBERS</div>
          </div>
       </a>
-<!--
       <div class="drop-down" id="col3">
          <div>
+            <a href="/members/classpoints/">
+               <div class="navitem">Class Points</div>
+            </a>
+<!--
             <a href="/">
                <div class="navitem">Opportunities</div>
             </a>
@@ -68,9 +71,9 @@
             <a href="/members/profiles.php">
                <div class="navitem">Profiles</div>
             </a>
+-->
          </div>
       </div>
--->
    </span>
    <span class="navcol">
       <a href="/prospective/osp/">

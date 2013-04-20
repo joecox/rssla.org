@@ -1,0 +1,9 @@
+
+AuthType Basic
+
+AuthName "Eboard Page"
+
+AuthUserFile "/home/rssla/.htpasswds/rssla/eboard/passwd"
+
+
+require valid-user

@@ -45,18 +45,6 @@
                   <div style="clear:both"></div>
                </div>
             </div>
-            <div class="subcont three-eighths left">
-               <div class="rowtitle"><span>Bruin Day Reception</span></div>
-               <div class="contentblock">
-                  RSVP to the Bruin Day Welcome reception!
-                  <div class="buttonwrap">
-                     <a href="outreach/">
-                        <span class="button">RSVP here</span>
-                     </a>
-                  </div>
-                  <div style="clear:both"></div>
-               </div>
-            </div>
          </div>
       </div>
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/footer.php"); ?>

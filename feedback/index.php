@@ -19,15 +19,13 @@
             <div class="bannertext"></div>
          </div>
          <div class="cont quarter left" id="sidebar">
-            <a href="/prospective/osp/">
-               <div class="pagetitle">FEEDBACK</div>
-            </a>
+            <div class="pagetitle">FEEDBACK</div>
          </div>
          <div class="cont three-quarters">
             <div class="rowtitle"><span>Feedback Form</span></div>
             <form action="feedback_process.php" method="post" id="form" style="font-weight: 400">
                <div class="contentblock">
-                  <p>We would appreciate it if you could spend a few moments providing some feedback for our website.  Please fill out the form below.</p>
+                  <p>We would appreciate it if you spent a few moments providing some feedback for our website.  Please fill out the form below.  <b>All feedback you provide is completely anonymous.</b></p>
                   <p>If you have any questions, please email <?php echo $commFL; ?>, the Communications Director, at <a class="norm" href="mailto:communications@rssla.org">communications@rssla.org</a>.</p>
                </div>
                <div class="inputwrap">
@@ -39,7 +37,7 @@
                   <textarea rows="8" cols="48" name="likes"></textarea>
                </div>
                <div class="inputwrap">
-                  <label for="notlikes">What do you not like about the website?</label>
+                  <label for="notlikes">What don't you like about the website?</label>
                   <textarea rows="8" cols="48" name="notlikes"></textarea>
                </div>
                <div class="inputwrap">

@@ -66,7 +66,7 @@
                   <li>Session 2: April 6 - 8 <span style="font-style: italic">(Saturday - Monday)</span><b style="padding-left: 10px">Session signups closed</b></li>
                   <li>Session 3: April 11 - 13 <span style="font-style: italic">(Thursday - Saturday)</span><b style="padding-left: 10px">Session signups closed</b></li>
                   <li>Session 4: April 13 - 15 <span style="font-style: italic">(Saturday - Monday)</span><b style="padding-left: 10px">Session signups closed</b></li>
-                  <li>Session 5: April 18 - 20 <span style="font-style: italic">(Thursday - Saturday)</span></li>
+                  <li>Session 5: April 18 - 20 <span style="font-style: italic">(Thursday - Saturday)</span><b style="padding-left: 10px">Session signups closed</b></li>
                   <li>Transfer Session: May 10 - 11 <span style="font-style: italic">(Saturday - Sunday)</span></li>
                </ul>
                <p>Once you've chosen the session to want to attend, sign up through the link below.  The registration periods for each session are now open, and close when a session is less than 3 days away.</p>
