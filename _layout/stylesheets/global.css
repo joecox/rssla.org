@@ -110,6 +110,7 @@ body.dialog-open { overflow: hidden; }
    z-index: 5;
    -webkit-transition: opacity 0.25s;
       -moz-transition: opacity 0.25s;
+       -ms-transition: opacity 0.25s;
         -o-transition: opacity 0.25s;
            transition: opacity 0.25s;
 }
@@ -222,7 +223,7 @@ div#col7 {left: 875px;}
    width: 100%;
    background-color: white;
    border: 1px solid #c2c2c2;
-   padding: 20px 0;
+   padding: 20px 0 10px;
    font-weight: 300;
 }
 
@@ -567,7 +568,7 @@ font-family:'ProximaNova'; src:url('/resources/fonts/ProximaNova/proximanova-sem
    margin: 5px 0;
 }
 
-input {
+input[type='text'] {
    outline: none;
    border: 1px solid rgb(180,180,180);
    margin-left: 0;
@@ -686,7 +687,7 @@ input.hidden {
    padding: 12px 13px;
 }
 
-.login-box .drop-down {
+.login-box .dropdown {
    max-height: 0;
    overflow: hidden;
    margin: 0;
@@ -696,20 +697,20 @@ input.hidden {
    z-index: 10;
 }
 
-.login-box .drop-down ul {padding: none;}
+.login-box .dropdown ul {padding: none;}
 
-.login-box .drop-down li {
+.login-box .dropdown li {
    border-bottom: 1px solid #bbb;
    padding: 12px 12px;
    margin: 0;
    cursor: pointer;
    background: white;
 }
-.login-box .drop-down li:hover {
+.login-box .dropdown li:hover {
    background: rgb(188, 211, 240);
 }
 
-.login-box .drop-down li.last {border: none;}
+.login-box .dropdown li.last {border: none;}
 
 .selector:hover {background: rgba(36, 113, 211, 0.30);}
 .selector.active {
@@ -720,7 +721,7 @@ input.hidden {
    outline: none;
 }
 
-.wrapper-dropdown.active .drop-down {
+.wrapper-dropdown.active .dropdown {
    overflow-y: scroll;
 }
 
@@ -739,6 +740,7 @@ input.hidden {
 .login-box .pw:focus {
    background: rgba(36, 113, 211, 0.05);
    box-shadow: none;
+   outline: none;
 }
 
 .submit-square {
@@ -746,10 +748,18 @@ input.hidden {
    width: 46px;
    position: absolute;
    bottom: 12px;
-   right: 22px;
-   background: rgb(188, 211, 240) center no-repeat url("/resources/images/UI/right_arrow_30.png");
+   right: 19px;
+   background: center no-repeat url("/resources/images/UI/right_arrow_black_30.png");
    cursor: pointer;
    z-index: 5;
 }
-.submit-square:hover {background-color: rgb(36, 113, 211);}
+.submit-square:hover {background-image: url("/resources/images/UI/right_arrow_hover_30.png");}
+
+#incorr_msg {
+   display: none;
+   color: red;
+   position: absolute;
+   top: 60px;
+   left: 445px;
+}
 /* =================================== */
