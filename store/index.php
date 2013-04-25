@@ -34,9 +34,6 @@
                </div>
             </div>
          </div>
-         <div class="item-add-frame">
-            <img class="item-add-sprite" src="/resources/images/gear/item-sprite.png">
-         </div>
          <div class="pagewrap">
             <div class="merchwrap">
                <div class="merchrow">
