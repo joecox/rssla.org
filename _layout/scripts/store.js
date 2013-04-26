@@ -58,7 +58,7 @@ $(document).ready(function () {
       var price_s = merchObj.children(".productwrap")
                             .children(".merchprice")
                             .text();
-      var price = parseInt(price_s.replace('$', ''));
+      var price = parseFloat(price_s.replace('$', ''));
 
       // calculate frame dimensions
 
@@ -197,9 +197,9 @@ $(document).ready(function () {
 
       // update price
       var cur_price_s = itemObj.children(".prod-price").text();
-      var cur_price = parseInt(cur_price_s.replace('$', ''));
+      var cur_price = parseFloat(cur_price_s.replace('$', ''));
       var new_price = cur_price + merch.price;
-      var new_price_s = "$" + new_price;
+      var new_price_s = "$" + fixPrecision("" + new_price);
       itemObj.children(".prod-price").text(new_price_s);
    }
 
@@ -211,7 +211,7 @@ $(document).ready(function () {
                            '<img class="prod-min v-align" src="/resources/images/gear/merch_' + merch.img_id + '_cart.png">' +
                            '<span class="prod-name v-align">' + merch.name + '</span>' +
                            '<input type="text" size="1" value="1" name="quantity" class="prod-quant" onchange="quantityChange()">' +
-                           '<span class="prod-price v-align" meta="' + merch.price + '">$' + merch.price + '</span>' +
+                           '<span class="prod-price v-align" meta="' + merch.price + '">$' + fixPrecision("" + merch.price) + '</span>' +
                         '</div>'
       $(".cart-item-wrap").append(newCartItem);
    }
@@ -219,9 +219,9 @@ $(document).ready(function () {
    function updateTotal(merch)
    {
       var cur_total_s = $(".total-price").text();
-      var cur_total = parseInt(cur_total_s.replace('$', ''));
+      var cur_total = parseFloat(cur_total_s.replace('$', ''));
       var new_total = cur_total + merch.price;
-      var new_total_s = "$" + new_total;
+      var new_total_s = "$" + fixPrecision("" + new_total);
 
       $(".total-price").text(new_total_s);
    }
@@ -234,6 +234,22 @@ $(document).ready(function () {
 
       var new_total_price = new_quantity * base_price;
 
-      $(this).sibling(".prod-price").text('$' + new_total_price);
+      $(this).sibling(".prod-price").text('$' + fixPrecision("" + new_total_price));
+   }
+
+   function fixPrecision (price)
+   {
+      var patt1 = /^[0-9]*\.[0-9]{2}$/;
+      var patt2 = /^[0-9]*\.[0-9]{1}$/;
+      var patt3 = /^[0-9]*$/;
+
+      if(patt1.test(price) || patt3.test(price))
+      {
+         return price;
+      }
+      else if (patt2.test(price))
+      {
+         return (price + "0");
+      }
    }
 });
