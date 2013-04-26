@@ -14,22 +14,18 @@
             <span class="helptext v-align">Click a product image to see more information.</span>
             <span class="cart-min v-align">Your cart (0)</span>
             <div class="cart">
-               <div style="display:none" class="emptycart v-align h-align">Your cart is empty</div>
+               <div class="emptycart v-align h-align">Your cart is empty</div>
                <div class="cart-head">
                   <span class="v-align" style="right:70px">Quantity</span>
-                  <span class="v-align" style="right: 10px">Price</span>
+                  <span class="v-align" style="right:10px">Price</span>
                </div>
-               <div class="cart-item">
-                  <img class="prod-min v-align" src="">
-                  <span class="prod-name v-align">PEE Shirt</span>
-                  <input type="text" size="1" value="1" name="quantity" class="prod-quant">
-                  <span class="prod-price v-align">$10</span>
+               <div class="cart-item-wrap">
                </div>
                <div class="total-bar">
                   <span class="v-align" style="right:80px;">Total:</span>
-                  <span class="v-align prod-price">$10</span>
+                  <span class="v-align total-price">$0.00</span>
                </div>
-               <div style="height:50px;">
+               <div class="checkout">
                   <span class="button v-align h-align">Go to checkout</span>
                </div>
             </div>
@@ -37,13 +33,37 @@
          <div class="pagewrap">
             <div class="merchwrap">
                <div class="merchrow">
-                  <div class="merch left tee">
+                  <div class="merch left">
                      <div class="productwrap">
                         <img class="product" src="/resources/images/gear/PEE_front.jpg">
+                        <div class="merchprice">$15</div>
                      </div>
                      <div class="infowrap">
                         <div style="margin-bottom:8px">
                            <span class="productname">PEE Shirt</span>
+                        </div>
+                        <div>
+                           <select style="float:left">
+                              <option value="S">Small</option>
+                              <option value="M">Medium</option>
+                              <option value="L">Large</option>
+                              <option value="XL">XLarge</option>
+                           </select>
+                           <span class="button small add-to-cart">Add to cart</span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="merch mid-left">
+                     <img class="product" src="/resources/images/gear/PEE_front.jpg">
+                  </div>
+                  <div class="merch mid-right">
+                     <div class="productwrap">
+                        <img class="product" src="/resources/images/gear/PEE_front.jpg">
+                        <div class="merchprice">$10</div>
+                     </div>
+                     <div class="infowrap">
+                        <div style="margin-bottom:8px">
+                           <span class="productname">Shirt 2</span>
                            <select style="float:right">
                               <option value="S">Small</option>
                               <option value="M">Medium</option>
@@ -52,18 +72,8 @@
                            </select>
                         </div>
                         <div>
-                           <span class="productprice">$10</span>
                            <span class="button small add-to-cart">Add to cart</span>
                         </div>
-                     </div>
-                  </div>
-                  <div class="merch mid-left tee">
-                     <img class="product" src="/resources/images/gear/PEE_front.jpg">
-                  </div>
-                  <div class="merch mid-right tee">
-                     <div class="productwrap">
-                        <img class="product" src="/resources/images/gear/PEE_front.jpg">
-                        <div class="merchprice">$10</div>
                      </div>
                   </div>
                   <div class="merch right tee">

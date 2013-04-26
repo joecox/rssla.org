@@ -97,8 +97,8 @@
       </a>
    </span>
    <span class="navcol">
-      <a href="#">
-         <div class="navbutton coming" meta="COMING SOON">
+      <a href="/store/">
+         <div class="navbutton">
             <div class="oneline">STORE</div>
          </div>
       </a>
