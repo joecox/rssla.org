@@ -1,31 +1,13 @@
-var DAY_WIDTH = 100;
-var DAY_HEIGHT = 80;
-var SIDE_DELTA = 2;
+var now;
+var centerDate;
 
-var DAY_HEADING = [
-  "SUN",
-  "MON",
-  "TUE",
-  "WED",
-  "THU",
-  "FRI",
-  "SAT"];
+var leftCal;
+var centerCal;
+var rightCal;
 
-var MONTH_NAMES = [
-  "JANUARY",
-  "FEBRUARY",
-  "MARCH",
-  "APRIL",
-  "MAY",
-  "JUNE",
-  "JULY",
-  "AUGUST",
-  "SEPTEMBER",
-  "OCTOBER",
-  "NOVEMBER",
-  "DECEMBER"];
+var eventsObj = {};
 
-
+var eventsReceived = false;
 
 function build_day_over_handler(x)
 {
@@ -38,7 +20,7 @@ function build_day_over_handler(x)
         height: (DAY_HEIGHT+2*SIDE_DELTA)+"px",
         width: (DAY_WIDTH+2*SIDE_DELTA)+"px",
       }, 100);
-  }
+  };
 }
 
 function build_day_out_handler(x)
@@ -52,7 +34,7 @@ function build_day_out_handler(x)
         height: DAY_HEIGHT + "px",
         width: DAY_WIDTH + "px",
       }, 100);
-  }
+  };
 }
 
 
@@ -63,7 +45,7 @@ function build_cal_frame(pos, calObj)
               .css({top: "7px", left: (pos*720+7)+"px"})
               .appendTo($("#calendar_canvas"));
 
-  calObj.framediv = cal[0]
+  calObj.framediv = cal[0];
 
   calObj.days.length = 0;
 
@@ -109,12 +91,19 @@ function build_cal_frame(pos, calObj)
                        .css({top: "0px", left: (ii*DAY_WIDTH)+"px"})
                        .mouseenter(build_day_over_handler(ii*DAY_WIDTH))
                        .mouseleave(build_day_out_handler(ii*DAY_WIDTH))
+                       .click(function ()
+                         {
+                           openOverlay();
+                           populateOverlay(this.dayparent);
+                         })
                        .append(
                          $("<div>")
                            .addClass("datenum"));
 
+        newDay[0].dayparent = null;
+
         $(this).append(newDay);
-        calObj.days.push({$div: newDay, events: []});
+        calObj.days.push({$div: newDay, date: undefined, events: []});
       }
     }
   );
@@ -122,10 +111,94 @@ function build_cal_frame(pos, calObj)
   return cal;
 }
 
+function openOverlay()
+{
+  var left = $(window).width()/2 - 300;
+  if (left < 0) left = 0;
+
+  var top = $(window).height()/2 - 200;
+  if (top < 0) top = 0;
+ 
+  $(".veil")
+    .fadeIn(100);
+  $(".cal_overlay")
+    .css({top: top + "px", left: left + "px"})
+    .fadeIn(100);
+}
+
+function populateOverlay(dayObj)
+{
+  $('.cal_overlay_title')
+    .html(MONTH_NAMES[dayObj.date.getMonth()] + ' ' + 
+          (dayObj.date.getDate()) + ', ' + 
+          dayObj.date.getFullYear());
+
+  if (dayObj.events.length == 0) 
+  {
+    $(".cal_overlay_content")
+      .append($('<div>')
+                .addClass('event_no_content')
+                .html('No events found'));
+  }
+  else
+  {
+    for (var ii = 0; ii < dayObj.events.length; ii++)
+    {
+      $(".cal_overlay_content")
+        .append(buildEventDesc(dayObj.events[ii]));
+    }
+  }
+}
+
+function buildEventDesc(e)
+{
+  var $div, $title, $timing, $loc, $fb_link, $gc_link, $desc;
+
+  $div = 
+    $('<div>')
+      .addClass('event_desc_wrap')
+      .append(($title =   $('<div>').addClass('event_title')))
+      .append(($timing =  $('<span>').addClass('event_time')));
+
+  $title.html(e.title);
+  $timing.html(e.sdate.timeStr() + ' - ' + e.edate.timeStr());
+
+  if (e.loc) $div.append($('<span>').addClass('event_loc').html(e.loc));
+
+  $div.append(($fb_link =  $('<a>').addClass('event_fb_link')))
+      .append(($gc_link =  $('<a>')
+                             .addClass('event_gc_link')
+                             .attr('href', e.link)
+                             .attr('target', '_blank')
+                             .html('Google Cal.')));
+
+  if (e.desc) $div.append($('<div>').addClass('event_desc').html(e.desc));
+
+  $fb_link.html("Facebook");
+  if (false /*haveFbLink()*/) 
+  {
+    $fb_link.attr("href", "fblink")
+  }
+  else
+  {
+    $fb_link.addClass('nolink');
+  }
+
+  return $div;
+}
+
+
+function closeOverlay()
+{
+  $(".veil").fadeOut(100);
+  $(".cal_overlay").fadeOut(100);
+  $('.cal_overlay_content').children().remove();
+}
+
 
 function slide_cal_left()
 {
-  centerMonYear = monyearup(centerMonYear);
+  centerDate = centerDate.plusMonth();
 
   $(".cal_frame.cal_left").remove();
 
@@ -145,14 +218,14 @@ function slide_cal_left()
   rightCal = new CalObject();
   build_cal_frame(1, rightCal).addClass("cal_right");
 
-  rightCal.setMonth(monyearup(centerMonYear));
+  rightCal.setMonth(centerDate.plusMonth());
   if (eventsReceived) rightCal.fillMonth();
 
 }
 
 function slide_cal_right()
 {
-  centerMonYear = monyeardown(centerMonYear);
+  centerDate = centerDate.minusMonth();
 
   $(".cal_frame.cal_right").remove();
 
@@ -172,40 +245,40 @@ function slide_cal_right()
   leftCal = new CalObject();
   build_cal_frame(-1, leftCal).addClass("cal_left");
 
-  leftCal.setMonth(monyeardown(centerMonYear));
+  leftCal.setMonth(centerDate.minusMonth());
   if (eventsReceived) leftCal.fillMonth();
 
 }
-
-var eventsObj = 
-{
-};
-
-var eventsReceived = false;
 
 function gotEvents(data)
 {
   eventsReceived = true;
   var entries = data.feed.entry;
+  var newEv;
+  var dateIter;
+  var ym;
+
+  /* for each event ... */
   for (var e = 0; e < entries.length; e++)
   {
-    var startDateEls;
-    startDateEls= entries[e].gd$when[0].startTime.split("-");
-    var ymstring = startDateEls[0].concat(startDateEls[1]);
-    if (!eventsObj.hasOwnProperty(ymstring))
+    newEv = new EvObject(entries[e]);
+
+    /* for each month that event spans... */
+    for (dateIter = newEv.sdate; 
+         +dateIter <= +newEv.edate; 
+         dateIter = dateIter.plusMonth())
     {
-      eventsObj[ymstring] = [];
-    }
+      ym = dateIter.getYearMonth();
+
+      if (!eventsObj.hasOwnProperty(ym))
+      {
+        eventsObj[ym] = [];
+      }
     
-    eventsObj[ymstring].push(
-    {
-      date:   entries[e].gd$when[0].startTime.substr(8,2),
-      shr:    entries[e].gd$when[0].startTime.substr(11,2),
-      smin:   entries[e].gd$when[0].startTime.substr(14,2),
-      ehr:    entries[e].gd$when[0].endTime.substr(11,2),
-      emin:   entries[e].gd$when[0].endTime.substr(14,2),
-      title:  entries[e].title.$t
-    });
+      /* add a reference to the event in that month's field in the 
+       *  eventsObj structure. */
+      eventsObj[ym].push(newEv);
+    }
   }
 
   centerCal.fillMonth();
@@ -213,25 +286,6 @@ function gotEvents(data)
   leftCal.fillMonth();
 
 }
-
-
-
-var now = new Date();
-var centerMonYear = {month: now.getMonth(), year: now.getFullYear()};
-
-var leftCal = new CalObject();
-var centerCal = new CalObject();
-var rightCal = new CalObject();
-  
-
-build_cal_frame(0, centerCal).addClass("cal_center");
-build_cal_frame(-1, leftCal).addClass("cal_left");
-build_cal_frame(1, rightCal).addClass("cal_right");
-
-
-centerCal.setMonth(centerMonYear);
-leftCal.setMonth(monyeardown(centerMonYear));
-rightCal.setMonth(monyearup(centerMonYear));
 
 //get all the data
 
@@ -255,34 +309,23 @@ function monyearup(monyear)
   return ret;
 }
 
-/*
-var clientId = '660311823487';
-
-var apikey = 'AIzaSyAvwV-sCraZiJtOYjy8tOVJ8lTWH_R9cWA';
-
-var scope = 'https://www.googleapis.com/auth/calendar.readonly';
-
-function apiLoad()
+$(document).ready(function ()
 {
-  gapi.client.setApiKey(apikey);
-  window.setTimeout(doAuth,1);
-//  gapi.client.load('calendar', 'v3', clientLoad);
-}
+  $("body").append('<script type="text/javascript" charset="utf-8" src="https://www.google.com/calendar/feeds/932agq27os62bh2qo2gg0k3cak%40group.calendar.google.com/public/full?alt=json-in-script&callback=gotEvents"><\/script>');
+  now = new Date();
+  centerDate = now;
 
-function doAuth()
-{
-  gapi.auth.authorize({client_id: clientId, scope: scope, immediate: false},
-                      handleAuthResult);
-}
+  leftCal = new CalObject();
+  centerCal = new CalObject();
+  rightCal = new CalObject();
+    
 
-function handleAuthResult(authResult)
-{
-  alert('result');
-}
+  build_cal_frame(0, centerCal).addClass("cal_center");
+  build_cal_frame(-1, leftCal).addClass("cal_left");
+  build_cal_frame(1, rightCal).addClass("cal_right");
 
-function clientLoad()
-{
-//  var request = gapi.client.plus.calendar.get({
-  alert('meh');
-}
-*/
+
+  centerCal.setMonth(now);
+  leftCal.setMonth(now.minusMonth());
+  rightCal.setMonth(now.plusMonth());
+});

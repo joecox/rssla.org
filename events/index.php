@@ -7,6 +7,14 @@
 <body>
    <div id="wrapper">
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/header.php"); ?>
+
+      <div class="veil" onclick="closeOverlay();"></div>
+      <div class="cal_overlay">
+        <div class="cal_overlay_title">hello</div>
+        <div class="cal_overlay_exit" onclick="closeOverlay();">[x]</div>
+        <div class="cal_overlay_content"></div>
+        
+      </div>
       <div class="main clearfix">
 
         <div id="cal_nav_wrapper">
@@ -27,12 +35,10 @@
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/footer.php"); ?>
    </div>
    
-<script type="text/javascript" charset="utf-8" src="events_objects.js"></script>
+<script type="text/javascript" charset="utf-8" src="events_Utils.js"></script>
+<script type="text/javascript" charset="utf-8" src="events_CalObject.js"></script>
+<script type="text/javascript" charset="utf-8" src="events_EvObject.js"></script>
 <script type="text/javascript" charset="utf-8" src="events.js"></script>
-<script type="text/javascript" charset="utf-8"
-        src="https://www.google.com/calendar/feeds/932agq27os62bh2qo2gg0k3cak%40group.calendar.google.com/public/full?alt=json-in-script&callback=gotEvents">
-</script>
-<!--<script src="https://apis.google.com/js/client.js?onload=apiLoad"></script>-->
 
 </body>
 </html>
