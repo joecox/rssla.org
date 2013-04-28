@@ -187,10 +187,4 @@ $(document).ready(function ()
    $("label.required").append("<span style='color:red'> *</span");
 
    $("input[type='text']").prop("size", "30");
-
-   $(".sidenavitem").click(function ()
-   {
-      $(this).addClass("selected");
-      $(this).parent().siblings("a").children(".sidenavitem").removeClass("selected");
-   });
 });

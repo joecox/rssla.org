@@ -11,7 +11,6 @@
       <div class="main clearfix" style="position: relative">
          <div class="wrap border-bottom shadow-bottom">
             <span class="pagetitle" style="font-size: 2.5rem">STORE</span>
-            <span class="helptext v-align">Click a product image to see more information.</span>
             <span class="cart-min v-align">Your cart (0)</span>
             <div class="cart">
                <div class="emptycart v-align h-align">Your cart is empty</div>
@@ -37,8 +36,8 @@
             <div class="merchwrap">
                <?php
 
-                  $db_connection = mysql_connect(localhost, rssla_scholar, hilltop23);
-                  mysql_select_db(rssla_rss);
+                  $db_connection = mysql_connect("localhost", "rssla_scholar", "hilltop23");
+                  mysql_select_db("rssla_rss");
 
                   $query = "SELECT * FROM merchandise";
                   $result = mysql_query($query);
@@ -79,15 +78,15 @@
                         $size_s_pieces = explode(',', $size_s[$jj]);
 
 
-                        if (ereg("^[0-9]*\.[0-9]{2}$", $prices[$jj]))
+                        if (preg_match("/^[0-9]*\.[0-9]{2}$/", $prices[$jj]))
                         {
                            $price = $prices[$jj];
                         }
-                        else if (ereg("^[0-9]*\.[0-9]{1}$", $prices[$jj]))
+                        else if (preg_match("/^[0-9]*\.[0-9]{1}$/", $prices[$jj]))
                         {
                            $price = $prices[$jj] . "0";
                         }
-                        else if (ereg("^[0-9]*$", $prices[$jj]))
+                        else if (preg_match("/^[0-9]*$/", $prices[$jj]))
                         {
                            $price = $prices[$jj];
                         }

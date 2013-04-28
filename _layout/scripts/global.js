@@ -60,17 +60,24 @@ $(document).ready(function ()
    $(".photobanner[src='']").parent(".bannerwrap").css("display", "none");
 
    // Rowtitle side-line
-   $(".rowtitle").not(".w-o-line").append("<div></div>");
-   $(".rowtitle").not(".w-o-line").children("div").css("position", "absolute");
-   $(".rowtitle").not(".w-o-line").children("div").css("right", "0");
-   $(".rowtitle").not(".w-o-line").children("div").css("background-color", "#ccc");
-   $(".rowtitle").not(".w-o-line").children("div").css("height", "1px");
-   $(".rowtitle").not(".w-o-line").each(function () 
+   $(".rowtitle").append("<div></div>");
+   $(".rowtitle").children("div").css("position", "absolute");
+   $(".rowtitle").children("div").css("right", "0");
+   $(".rowtitle").children("div").css("background-color", "#ccc");
+   $(".rowtitle").children("div").css("height", "1px");
+   $(".rowtitle").each(function () 
    {
       var width = $(this).width() - 20 - $(this).children("span").width();
       $(this).children("div").css("width", width + "px");
       var bottom = ($(this).children("span").height() / 2) - 1;
       $(this).children("div").css("bottom", bottom);
+   });
+
+   // Sidenavitem
+   $(".sidenavitem").click(function ()
+   {
+      $("sidenav").children(".sidenavitem").removeClass("selected");
+      $(this).addClass("selected");
    });
 
    // sponsors align
@@ -198,3 +205,9 @@ $(document).ready(function () {
    });
 });
 
+function selectSideItem (obj)
+{
+   var jobj = $(obj);
+   $(".sidenav").children(".sidenavitem").removeClass("selected");
+   jobj.addClass("selected");
+}

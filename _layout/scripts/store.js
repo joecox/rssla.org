@@ -156,12 +156,12 @@ $(document).ready(function () {
       if(cart_merchObj.inCart)
       {
          incrementCartItem(merch, cart_merchObj.item);
-         updateTotal(merch);
+         updateTotal();
       }
       else
       {
          addCartItem(merch);
-         updateTotal(merch);
+         updateTotal();
       }
       // set total price
    }
@@ -210,46 +210,54 @@ $(document).ready(function () {
       var newCartItem = '<div class="cart-item" id="' + n + '">' +
                            '<img class="prod-min v-align" src="/resources/images/gear/merch_' + merch.img_id + '_cart.png">' +
                            '<span class="prod-name v-align">' + merch.name + '</span>' +
-                           '<input type="text" size="1" value="1" name="quantity" class="prod-quant" onchange="quantityChange()">' +
+                           '<input type="text" size="1" value="1" name="quantity" class="prod-quant" onchange="quantityChange(this)">' +
                            '<span class="prod-price v-align" meta="' + merch.price + '">$' + fixPrecision("" + merch.price) + '</span>' +
                         '</div>'
       $(".cart-item-wrap").append(newCartItem);
-   }
-
-   function updateTotal(merch)
-   {
-      var cur_total_s = $(".total-price").text();
-      var cur_total = parseFloat(cur_total_s.replace('$', ''));
-      var new_total = cur_total + merch.price;
-      var new_total_s = "$" + fixPrecision("" + new_total);
-
-      $(".total-price").text(new_total_s);
-   }
-
-   // Item quantity change
-   function quantityChange ()
-   {
-      var new_quantity = $(this).val();
-      var base_price = parseInt($(this).sibling(".prod-price").attr("meta"));
-
-      var new_total_price = new_quantity * base_price;
-
-      $(this).sibling(".prod-price").text('$' + fixPrecision("" + new_total_price));
-   }
-
-   function fixPrecision (price)
-   {
-      var patt1 = /^[0-9]*\.[0-9]{2}$/;
-      var patt2 = /^[0-9]*\.[0-9]{1}$/;
-      var patt3 = /^[0-9]*$/;
-
-      if(patt1.test(price) || patt3.test(price))
-      {
-         return price;
-      }
-      else if (patt2.test(price))
-      {
-         return (price + "0");
-      }
-   }
+   }   
 });
+
+function updateTotal()
+{
+   var prices = $(".prod-price");
+   var new_total = 0;
+   for (var ii = 0; ii < prices.size(); ii++)
+   {
+      var price_s = $(prices[ii]).text();
+      var price = parseFloat(price_s.replace('$', ''));
+      new_total += price;
+   }
+   var new_total_s = "$" + fixPrecision("" + new_total);
+
+   $(".total-price").text(new_total_s);
+}
+
+// Item quantity change
+function quantityChange (obj)
+{
+   var jobj = $(obj);
+   var new_quantity = jobj.val();
+   var base_price = parseFloat(jobj.siblings(".prod-price").attr("meta"));
+
+   var new_total_price = new_quantity * base_price;
+
+   jobj.siblings(".prod-price").text('$' + fixPrecision("" + new_total_price));
+
+   updateTotal();
+}
+
+function fixPrecision (price)
+{
+   var patt1 = /^[0-9]*\.[0-9]{2}$/;
+   var patt2 = /^[0-9]*\.[0-9]{1}$/;
+   var patt3 = /^[0-9]*$/;
+
+   if(patt1.test(price) || patt3.test(price))
+   {
+      return price;
+   }
+   else if (patt2.test(price))
+   {
+      return (price + "0");
+   }
+}

@@ -83,8 +83,8 @@
       </a>
    </span>
    <span class="navcol">
-      <a href="#">
-         <div class="navbutton coming" meta="COMING SOON">
+      <a href="/alumni/">
+         <div class="navbutton">
             <div class="oneline">ALUMNI</div>
          </div>
       </a>
@@ -97,8 +97,8 @@
       </a>
    </span>
    <span class="navcol">
-      <a href="/store/">
-         <div class="navbutton">
+      <a href="#">
+         <div class="navbutton coming" meta="COMING 5/3">
             <div class="oneline">STORE</div>
          </div>
       </a>
