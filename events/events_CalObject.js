@@ -150,7 +150,7 @@ function ()
     this.days[ii].events.sort(
       function (a, b)
       {
-        return (a.sdate - b.sdate);
+         return (a.getSortMetric() - b.getSortMetric());
       });
 
     var calEv;
@@ -167,7 +167,7 @@ function ()
             .append(
                 $('<span>')
                   .addClass("time")
-                  .html(calEv.sdate.timeStr() + "- ")
+                  .html(calEv.getTimePrefixString())
                 )
             .append(
                 $('<span>')

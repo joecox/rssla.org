@@ -161,7 +161,7 @@ function buildEventDesc(e)
       .append(($timing =  $('<span>').addClass('event_time')));
 
   $title.html(e.title);
-  $timing.html(e.sdate.timeStr() + ' - ' + e.edate.timeStr());
+  $timing.html(e.getTimeBoundsString());
 
   if (e.loc) $div.append($('<span>').addClass('event_loc').html(e.loc));
 
