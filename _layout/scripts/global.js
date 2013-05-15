@@ -60,12 +60,12 @@ $(document).ready(function ()
    $(".photobanner[src='']").parent(".bannerwrap").css("display", "none");
 
    // Rowtitle side-line
-   $(".rowtitle").append("<div></div>");
-   $(".rowtitle").children("div").css("position", "absolute");
-   $(".rowtitle").children("div").css("right", "0");
-   $(".rowtitle").children("div").css("background-color", "#ccc");
-   $(".rowtitle").children("div").css("height", "1px");
-   $(".rowtitle").each(function () 
+   $(".rowtitle").not(".top").append("<div></div>");
+   $(".rowtitle").not(".top").children("div").css("position", "absolute");
+   $(".rowtitle").not(".top").children("div").css("right", "0");
+   $(".rowtitle").not(".top").children("div").css("background-color", "#ccc");
+   $(".rowtitle").not(".top").children("div").css("height", "1px");
+   $(".rowtitle").not(".top").each(function () 
    {
       var width = $(this).width() - 20 - $(this).children("span").width();
       $(this).children("div").css("width", width + "px");

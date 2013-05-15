@@ -247,6 +247,19 @@ div#col7 {left: 875px;}
                 -2px -2px 5px black;
 }
 
+.fullpage-contwrap {padding-top: 20px;}
+
+.topnav {
+   text-align: center;
+   display: inline-block;
+}
+.topnavitem {
+   padding: 5px 4px;
+   cursor: pointer;
+}
+.topnavitem:hover {background-color: #dadada;}
+.topnavitem.selected {background-color: #dadada;}
+
 .clearfix {
    display: block;
 }

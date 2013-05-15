@@ -1,28 +1,26 @@
 <div class="nav">
    <span class="navcol">
-      <a href="#">
-         <div class="navbutton coming" meta="COMING SOON">
+      <a href="/about/">
+         <div class="navbutton">
             <div class="oneline">ABOUT</div>
          </div>
       </a>
-<!--
       <div class="drop-down" id="col0">
          <div>
-            <a href="/about/society.php">
+            <a href="/about/society">
                <div class="navitem">Society</div>
             </a>
-            <a href="/about/scholarship.php">
+            <a href="/about/scholarship">
                <div class="navitem">Scholarship</div>
             </a>
-            <a href="/about/constitution.php">
+            <a href="/about/constitution">
                <div class="navitem">Constitution</div>
             </a>
-            <a href="/about/leadership.php">
+            <a href="/about/leadership">
                <div class="navitem">Leadership</div>
             </a>
          </div>
       </div>
--->
    </span>
    <span class="navcol">
       <a href="#">
