@@ -20,13 +20,13 @@
         <div id="cal_nav_wrapper">
           <div class="cal_nav_button">
             <img src="/resources/images/UI/prevbutton.png"
-                 onclick="slide_cal_right()">
+                 onclick="slide_cal_right()" style="cursor:pointer">
           </div>
           <div id="calendar_canvas">
           </div>
           <div class="cal_nav_button">
             <img src="/resources/images/UI/nextbutton.png"
-                 onclick="slide_cal_left()">
+                 onclick="slide_cal_left()" style="cursor:pointer">
           </div>
         </div>
 

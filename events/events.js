@@ -172,21 +172,31 @@ function buildEventDesc(e)
                              .attr('target', '_blank')
                              .html('Google Cal.')));
 
-  if (e.desc) $div.append($('<div>').addClass('event_desc').html(e.desc));
-
   $fb_link.html("Facebook");
-  if (false /*haveFbLink()*/) 
+  if (haveFbLink(e))
   {
-    $fb_link.attr("href", "fblink")
+    var fb_s = /http[s]?:\/\/www.facebook.com\/events\/[0-9]*[\/]?/;
+    var fblink = fb_s.exec(e.desc);
+    $fb_link.attr("href", fblink);
   }
   else
   {
     $fb_link.addClass('nolink');
   }
 
+  var new_desc = e.desc.replace(/http[s]?:\/\/www.facebook.com\/events\/[0-9]*[\/]?/, '');
+
+  if (new_desc) $div.append($('<div>').addClass('event_desc').html(new_desc));
+
   return $div;
 }
 
+function haveFbLink(e)
+{
+  var fb_s = /facebook.com/;
+  
+  return fb_s.test(e.desc);
+}
 
 function closeOverlay()
 {
@@ -311,7 +321,7 @@ function monyearup(monyear)
 
 $(document).ready(function ()
 {
-  $("body").append('<script type="text/javascript" charset="utf-8" src="https://www.google.com/calendar/feeds/932agq27os62bh2qo2gg0k3cak%40group.calendar.google.com/public/full?alt=json-in-script&callback=gotEvents"><\/script>');
+  $("body").append('<script type="text/javascript" charset="utf-8" src="https://www.google.com/calendar/feeds/u0s3n2gjmha0e30f1v13houo0o%40group.calendar.google.com/public/full?alt=json-in-script&callback=gotEvents"><\/script>');
   now = new Date();
   centerDate = now;
 
