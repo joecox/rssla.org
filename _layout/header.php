@@ -17,7 +17,7 @@
    <div id="photobar">
       <?php
          $db_connection = mysql_connect("localhost", "rssla_scholar", "hilltop23") or die("Could not connect to database");
-         mysql_select_db("rssla_rss");
+         mysql_select_db("rssla_rss", $db_connection) or die("select failed");
          $getSL = "SELECT * FROM instagram";
          $result = mysql_query($getSL);
          $i = 0;
