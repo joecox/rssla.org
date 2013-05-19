@@ -55,7 +55,7 @@
 
                   for ($ii = 0; $ii < sizeof($ids); $ii = $ii + 4)
                   {
-                     echo '<div class="merchrow">';
+                     echo '<div class="merchrow" rownum=' . ($ii / 4) . '>';
                      for ($jj = $ii; $jj < $ii + 4 && $jj < sizeof($ids); $jj++)
                      {
                         switch ($jj % 4)
@@ -120,6 +120,9 @@
 
                ?>
             </div>
+         </div>
+         <div class="wrap border-top shadow-top" style="text-align:center">
+            <div>Send questions or ideas for new merchandise to <?php echo $publFL; ?> at <a class="norm" href="mailto:publicity@rssla.org">publicity@rssla.org</a></div>
          </div>
          <div class="veil"></div>
          <div class="overlay">

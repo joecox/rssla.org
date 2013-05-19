@@ -14,7 +14,10 @@ $(document).ready(function ()
          ;
       else
          $(this).parent().css("position", "relative");
-      var top = ($(this).parent().height() / 2) - ($(this).height() / 2);
+      var top = ($(this).parent().height() / 2) 
+                  - ($(this).height() / 2)
+                  - (parseInt($(this).css("padding-top")) / 2)
+                  - (parseInt($(this).css("padding-bottom")) / 2);
       $(this).css("top", top);
    });
 

@@ -395,6 +395,13 @@ height: auto;
 .shadow-bottom {
    box-shadow: 0 5px 5px -5px #ccc;
 }
+.border-top {
+   padding-top: 10px;
+   border-top: 1px solid #ccc;
+}
+.shadow-top {
+   box-shadow: 0 -5px 5px -5px #ccc;
+}
 
 .blocktitle {
    font-size: 1.5rem;

@@ -110,7 +110,14 @@
 .cart-min {
    position: absolute;
    right: 40px;
-   cursor: default;
+   cursor: pointer;
+   padding: 6px 8px;
+   background: rgb(36,115,211);
+   opacity: 0.8;
+   color: white;
+}
+.cart-min:hover {
+   opacity: 1;
 }
 .cart {
    position: absolute;

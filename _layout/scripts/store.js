@@ -24,10 +24,10 @@ $(document).ready(function () {
    $(".product").attr("src", "/resources/images/gear/merch_placeholder_large.png");
 
    // Cart UI
-   $(".cart-min").hover(function () {
+   $(".cart-min").click(function () {
       $(".cart").css("z-index", 10);
       $(".cart").animate({opacity: 1.0}, 200);
-   }, function () {});
+   });
 
    $(".cart").hover(function () {}, function () {
       $(this).animate({opacity: 0}, 200, function () {
@@ -61,15 +61,25 @@ $(document).ready(function () {
       var price = parseFloat(price_s.replace('$', ''));
 
       // calculate frame dimensions
+      if (merchObj.hasClass("left"))
+         var frame_w = 810;
+      else if (merchObj.hasClass("mid-left"))
+         var frame_w = 570;
+      else if (merchObj.hasClass("mid-right"))
+         var frame_w = 330;
+      else if (merchObj.hasClass("right"))
+         var frame_w = 90;
 
+      var rownum = parseInt(merchObj.parent().attr("rownum"));
+      var frame_h = 170 + (rownum * 327);
 
       // create the item object
       var merch = {
          img_id: img_id,
-         frame_h: 200,
-         frame_w: 830,
+         frame_h: frame_h,
+         frame_w: frame_w,
          frame_top: 25,
-         frame_left: 60,
+         frame_right: 40,
          price: price,
          size: size,
          name: name
@@ -91,7 +101,7 @@ $(document).ready(function () {
       $(".main").append('<div class="item-add-frame"></div>');
       var frame = $(".item-add-frame");
       frame.css("top", merch.frame_top + "px")
-           .css("left", merch.frame_left + "px")
+           .css("right", merch.frame_right + "px")
            .css("height", merch.frame_h + "px")
            .css("width", merch.frame_w + "px");
 
@@ -103,8 +113,8 @@ $(document).ready(function () {
       frame.append('<img class="item-add-sprite">');
       sprite = $(".item-add-sprite");
       sprite.attr("src", "/resources/images/gear/merch_" + merch.img_id + "_sprite.png")
-            .css("top", "160px")
-            .css("right", "790px")
+            .css("top", merch.frame_h)
+            .css("right", merch.frame_w)
             .css("width", "40px");
 
       return sprite;
@@ -113,7 +123,7 @@ $(document).ready(function () {
    function animateSprite(sprite, frame, merch, callback)
    {
       sprite.fadeIn(200, function () {
-         sprite.animate({top: 0, right: 0}, function () {
+         sprite.animate({top: -3, right: 30}, function () {
             sprite.fadeOut(200, callback(sprite, frame));
          });
       });
@@ -214,7 +224,7 @@ $(document).ready(function () {
                            '<span class="prod-price v-align" meta="' + merch.price + '">$' + fixPrecision("" + merch.price) + '</span>' +
                         '</div>'
       $(".cart-item-wrap").append(newCartItem);
-   }   
+   }
 });
 
 function updateTotal()
@@ -241,9 +251,30 @@ function quantityChange (obj)
 
    var new_total_price = new_quantity * base_price;
 
+   var cur_quantity = parseFloat((jobj.siblings(".prod-price").text()).replace('$', '')) / base_price;
+
    jobj.siblings(".prod-price").text('$' + fixPrecision("" + new_total_price));
 
    updateTotal();
+
+   var diff = new_quantity - cur_quantity;
+   var cur_total_q = getCartMin();
+   var diff_total_q = cur_total_q + diff;
+   updateCartMin(diff_total_q);
+}
+
+function getCartMin()
+{
+   var text = $(".cart-min").text();
+   var patt2 = new RegExp("[(].*[)]");
+   var result = patt2.exec(text);
+   var n = parseInt(result[0].replace(/[()]/g, ''));
+   return n;
+}
+
+function updateCartMin(n)
+{
+   $(".cart-min").text("Your cart (" + n.toString() + ")");
 }
 
 function fixPrecision (price)
