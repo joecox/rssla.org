@@ -98,6 +98,10 @@ switch($session)
       break;
    case 6:
       mail("outreach@rssla.org", $subj, $msg, $from_addr);
+      mail("nanayogibear@yahoo.com", $subj, $msg, $from_addr);
+      mail("elizabethjm@live.com", $subj, $msg, $from_addr);
+      mail("lmi12@cox.net", $subj, $msg, $from_addr);
+      mail("melcab@gmail.com", $subj, $msg, $from_addr);
 }
 
 mail("joeyalancox@gmail.com", "OSP Check for Payment", $_POST['first'].' '.$_POST['last'].' has signed up for session '.$session.', please check for payment.', $from_addr);

@@ -55,11 +55,12 @@
                   <a class="norm" href="/resources/docs/osp/OSP_Session3_Itinerary_2013.pdf">Session 3</a> | 
                   <a class="norm" href="/resources/docs/osp/OSP_Session4_Itinerary_2013.pdf">Session 4</a> | 
                   <a class="norm" href="/resources/docs/osp/OSP_Session5_Itinerary_2013.pdf">Session 5</a> | 
-                  <a class="norm" href="/resources/docs/osp/OSP_Transfer_Itinerary_2013.pdf">Transfer</a>
+                  <a>Transfer</a>
                </p>
             </div>
             <div class="rowtitle" id="signup"><span>Sign up for OSP</span></div>
             <div class="contentblock">
+               <p><b>Due to unforeseen delays within the selection process that are completely outside the Society's control, Transfer OSP, which was scheduled for May 10-11, has been cancelled. As an alternative, we will be offering a day-long event on Thursday, May 30. Check back soon for a detailed itinerary, which will include lunch, a Q&A panel with current Regents Scholars, and a campus tour. The fee will be reduced to $10 and will include a T-shirt and a meal in the dorms.</b></p>
                <p>We offer six different sessions:</p>
                <ul>
                   <li>Session 1: April 4 - 6 <span style="font-style: italic">(Thursday - Saturday)</span><b style="padding-left: 10px">Session signups closed</b></li>
@@ -67,11 +68,9 @@
                   <li>Session 3: April 11 - 13 <span style="font-style: italic">(Thursday - Saturday)</span><b style="padding-left: 10px">Session signups closed</b></li>
                   <li>Session 4: April 13 - 15 <span style="font-style: italic">(Saturday - Monday)</span><b style="padding-left: 10px">Session signups closed</b></li>
                   <li>Session 5: April 18 - 20 <span style="font-style: italic">(Thursday - Saturday)</span><b style="padding-left: 10px">Session signups closed</b></li>
-                  <li>Transfer Session: May 10 - 11 <span style="font-style: italic">(Saturday - Sunday)</span></li>
+                  <li>Transfer Session: May 30</li>
                </ul>
-               <p>Once you've chosen the session to want to attend, sign up through the link below.  The registration periods for each session are now open, and close when a session is less than 3 days away.</p>
-               <p><b>The fee for this year's OSP sessions is $20</b>, payable by PayPal. This helps us cover almost all of your meals, bus fares, your OSP T-shirt, and much more. You will be redirected to PayPal upon signing up for your session.</p>
-               <p>Because it is our priority to provide an OSP experience that is tailored to the individual needs of each prospective student, <b>each session will be limited to 30 prospective scholars</b>, after which it will be listed as full. Our program tends to be quite popular, so make sure to sign up early. If a session is full and you are absolutely unable to make it to any of the other available sessions, please email Jeff Lewis, the Outreach Director, at <a class="norm" href="mailto:outreach@rssla.org">outreach@rssla.org</a>, with a brief explanation of your circumstances. </p>
+               <p>If you will be attending the Bruin Transfer Days events on April 10-11 and are looking to stay overnight in UCLA's residence halls with a current Regents Scholar, shoot Jeff, the Outreach Director, an email at <a class="norm" href="mailto:outreach@rssla.org">outreach@rssla.org</a> and we will do our best to make accommodations free of charge. If you have been invited to apply for the scholarship and submitted the application, you are eligible for this (you need not have received the scholarship yet).</p>
                <div class="buttonwrap">
                   <a href="signup.php">
                      <span class="button">Sign up for OSP</span>

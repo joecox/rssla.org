@@ -176,8 +176,8 @@ $(document).ready(function ()
    });
    $(".button.radio[value='6']").hover(function () 
    {
-      $(this).css("padding", "5px 8px");
-      $(this).text("May 10 - 11");
+      $(this).css("padding", "5px 18px");
+      $(this).text("May 30");
    }, function ()
    {
       $(this).css("padding", "5px 15px");
