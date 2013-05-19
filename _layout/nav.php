@@ -16,9 +16,11 @@
             <a href="/about/constitution">
                <div class="navitem">Constitution</div>
             </a>
+            <!--
             <a href="/about/leadership">
                <div class="navitem">Leadership</div>
             </a>
+            -->
          </div>
       </div>
    </span>

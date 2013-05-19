@@ -22,9 +22,11 @@
          		<span class="topnavitem selected">
          			<a href="/about/constitution">Constitution</a>
          		</span>
-         		<span class="topnavitem">
-         			<a href="/about/leadership">Leadership</a>
-         		</span>
+         		<!--
+               <span class="topnavitem">
+                  <a href="/about/leadership">Leadership</a>
+               </span>
+               -->
          	</div>
          </div>
          <div class="cont solo">
