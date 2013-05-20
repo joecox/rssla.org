@@ -273,9 +273,12 @@ function quantityChange (obj)
 
 function removeCartRow(cartrow)
 {
-   cartrow.slideUp().remove();
-   if(!anyCartRows())
-      resetCart();
+   cartrow.slideUp(200, function () { 
+      $(this).remove(); 
+      if(!anyCartRows())
+         resetCart();
+   });
+   
 }
 
 function anyCartRows()
