@@ -247,7 +247,10 @@ div#col7 {left: 875px;}
                 -2px -2px 5px black;
 }
 
-.fullpage-contwrap {padding-top: 20px;}
+.fullpage-contwrap {
+   padding-top: 20px;
+   position: relative;
+}
 
 .topnav {
    text-align: center;
@@ -387,6 +390,10 @@ height: auto;
    font-weight: 400;
    margin: 0 20px 30px;
    color: rgb(36, 114, 211);
+}
+.pagetitle.little {
+   margin: 0;
+   font-size: 1.5rem;
 }
 .border-bottom {
    padding-bottom: 15px;
@@ -720,7 +727,7 @@ input.hidden {
    padding: 12px 13px;
 }
 
-.login-box .dropdown {
+.dropdown {
    max-height: 0;
    overflow: hidden;
    margin: 0;
@@ -730,20 +737,20 @@ input.hidden {
    z-index: 10;
 }
 
-.login-box .dropdown ul {padding: none;}
+.dropdown ul {padding: none;}
 
-.login-box .dropdown li {
+.dropdown li {
    border-bottom: 1px solid #bbb;
    padding: 12px 12px;
    margin: 0;
    cursor: pointer;
    background: white;
 }
-.login-box .dropdown li:hover {
+.dropdown li:hover {
    background: rgb(188, 211, 240);
 }
 
-.login-box .dropdown li.last {border: none;}
+.dropdown li.last {border: none;}
 
 .selector:hover {background: rgba(36, 113, 211, 0.30);}
 .selector.active {

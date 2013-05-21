@@ -166,6 +166,12 @@
    right: 10px;
    font-size: 1.2rem;
 }
+.prod-size {
+   font-style: italic;
+   position: absolute;
+   bottom: 5px;
+   left: 75px;
+}
 .total-bar {
    opacity: 0;
    height: 30px;
@@ -241,4 +247,14 @@
 .overlay img {
    width: 400px;
    height: 600px;
+}
+
+
+/* CHECKOUT ******************************************************************/
+.checkoutUI {
+   position: absolute;
+   width: 700px;
+   right: 20px;
+   top: 20px;
+   display: none;
 }

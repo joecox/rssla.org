@@ -26,8 +26,7 @@
                </div>
                <div class="checkout">
                   <span class="v-align h-align">
-                     <span class="button">Members checkout</span>
-                     <span class="button">Alumni checkout</span>
+                     <span class="button" onclick="goToCheckout()">Checkout</span>
                   </span>
                </div>
             </div>
@@ -122,7 +121,7 @@
             </div>
          </div>
          <div class="wrap border-top shadow-top" style="text-align:center">
-            <div>Send questions or ideas for new merchandise to <?php echo $publFL; ?> at <a class="norm" href="mailto:publicity@rssla.org">publicity@rssla.org</a></div>
+            <span>Send questions or ideas for new merchandise to <?php echo $publFL; ?> at <a class="norm" href="mailto:publicity@rssla.org">publicity@rssla.org</a>.</span>
          </div>
          <div class="veil"></div>
          <div class="overlay">

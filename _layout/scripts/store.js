@@ -20,9 +20,6 @@ $(document).ready(function () {
       $(this).children(".merchtext").fadeOut(200);
    });
 
-   // temp
-   $(".product").attr("src", "/resources/images/gear/merch_placeholder_large.png");
-
    // Cart UI
    $(".cart-min").click(function () {
       $(".cart").css("z-index", 10);
@@ -51,10 +48,25 @@ $(document).ready(function () {
                          .children("div:first-child")
                          .children(".productname")
                          .text();
-      var size = merchObj.children(".infowrap")
-                         .children("div:first-child")
-                         .children("select")
-                         .val();
+      var size_abbrev = merchObj.children(".infowrap")
+                           .children("div:nth-child(2)")
+                           .children("select")
+                           .val();
+      switch (size_abbrev) 
+      {
+         case 'S':
+            var size = "Small";
+            break;
+         case 'M':
+            var size = "Medium";
+            break;
+         case 'L':
+            var size = "Large";
+            break;
+         case 'XL':
+            var size = "Extra Large";
+            break;
+      }
       var price_s = merchObj.children(".productwrap")
                             .children(".merchprice")
                             .text();
@@ -181,7 +193,9 @@ $(document).ready(function () {
       var names = $(".prod-name");
       for (ii = 0; ii < names.size(); ii++)
       {
-         if (names[ii].textContent == merch.name)
+         if (names[ii].textContent == merch.name &&
+             ($(names[ii]).siblings(".prod-size").text() == merch.size || 
+              merch.size == null))
          {
             var obj = {
                inCart: true,
@@ -221,8 +235,10 @@ $(document).ready(function () {
                            '<img class="prod-min v-align" src="/resources/images/gear/merch_' + merch.img_id + '_cart.png">' +
                            '<span class="prod-name v-align">' + merch.name + '</span>' +
                            '<input type="text" size="1" value="1" name="quantity" class="prod-quant" onchange="quantityChange(this)">' +
-                           '<span class="prod-price v-align" meta="' + merch.price + '">$' + fixPrecision("" + merch.price) + '</span>' +
-                        '</div>'
+                           '<span class="prod-price v-align" meta="' + merch.price + '">$' + fixPrecision("" + merch.price) + '</span>';
+      if (merch.size != null)
+         newCartItem += '<span class="prod-size">' + merch.size + '</span>';
+      newCartItem += '</div>';
       $(".cart-item-wrap").append(newCartItem);
    }
 });
@@ -330,3 +346,72 @@ function fixPrecision (price)
       return (price + "0");
    }
 }
+
+function goToCheckout()
+{
+   var form = '<form method="POST" action="checkout.php">';
+   var items = $(".cart-item");
+   for(ii = 0; ii < items.size(); ii++)
+   {
+      form += '<input type="hidden" name="id' + ii + 
+              '" value="' + $(items[ii]).attr("id") + '">';
+
+      var srcpat = /_.*_/;
+      var imgid = srcpat.exec($(items[ii]).children("img").attr("src"))[0]
+                      .replace(/_/g, '');
+      form += '<input type="hidden" name="img-id' + ii + 
+              '" value="' + imgid + '">';
+      form += '<input type="hidden" name="item-name' + ii + 
+              '" value="' + $(items[ii]).children(".prod-name").text() + '">';
+      form += '<input type="hidden" name="item-quant' + ii + 
+              '" value="' + $(items[ii]).children(".prod-quant").val() + '">';
+      form += '<input type="hidden" name="item-price' + ii + 
+              '" value="' + $(items[ii]).children(".prod-price").attr("meta") + '">';
+      if ($(items[ii]).children(".prod-size").length > 0)
+         size = $(items[ii]).children(".prod-size").text();
+      else
+         size = "null";
+
+      form += '<input type="hidden" name="item-size' + ii + 
+              '" value="' + size + '">';
+   }
+   form += '</form>';
+   
+   $(".main").append(form);
+   $("form").submit();
+}
+
+// Checkout JS
+$(document).ready(function ()
+{
+   $(".dropdown").children("li").click(function ()
+   {
+      setTimeout(function ()
+      {
+         $(".wrapper-dropdown").animate({ margin: "0 20px" }, 200, function ()
+         {
+            var checkoutUI =  '<div class="checkoutUI">' +
+                                 'Blah<br>' +
+                                 'Blah<br>' +
+                                 'Blah<br>' +
+                                 'Blah<br>' +
+                                 'Blah<br>' +
+                                 'Blah<br>' +
+                                 'Blah<br>' +
+                                 'Blah<br>' +
+                                 'Blah<br>' +
+                                 'Blah<br>' +
+                                 'Blah<br>' +
+                                 'Blah<br>' +
+                                 'Blah<br>' +
+                                 'Blah<br>' +
+                                 'Blah<br>' +
+                              '</div>';
+            $(checkoutUI).appendTo($(".fullpage-contwrap")).slideDown(200);
+            var outerheight = $(".checkoutUI").height() + 20;
+            $(".fullpage-contwrap").animate({height: outerheight + "px"}, 200);
+         });
+      }, 200);
+   });
+
+});

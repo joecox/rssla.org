@@ -19,6 +19,9 @@
          <!-- PLACE CONTENT HERE -->
 
          </div>
+         <div class="wrap border-top shadow-top" style="text-align:center">
+            <span><!-- EXTRA INFO GOES HERE --></span>
+         </div>
       </div>
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/footer.php"); ?>
    </div>
