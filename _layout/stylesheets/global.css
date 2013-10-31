@@ -1,24 +1,27 @@
 /* ========== GLOBAL STYLES ========== */
 html {
    font-size: 16px;
-   -webkit-touch-callout: none;
+   /*-webkit-touch-callout: none;
      -webkit-user-select: none;
       -khtml-user-select: none;
         -moz-user-select: none;
          -ms-user-select: none;
-             user-select: none;
+             user-select: none;*/
 }
 
 body {
    background-color: #eaeaea;
    margin: 0;
    font-family: 'ProximaNova', 'Helvetica', sans-serif;
+   overflow-x: hidden;
 }
 
 a {
    text-decoration: none;
    color: black;
 }
+
+h1 { font-weight: 300; }
 
 .wrap {position: relative;}
 .center {text-align: center;}
@@ -33,11 +36,11 @@ a.norm:visited {color: blue;}
 
 .fillcontainer {width: 709px; padding: 0 20px;}
 img.fill {
-  width: 100%;
+   width: 100%;
 }
-li {
+/*li {
    margin-bottom: 10px;
-}
+}*/
 body.dialog-open { overflow: hidden; }
 
 #wrapper {
@@ -87,10 +90,13 @@ body.dialog-open { overflow: hidden; }
    margin-left: -58px;
 }
 
+.m20 { margin: 20px; }
+.c { margin-left: auto; margin-right: auto; text-align: center; }
+
 /* HEADER */
 
 #header {
-   margin: 20px 0 20px 0;
+   margin: 10px 0 15px 0;
    position: relative;
    width: 100%;
    height: 200px;
@@ -102,11 +108,12 @@ body.dialog-open { overflow: hidden; }
 
 #seal {
    position: absolute;
-   top: -10px;
+   top: 0;
    left: -10px;
-   width: 150px;
-   height: 150px;
+   width: 130px;
+   height: 130px;
    background-image: url("/resources/images/seal150_norm.png");
+   background-size: cover;
    z-index: 5;
    -webkit-transition: opacity 0.25s;
       -moz-transition: opacity 0.25s;
@@ -118,11 +125,12 @@ body.dialog-open { overflow: hidden; }
 
 #sealbehind {
    position: absolute;
-   top: -10px;
+   top: 0;
    left: -10px;
-   width: 150px;
-   height: 150px;
+   width: 130px;
+   height: 130px;
    background-image: url("/resources/images/seal150_white.png");
+   background-size: cover;
    z-index: 4;
 }
 
@@ -131,13 +139,14 @@ body.dialog-open { overflow: hidden; }
    font-size: 1.2rem;
    font-weight: 300;
    position: absolute;
-   top: 40px;
-   height: 50px;
-   width: 505px;
+   top: 5px;
+   left: 65px;
+   height: 35px;
+   width: 410px;
    box-shadow: 4px 4px 25px black;
    background-color: rgb(61,106,162);
    opacity: 0.9;
-   border-radius: 10px;
+   border-radius: 3px;
    z-index: 3;
    cursor: default;
 }
@@ -146,7 +155,7 @@ body.dialog-open { overflow: hidden; }
 }
 #banner div {
    margin-right: 15px;
-   padding: 15px 0;
+   padding: 7px 0;
 }
 
 #photobar-overlay {
@@ -158,63 +167,131 @@ body.dialog-open { overflow: hidden; }
    z-index: 1;
 }
 
-#photobar {opacity: 0.9; position: relative;}
-#photobar img {width: 200px; position: absolute;}
+#photobarCoverPanelRight {
+   height: 210px;
+   position: absolute;
+   background: #eaeaea;
+   z-index: -1;
+}
+
+#photobar {
+   opacity: 0.9; 
+   position: relative; 
+   z-index: -5;
+}
+#photobar img {
+   width: 200px;
+   position: absolute;
+}
+
+/* Flipper */
+
+/*.flip-container {
+   -webkit-perspective: 1000;
+      -moz-perspective: 1000;
+           perspective: 1000;
+}
+.flip-container.flipped .flipper {
+   -webkit-transform: rotateX(180deg);
+      -moz-transform: rotateX(180deg);
+       -ms-transform: rotateX(180deg);
+           transform: rotateX(180deg);
+}
+.flipper {
+   -webkit-transition: 0.6s;
+      -moz-transition: 0.6s;
+       -ms-transition: 0.6s;
+           transition: 0.6s;
+
+   -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+           transform-style: preserve-3d;
+
+   position: relative;
+}
+.front, .back {
+   -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+           backface-visibility: hidden;
+
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+.front { z-index: 2 }
+.back {
+   -webkit-transform: rotateX(180deg);
+      -moz-transform: rotateX(180deg);
+           transform: rotateX(180deg);
+}*/
 
 /* NAVBAR */
 
 .nav {
    position: absolute;
    right: 0;
-   bottom: 0;
+   bottom: -5px;
    text-align: center;
    z-index: 2;
    background-color: rgba(61,106,162,0.85);
-   border-radius: 10px;
+   border-radius: 3px;
    box-shadow: 0 12px 10px -10px black;
 }
-
+.nav ul {
+   padding: 0;
+   margin: 0;
+   list-style: none;
+}
+.navbar {
+   display: table;
+   width: 100%;
+   table-layout: fixed;
+   border-collapse: collapse;
+}
+.nav > table.navbar td:first-child { border-left: none; }
 .navbutton {
-   width: 125px;
-   height: 50px;
-   float: left;
-   border-radius: 10px;
+   position: relative;
+   display: table-cell;
+   width: 108px;
+   height: 35px;
+   /*border-left: 1px solid #bbb;*/
+   cursor: pointer;
+   vertical-align: middle;
 }
-.navcol:hover .navbutton {
-   background-color: #3d6aa2;
-   color: #ebc62f;
-   border-radius: 0;
-}
-.navbutton:hover {
-   background-color: #3d6aa2;
-   color: #ebc62f;
-   border-radius: 0;
-}
-.navcol:hover .drop-down {display: block;}
-.navbutton div.oneline {padding: 16px 0;}
-.navbutton div.twoline {padding: 7px 0;}
-
-.navcol {}
-
-.nav .drop-down {
+.navbutton a { color: white; }
+.navbutton .navtext { text-transform: uppercase; }
+.navbutton:hover { background-color: #3d6aa2; }
+.navbutton:hover .navtext { color: #ebc62f; }
+.nav > .dropdown-bar {
    display: none;
+   width: 100%;
+   table-layout: fixed;
+   border-collapse: collapse;
    position: absolute;
-   width: 125px;
-   top: 50px;
-   background-color: #3d6aa2;
-   padding: 5px 0;
 }
-div#col0 {left: 0;}
-div#col1 {left: 125px;}
-div#col2 {left: 250px;}
-div#col3 {left: 375px;}
-div#col4 {left: 500px;}
-div#col5 {left: 625px;}
-div#col6 {left: 750px;}
-div#col7 {left: 875px;}
-
-.navitem {padding: 3px 0;}
-.navitem:hover {background-color: #2a4c76;}
+.nav > .dropdown-bar  td:first-child { border-left: none; }
+.nav > .dropdown-bar  td:last-child { border-right: none; }
+.nav-list {
+   display: table-cell;
+   visibility: hidden;
+   width: 108px;
+   background-color: #3d6aa2;
+   /*border: 1px solid #bbb;
+   border-top: none;
+   border-top-left-radius: 0;
+   border-top-right-radius: 0;*/
+   empty-cells: empty;
+   vertical-align: middle;
+   padding: 0;
+}
+.nav-list li:first-child { margin-top: 3px; }
+.nav-list li:last-child { margin-bottom: 3px; }
+.nav-list li {
+   padding: 3px 0;
+   margin: 1px 0;
+   height: 18px;
+}
+.nav-list li:hover { background-color: #2a4c76; }
 
 /* MAIN */
 
@@ -225,6 +302,8 @@ div#col7 {left: 875px;}
    border: 1px solid #c2c2c2;
    padding: 20px 0 10px;
    font-weight: 300;
+   z-index: 0;
+   position: relative;
 }
 
 .with-banner {padding-top: 0;}
@@ -252,12 +331,30 @@ div#col7 {left: 875px;}
    position: relative;
 }
 
+.titlebar.link {
+   position: absolute;
+   right: 40px;
+   font-size: 1.1rem;
+}
+
+.flatbutton {
+   cursor: pointer;
+   padding: 6px 8px;
+   background: #2473D3;
+   opacity: 0.8;
+   color: #fff;
+}
+.flatbutton:hover {
+   opacity: 1;
+}
+
 .topnav {
    text-align: center;
    display: inline-block;
 }
 .topnavitem {
    padding: 5px 4px;
+   margin: 0 2px;
    cursor: pointer;
 }
 .topnavitem:hover {background-color: #dadada;}
@@ -479,6 +576,8 @@ height: auto;
    color: white;
 }
 
+#sidebar .pagetitle { margin-bottom: 20px; }
+
 .sidenavitem {
    font-size: 1.2rem;
    font-weight: 400;
@@ -502,6 +601,42 @@ height: auto;
 }
 
 .v-align, .h-align {position: absolute;}
+
+table.data {
+   border-collapse: collapse;
+   border: none;
+   table-layout: fixed;
+   text-align: left;
+}
+table.data th {
+   background: rgb(200,200,200);
+}
+table.data tbody tr:nth-child(even) {
+   background: rgb(208, 229, 255);
+}
+table.data th,
+table.data td {
+   padding: 5px;
+}
+
+.main .topbar {
+   position: relative;
+   padding-bottom: 15px;
+   border-bottom: 1px solid #ccc;
+   box-shadow: 0 5px 5px -5px #ccc;
+}
+.main .topbar .pagetitle {
+   text-transform: uppercase;
+}
+
+.main .bottombar {
+   position: relative;
+   text-align: center;
+   padding-top: 10px;
+   border-top: 1px solid #ccc;
+   box-shadow: 0 -5px 5px -5px #ccc;
+}
+
 /* CUSTOM FONTS */
 
 @font-face {
@@ -737,7 +872,7 @@ input.hidden {
    z-index: 10;
 }
 
-.dropdown ul {padding: none;}
+.dropdown ul {padding: 0;}
 
 .dropdown li {
    border-bottom: 1px solid #bbb;

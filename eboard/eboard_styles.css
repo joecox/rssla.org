@@ -17,24 +17,62 @@
 }
 
 .merchEdit {
-	background: url("/resources/images/eboard/merchEdit.png");
-	background-size: contain;
-	background-repeat: no-repeat;
-	width: 20px;
-	height: 20px;
-	top: 4px;
-	left: 15px;
-	position: absolute;
+   background: url("/resources/images/eboard/merchEdit.png");
+   background-size: contain;
+   background-repeat: no-repeat;
+   width: 20px;
+   height: 20px;
+   top: 4px;
+   left: 15px;
+   position: absolute;
 }
 
 .merchDelete {
-	background: url("/resources/images/eboard/merchDelete.png");
-	background-size: contain;
-	background-repeat: no-repeat;
-	width: 20px;
-	height: 20px;
-	position: absolute;
-	top: 4px;
-	left: 15px;
-	cursor: pointer;
+   background: url("/resources/images/eboard/merchDelete.png");
+   background-size: contain;
+   background-repeat: no-repeat;
+   width: 20px;
+   height: 20px;
+   position: absolute;
+   top: 4px;
+   left: 15px;
+   cursor: pointer;
+}
+
+/* Manage Eboard Info */
+.eboarder {
+   margin: 20px 0;
+   position: relative;
+   visibility: hidden;
+}
+.eboarder img {
+   width: 200px;
+   height: 267px;
+   vertical-align: top;
+   float: left;
+}
+.eboarder .text-container {
+   margin-left: 220px;
+   margin-bottom: 10px;
+}
+.eboarder .name {
+   height: 40px;
+   font-size: 2rem;
+   font-family: inherit;
+   padding: 0;
+   margin: 0;
+}
+.eboarder .blurb {
+   font-family: inherit;
+   font-size: 1rem;
+   margin-top: 10px;
+   height: 209px;
+   width: 95%;
+}
+.eboarder .file {
+   margin: 0;
+   margin-bottom: 10px;
+}
+.eboarder .savebuttonwrap {
+   margin: 10px 0;
 }

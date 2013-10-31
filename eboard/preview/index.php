@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/head.php"); ?>
+   <title>Regents Scholar Society at UCLA</title>
+   <link rel="icon" type="image/png" href="/resources/images/seal_favicon.png">
+   <script src="/_layout/scripts/jquery.js"></script>
+   <script src="global.js"></script>
+   <?php 
+      include($_SERVER['DOCUMENT_ROOT']."/_layout/scripts/officernames.php"); 
+      include($_SERVER['DOCUMENT_ROOT']."/_layout/globals.php");
+   ?>
+   <link rel="stylesheet" type="text/css" href="global.css"/>
 </head>
 <body>
    <div id="wrapper">
-      <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/header.php"); ?>
+      <?php include("header.php"); ?>
       <div class="main clearfix">
          <div class="bannerwrap">
             <img class="photobanner" src="">

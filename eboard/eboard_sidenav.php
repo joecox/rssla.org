@@ -6,6 +6,20 @@
             <span>Eboard Home</span>
          </div>
       </a>
+      <a href="/eboard/bulletin">
+      <?php
+         if ($selected == "bulletin")
+         {
+            echo "<div class=\"sidenavitem selected\">";
+         }
+         else
+         {
+            echo "<div class=\"sidenavitem\">";
+         }
+      ?>
+            <span>Submit Bulletin Post</span>
+         </div>
+      </a>
       <a href="/eboard/classpoints">
       <?php
          if ($selected == "classpoints")
@@ -60,6 +74,20 @@
          }
       ?>
             <span>Manage Header Photos</span>
+         </div>
+      </a>
+      <a href="/eboard/manageEboard.php">
+      <?php
+         if ($selected == "eboarders")
+         {
+            echo "<div class=\"sidenavitem selected\">";
+         }
+         else
+         {
+            echo "<div class=\"sidenavitem\">";
+         }
+      ?>
+            <span>Manage Eboard Info</span>
          </div>
       </a>
    </div>

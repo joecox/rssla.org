@@ -18,6 +18,12 @@
          <div class="fullpage-contwrap">
             <div class="services-container">
                <div class="service">
+                  <a href="bulletin">
+                     <img src="/resources/images/eboard/bulletin.png"/>
+                     <div>Submit Bulletin Post</div>
+                  </a>
+               </div>
+               <div class="service">
                   <a href="classpoints">
                      <img src="/resources/images/eboard/classpoints_trophy.png"/>
                      <div>Update Class Points</div>
@@ -39,6 +45,12 @@
                   <a href="header/manage.php">
                      <img src="/resources/images/eboard/manage_header.png"/>
                      <div>Manage Header Photos</div>
+                  </a>
+               </div>
+               <div class="service">
+                  <a href="manageEboard.php">
+                     <img src="/resources/images/eboard/eboarders.png"/>
+                     <div>Manage Eboard Information</div>
                   </a>
                </div>
                <!-- Add service nodes here -->

@@ -1,6 +1,6 @@
 <?php
     echo "<pre>";
-	$name = $_POST['name'];
+    $name = $_POST['name'];
     $from = $_POST['email'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
@@ -70,7 +70,7 @@
     {
         $temp_msg = $message;
 
-        // Find and apply gendered pronouns
+        // Find and apply gender-specific pronouns
         for ($jj = 0; $jj < $cols; $jj++)
         {
             if ((strpos($headers[$jj], 'Gender') !== false) &&
@@ -118,7 +118,7 @@
                 continue;
             }
 
-            // Find and apply gendered pronouns for email recipient
+            // Find and apply gender-specific pronouns for email recipient
             // else if ($headers[$jj] == 'Gender')
             // {
             //     if ($values['Gender'][$ii] == 'M')
@@ -156,7 +156,10 @@
             // }
         }
 
-        if (mail($values['Email'][$ii], $subject, $temp_msg, "From: ".$name." <".$from.">", "-f".$from))
+        $mail_headers = 'From: '.$name.' <'.$from.'>' . "\r\n";
+        $mail_headers .= "Content-Type: text/plain; charset=\"iso-8859-1\"" . "\r\n";
+
+        if (mail($values['Email'][$ii], $subject, $temp_msg, $mail_headers, "-f".$from))
             echo "Mail sent successfully to " . $values['Email'][$ii] . "\r\n";
         else
             echo "Mail delivery FAILED to " . $values['Email'][$ii] . "\r\n";

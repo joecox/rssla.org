@@ -1,10 +1,75 @@
 /* HEADER */
 
-function fadeIn(obj) {
-   $(obj).fadeIn(1200);
-}
+var loadedHeaderImages = 0;
+var numHeaderImages = 5;
+
+$(function ()
+{
+   // $(".headerphoto").each(function ()
+   // {
+   //    $(this).load(function ()
+   //    {
+   //       loadedHeaderImages++;
+
+   //       if (loadedHeaderImages == numHeaderImages)
+   //       {
+            // check if homepage
+            var home = true;
+            var patt = /rssla\.org\/?$/;
+            var patt2 = /localhost\/?$/;
+            if (patt.exec(window.location.href) == null &&
+                patt2.exec(window.location.href) == null)
+            {
+               var home = false;
+            }
+            // set cover-up width
+            var width = ($("html").width() - 1000) / 2;
+            $("#photobarCoverPanelRight")
+               .width(width)
+               .css("right", "-" + width + "px");
+
+            setTimeout(function() {
+               for (ii = 0; ii < 5; ii++)
+               {
+                  var obj = $(".headerphoto[num=" + ii + "]");
+                  var leftString = $(obj).css("left");
+                  var left = leftString.replace("px", "") - 1000;
+
+                  // check if homepage
+                  if (home)
+                  {
+                     $(obj).animate({left: left + "px"}, {queue: false, duration: 1200});
+                  }
+                  else
+                  {
+                     $(obj).css("left", left + "px");
+                  }
+                  $(obj).animate({opacity: 1}, {queue: false, duration: 1800});
+               }
+               $("body").css("overflow-x", "");
+            }, 100);
+   //       }
+   //    });
+   // });
+});
 
 /* MAIN */
+
+function setContHeight () 
+{
+   var maxHeight = Math.max.apply(null, $(".cont").map(function ()
+   {
+      return $(this).height();
+   }).get());
+   
+   $(".cont").css("min-height", maxHeight);
+}
+
+function resetContHeight ()
+{
+   $(".cont").css("min-height", "");
+   setContHeight();
+}
 
 $(document).ready(function () 
 {
@@ -51,16 +116,39 @@ $(document).ready(function ()
       $(this).css("left", left);
    });
 
-   // set min-heights to max
-   var maxHeight = Math.max.apply(null, $(".cont").map(function ()
+   $(window).load(function ()
    {
-      return $(this).height();
-   }).get());
+      // set min-heights to max
+      var maxHeight = Math.max.apply(null, $(".cont").map(function ()
+      {
+         return $(this).height();
+      }).get());
+      
+      $(".cont").css("min-height", maxHeight);
+   });
    
-   $(".cont").css("min-height", maxHeight);
-
    // initially hide the photobanner
    $(".photobanner[src='']").parent(".bannerwrap").css("display", "none");
+
+   // Konami
+   var keys    = [];
+   var konami  = '38,38,40,40,37,39,37,39,66,65';
+   $(window).keydown(function(e) {
+      keys.push( e.keyCode );
+      if ( keys.toString().indexOf( konami ) >= 0 )
+      {
+         $(".nav")
+            .animate({
+               opacity: 0
+            });
+         $(".nav#hidden")
+            .animate({
+               opacity: 1
+            })
+            .css("z-index", "2");
+         keys = [];
+      }
+   });
 
    // Rowtitle side-line
    $(".rowtitle").not(".top").append("<div></div>");
@@ -102,110 +190,7 @@ $(document).ready(function ()
          $(this).width = $(this).parent().width();
    });
 */
-   // coming soon nav items
-   $(".navbutton.coming").hover(function ()
-   {
-      var cur_text = $(this).children().text();
-      var cur_class = $(this).children().attr("class");
-      var set_text = $(this).attr("meta");
-      $(this).children().attr("class", "oneline");
-      $(this).children().text(set_text);
-      $(this).children().attr("meta1", cur_text);
-      $(this).children().attr("meta2", cur_class); 
-   }, function () 
-   {
-      var set_text = $(this).children().attr("meta1");
-      var set_class = $(this).children().attr("meta2");
-      $(this).children().attr("class", set_class);
-      $(this).children().text(set_text);
-   });
-});
-
-/* EBOARD SIGNIN *************************************************************/
-$(document).ready(function () {
-   var login_box_open = false;
-
-   $(".selector").click(function () {
-      if (!login_box_open)
-      {
-         $(".wrapper-dropdown").addClass("active");
-         $(this).addClass("active");
-         $(".dropdown").animate({'max-height': "257px"}, 200);
-         login_box_open = true;
-      }
-      else if (login_box_open)
-      {
-         $(".dropdown").animate({'max-height': 0}, 200);
-         $(".wrapper-dropdown").removeClass("active");
-         $(this).removeClass("active");
-         login_box_open = false;
-      }
-   });
-
-   $(".dropdown").children("li").click(function () {
-      var text = $(this).text();
-      $(".selector").text(text);
-      $(".dropdown").animate({'max-height': 0}, 200);
-      $(".wrapper-dropdown").removeClass("active");
-      $(".selector").removeClass("active");
-      login_box_open = false;
-   });
-
-   $(document).click(function () {
-      $(".dropdown").animate({'max-height': 0}, 200);
-      $(".wrapper-dropdown").removeClass("active");
-      $(".selector").removeClass("active");
-      login_box_open = false;
-   });
-
-   $(".wrapper-dropdown").click(function(event) {
-      event.stopPropagation();
-   });
-
-   function filled (id, pw) {
-      if (id == "Login as:" || pw == "")
-         return false;
-      else return true;
-   }
-
-   function ajaxPW () {
-      var id = $(".selector").text();
-      var pw = $("input#pw").val();
-      if (filled(id, pw))
-      {
-         var data = 'id=' + id + '&pw=' + pw;
-         $.ajax({
-            url: "validate.php",
-            type: "POST",
-            data: data,
-            dataType: "json"
-         })
-         .done(function (response) {
-            if (response.success) {
-               $(".login-box").fadeOut(200, function () {
-                  $("#incorr_msg").fadeOut(200, function () {
-                     $("#contwrap").hide().append(response.newcont).fadeIn(200);
-                  });
-               });
-            }
-            else
-               $("#incorr_msg").fadeIn(200);
-         })
-         .fail(function () {
-            alert("fail");
-         });
-      }
-   }
-
-   $(".submit-square").click(function () {ajaxPW();});
-
-   // Handle enter key AJAX
-   $("input#pw").keypress(function(event) {
-      if (event.keyCode == 13) {
-         event.preventDefault();
-         ajaxPW();
-      }
-   });
+   
 });
 
 function selectSideItem (obj)
@@ -213,4 +198,15 @@ function selectSideItem (obj)
    var jobj = $(obj);
    $(".sidenav").children(".sidenavitem").removeClass("selected");
    jobj.addClass("selected");
+}
+
+/* http://stackoverflow.com/questions/9333379/javascript-css-check-if-overflow */
+function isOverflowed (element)
+{
+   return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+}
+
+function jq_isOverflowed (element)
+{
+   return element[0].scrollHeight > element[0].clientHeight || element[0].scrollWidth > element[0].clientWidth;
 }

@@ -1,0 +1,83 @@
+body {
+	background-color: #eaeaea;
+	font-family: 'ProximaNova', 'Helvetica', sans-serif;
+}
+
+header {
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+
+header .title {
+	font-family: 'Consolas', monospace;
+	font-size: 3rem;
+	font-weight: 700;
+	position: absolute;
+	left: 200px;
+	top: 35%;
+	margin-top: -28px;
+}
+
+header img {
+	vertical-align: bottom;
+}
+
+header .navigation {
+	position: absolute;
+	left: 150px;
+	top: 50%;
+	font-size: 1.3rem;
+	font-weight: 300;
+}
+
+header .navigation a {
+	text-decoration: none;
+	color: black;
+}
+
+header .navigation > li {
+	display: inline;
+	margin: 0 10px;
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+header .navigation > li:hover {
+	background-color: #aaa;
+	cursor: pointer;
+}
+
+main {
+	width: 1200px;
+	margin: 20px auto;
+	padding: 10px;
+	position: relative;
+	background-color: white;
+	outline: 1px solid #aaa;
+	box-sizing: border-box;
+}
+
+h1.top, h2.top, h3.top, p.top { margin-top: 10px; }
+
+.instructionWrapper#MAC,
+.instructionWrapper#LINUX { display: none; }
+
+/* FONTS */
+@font-face { 
+  font-family:'ProximaNova'; src:url('/resources/fonts/ProximaNova/proximanova-light.eot'); src:url('/resources/fonts/ProximaNova/proximanova-light.eot?#iefix') format('embedded-opentype'),url('/resources/fonts/ProximaNova/proximanova-light.woff') format('woff'),url('/resources/fonts/ProximaNova/proximanova-light.ttf') format('truetype'); 
+  font-weight:300; 
+  font-style:normal; 
+}
+
+@font-face { 
+  font-family:'ProximaNova'; src:url('/resources/fonts/ProximaNova/proximanova-regular.eot'); src:url('/resources/fonts/ProximaNova/proximanova-regular.eot?#iefix') format('embedded-opentype'),url('/resources/fonts/ProximaNova/proximanova-regular.woff') format('woff'),url('/resources/fonts/ProximaNova/proximanova-regular.ttf') format('truetype'); 
+  font-weight:400; 
+  font-style:normal; 
+}
+
+@font-face { 
+font-family:'ProximaNova'; src:url('/resources/fonts/ProximaNova/proximanova-semibold.eot'); src:url('/resources/fonts/ProximaNova/proximanova-semibold.eot?#iefix') format('embedded-opentype'),url('/resources/fonts/ProximaNova/proximanova-semibold.woff') format('woff'),url('/resources/fonts/ProximaNova/proximanova-semibold.ttf') format('truetype'); 
+  font-weight:600; 
+  font-style:normal; 
+}

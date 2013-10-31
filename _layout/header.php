@@ -16,25 +16,26 @@
    <div id="photobar-overlay"></div>
    <div id="photobar">
       <?php
-         $db_connection = mysql_connect("localhost", "rssla_scholar", "hilltop23") or die("Could not connect to database");
-         mysql_select_db("rssla_rss", $db_connection) or die("select failed");
-         $getSL = "SELECT * FROM instagram";
-         $result = mysql_query($getSL);
-         $i = 0;
-         while ($row = mysql_fetch_row($result))
+         $approved_file = fopen($_SERVER['DOCUMENT_ROOT'] . '/eboard/header/approved.txt', 'r');
+
+         $photo_urls = array();
+         while (!feof($approved_file))
          {
-            $shortlinks[$i] = $row[0];
-            $i++;
+            $url = fgets($approved_file);
+            if ($url != '')
+               array_push($photo_urls, $url);
          }
-         shuffle($shortlinks);
-         shuffle($shortlinks);
-         shuffle($shortlinks);
-         for ($i = 0; $i < 5; $i++)
+
+         shuffle($photo_urls);
+         shuffle($photo_urls);
+         shuffle($photo_urls);
+         for ($ii = 0; $ii < 5; $ii++)
          {
-            $pos = $i * 200;
-            echo '<img class="headerphoto-'.$i.'" onload=\'fadeIn(".headerphoto-'.$i.'")\' src="http://instagram.com/p/'.$shortlinks[$i].'/media/?size=m" style="display:none; left:'.$pos.'px">';
+            $pos = ($ii * 200) + 1000;
+            echo '<img class="headerphoto" num="'.$ii.'" src=' . $photo_urls[$ii] . ' style="opacity:0; left:'.$pos.'px;">';
          }
       ?>
    </div>
+   <div id="photobarCoverPanelRight"></div>
    <?php include($_SERVER['DOCUMENT_ROOT'].'/_layout/nav.php'); ?>
 </div>

@@ -14,8 +14,8 @@
       {
          <?php
 
-            $dbh=mysql_connect ("localhost", "rssla_scholar", "hilltop23") or die ('I cannot connect to the database because: ' . mysql_error());
-            mysql_select_db ("rssla_rss");
+            $dbh=mysql_connect ("localhost", $DB_USER, $DB_PW) or die ('I cannot connect to the database because: ' . mysql_error());
+            mysql_select_db ($DB_NAME);
        
             $request = "SELECT * FROM classpoints";
             $query = mysql_query($request, $dbh);
@@ -288,9 +288,8 @@
                disp = true;
             }
          });
-
-}
-</script>
+      }
+   </script>
 </head>
 <body>
    <div id="wrapper">

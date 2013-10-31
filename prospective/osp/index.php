@@ -55,7 +55,7 @@
                   <a class="norm" href="/resources/docs/osp/OSP_Session3_Itinerary_2013.pdf">Session 3</a> | 
                   <a class="norm" href="/resources/docs/osp/OSP_Session4_Itinerary_2013.pdf">Session 4</a> | 
                   <a class="norm" href="/resources/docs/osp/OSP_Session5_Itinerary_2013.pdf">Session 5</a> | 
-                  <a>Transfer</a>
+                  <a class="norm" href="/resources/docs/osp/OSP_Transfer_Itinerary_2013.pdf">Transfer</a>
                </p>
             </div>
             <div class="rowtitle" id="signup"><span>Sign up for OSP</span></div>

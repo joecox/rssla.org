@@ -1,0 +1,11 @@
+#post_type {
+   margin-bottom: 20px;
+}
+
+.post_form {
+   display: none;
+}
+
+.post_form#event_post {
+   display: block;
+}

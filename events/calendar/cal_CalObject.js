@@ -6,7 +6,7 @@ function CalObject()
   this.sdate = undefined;
   this.ym = undefined;
 
-  //this.framediv is the .cal_frame div assigned by build_cal_fram
+  //this.framediv is the .cal_frame div assigned by build_cal_frame
   this.framediv = null;
 
   //this.titlediv is the .cal_title div assigned by build_cal_frame
@@ -43,7 +43,7 @@ function (date)
   this.sdate = new Date(this.year, this.month, 1);
   this.ym = this.sdate.getYearMonth();
 
-  $(this.titlediv).html(MONTH_NAMES[this.month]);
+  $(this.titlediv).html(MONTH_NAMES[this.month] + " " + this.year);
 
   var month = new Date(this.year, this.month, 1, 0, 0, 0, 0);
   var firstOfMonthDay = month.getDay();
@@ -60,8 +60,14 @@ function (date)
     this.days[ii].$div[0].dayparent = this.days[ii];
     this.days[ii].$div[0].dayparent.date = 
       new Date(this.year, this.month, date);
-  }
 
+    if (this.days[ii].$div[0].dayparent.date.getTime() 
+          == now.getTime())
+    {
+      $(this.days[ii].$div[0]).addClass("today");
+    }
+  }
+  
   /* set up previous month */
   date = (new Date(this.year, this.month, 0)).getDate();
   this.prevBorderEnd = date;

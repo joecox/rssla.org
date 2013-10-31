@@ -7,79 +7,92 @@
     * FL is full name, FN is first name, LN is last name, MID is the memberID of their profile.
     */
 
-   $presFL = "Allen Huang";
+   $presFL = "Keaton Boyle";
+   $pres_min = str_replace(' ', '', strtolower($presFL));
    $pres_pieces = explode(' ', $presFL);
    $presFN = $pres_pieces[0];
    $presLN = $pres_pieces[1];
-   $presMID = "313";
+   $presMID = "372";
 
    $ivpFL = "Christina Chung";
+   $ivp_min = str_replace(' ', '', strtolower($ivpFL));
    $ivp_pieces = explode(' ', $ivpFL);
    $ivpFN = $ivp_pieces[0];
    $ivpLN = $ivp_pieces[1];
    $ivpMID = "395";
 
-   $evpFL = "Katherine Chuang";
+   $evpFL = "Jonathan Han";
+   $evp_min = str_replace(' ', '', strtolower($evpFL));
    $evp_pieces = explode(' ', $evpFL);
    $evpFN = $evp_pieces[0];
    $evpLN = $evp_pieces[1];
-   $evpMID = "343";
+   $evpMID = "";
 
-   $treasFL = "Keaton Boyle";
+   $treasFL = "Gayan Seneviratna";
+   $treas_min = str_replace(' ', '', strtolower($treasFL));
    $treas_pieces = explode(' ', $treasFL);
    $treasFN = $treas_pieces[0];
    $treasLN = $treas_pieces[1];
-   $treasMID = "372";
+   $treasMID = "455";
 
    $secrFL = "Emily Parker";
+   $secr_min = str_replace(' ', '', strtolower($secrFL));
    $secr_pieces = explode(' ', $secrFL);
    $secrFN = $secr_pieces[0];
    $secrLN = $secr_pieces[1];
    $secrMID = "351";
 
    $activFL = "Anna Dornisch";
+   $activ_min = str_replace(' ', '', strtolower($activFL));
    $activ_pieces = explode(' ', $activFL);
    $activFN = $activ_pieces[0];
    $activLN = $activ_pieces[1];
    $activMID = "446";
 
    $commFL = "Joey Cox";
+   $comm_min = str_replace(' ', '', strtolower($commFL));
    $comm_pieces = explode(' ', $commFL);
    $commFN = $comm_pieces[0];
    $commLN = $comm_pieces[1];
    $commMID = "401";
 
-   $crdFL = "Gayan Seneviratna";
+   $crdFL = "Joselyn Ho";
+   $crd_min = str_replace(' ', '', strtolower($crdFL));
    $crd_pieces = explode(' ', $crdFL);
    $crdFN = $crd_pieces[0];
    $crdLN = $crd_pieces[1];
-   $crdMID = "455";
+   $crdMID = "";
 
-   $epdFL = "Aanand Patel";
+   $epdFL = "Sharon Abada";
+   $epd_min = str_replace(' ', '', strtolower($epdFL));
    $epd_pieces = explode(' ', $epdFL);
    $epdFN = $epd_pieces[0];
    $epdLN = $epd_pieces[1];
-   $epdMID = "322";
+   $epdMID = "";
 
-   $outrFL = "Jeff Lewis";
+   $outrFL = "Vishal Yadav";
+   $outr_min = str_replace(' ', '', strtolower($outrFL));
    $outr_pieces = explode(' ', $outrFL);
    $outrFN = $outr_pieces[0];
    $outrLN = $outr_pieces[1];
-   $outrMID = "363";
+   $outrMID = "";
 
-   $publFL = "Sedina Alicic";
+   $publFL = "Erin Standen";
+   $publ_min = str_replace(' ', '', strtolower($publFL));
    $publ_pieces = explode(' ', $publFL);
    $publFN = $publ_pieces[0];
    $publLN = $publ_pieces[1];
-   $publMID = "493";
+   $publMID = "";
 
-   $arlFL = "Angel Barajas";
+   $arlFL = "Brent Louie";
+   $pres_min = str_replace(' ', '', strtolower($arlFL));
    $arl_pieces = explode(' ', $arlFL);
    $arlFN = $arl_pieces[0];
    $arlLN = $arl_pieces[1];
-   $arlMID = "305";
+   $arlMID = "";
 
    $lampFL = "Molly Montgomery";
+   $lamp_min = str_replace(' ', '', strtolower($lampFL));
    $lamp_pieces = explode(' ', $lampFL);
    $lampFN = $lamp_pieces[0];
    $lampLN = $lamp_pieces[1];

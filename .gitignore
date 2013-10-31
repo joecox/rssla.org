@@ -25,6 +25,7 @@
 *.log
 *.sql
 *.sqlite
+error_log
 
 # OS generated files #
 ######################
@@ -35,3 +36,14 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.ini
+
+# Security Files #
+##################
+.htaccess
+.htpasswd
+globals.php
+
+# Configuration Files #
+#######################
+sftp-config.json

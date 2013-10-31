@@ -13,25 +13,7 @@
          </div>
          <div class="wrap border-bottom shadow-bottom">
             <span class="pagetitle">ABOUT</span>
-            <div class="topnav v-align">
-               <span class="topnavitem">
-                  <a href="/about/">Home</a>
-               </span>
-               <span class="topnavitem">
-                  <a href="/about/society/">Society</a>
-               </span>
-               <span class="topnavitem">
-                  <a href="/about/scholarship/">Scholarship</a>
-               </span>
-               <span class="topnavitem">
-                  <a href="/about/constitution">Constitution</a>
-               </span>
-               <!--
-               <span class="topnavitem">
-                  <a href="/about/leadership">Leadership</a>
-               </span>
-               -->
-            </div>
+            <?php $selected = "home"; include($root."/about/about_topnav_template.php"); ?>
          </div>
          <div class="fullpage-contwrap">
             <div class="cont solo">
