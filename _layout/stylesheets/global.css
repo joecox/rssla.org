@@ -38,6 +38,11 @@ a.norm:visited {color: blue;}
 img.fill {
    width: 100%;
 }
+.fillprom {width: 740px; padding: 0 20px;}
+img.fillprom {
+   width: 100%;
+   height: 70%;
+}
 /*li {
    margin-bottom: 10px;
 }*/
