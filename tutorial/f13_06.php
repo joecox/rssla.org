@@ -16,9 +16,31 @@
             </div> -->
          </div>
          <div class="fullpage-contwrap">
+            <div class="contentblock">
+               <pre>
+                  <?php
 
-         <!-- PLACE CONTENT HERE -->
+                     error_reporting(E_ALL);
+                     include($DB_MODULE);
 
+                     db_connect();
+
+                     $results = db_select_all("tutorial");
+
+                     for ($i = 0; $i < sizeof($results); $i++)
+                     {
+                        $person = $results[$i];
+                        $id = $person["id"];
+                        $name = $person["name"];
+                        $year = $person["year"];
+                        $fav_pizza = $person["favorite_pizza"];
+                        $shoes = $person["shoes_owned"];
+
+                        echo $name . "," . $year . "," . $fav_pizza . "," . $shoes . "\n";
+                     }
+                  ?>
+               </pre>
+            </div>
          </div>
          <!-- Optional bottom bar
          <div class="bottombar">

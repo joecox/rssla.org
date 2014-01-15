@@ -1,0 +1,36 @@
+.rowtitle {
+   margin-left: 0;
+}
+
+table.memberList {
+   padding: 10px 0;
+   margin: 0 auto;
+}
+
+table.memberList td {
+   width: 200px;
+}
+
+.member-link:hover {
+   color: rgb(36, 114, 211);
+   text-decoration: underline;
+}
+
+.member-list-header {
+   color: rgb(36, 114, 211);
+}
+
+.no_results_msg {
+   text-align: center;
+}
+
+.create-msg-container {
+   text-align: center;
+   margin: 0;
+   padding-bottom: 20px;
+}
+
+.create-msg {
+   padding: 10px;
+   background: rgb(230,230,230);
+}

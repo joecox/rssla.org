@@ -332,7 +332,7 @@ body.dialog-open { overflow: hidden; }
 }
 
 .fullpage-contwrap {
-   padding-top: 20px;
+   padding-top: 10px;
    position: relative;
 }
 
@@ -634,12 +634,78 @@ table.data td {
    text-transform: uppercase;
 }
 
+.fullpage-contwrap.fixed-box {
+   height: 300px;
+}
+
 .main .bottombar {
    position: relative;
    text-align: center;
    padding-top: 10px;
    border-top: 1px solid #ccc;
    box-shadow: 0 -5px 5px -5px #ccc;
+}
+
+.button-wrap {
+   margin-top: 20px;
+}
+
+.button-wrap.right {
+   text-align: right;
+   padding-right: 10px;
+}
+
+.nav-card-container {
+   width: 90%;
+   margin: 20px auto 0;
+   text-align: center;
+}
+
+.nav-card {
+   text-align: left;
+   width: 400px;
+   height: 150px;
+   margin: 0 10px 20px;
+   padding: 10px;
+   display: inline-block;
+   box-sizing: border-box;
+   box-shadow: 0 0 20px -5px black;
+   cursor: pointer;
+   vertical-align: top;
+}
+.nav-card:hover {
+   box-shadow: 0 0 25px -5px black;
+}
+
+.nav-card .title {
+   font-size: 1.4rem;
+   color: rgb(36, 114, 211);
+}
+.nav-card .description {
+
+}
+
+.modal {
+   display: none;
+   position: absolute;
+   z-index: 99999;
+   top: 50%;
+   left: 50%;
+   background: white;
+   box-shadow: 0 0 30px #777;
+}
+.modal.notif {
+   width: 250px;
+   height: 300px;
+   margin-top: -150px;
+   margin-left: -75px;
+   text-align: center;
+}
+.modal.notif > .notif-inner {
+   margin: 9px;
+   width: 230px;
+   height: 280px;
+   border: 1px solid #aaa;
 }
 
 /* CUSTOM FONTS */

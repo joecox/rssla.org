@@ -1,19 +1,19 @@
 .services-container {
-    width: 90%;
-    margin: 20px auto 0;
-    text-align: center;
+   width: 90%;
+   margin: 20px auto 0;
+   text-align: center;
 }
 
 .service {
-    text-align: center;
-    width: 200px;
-    margin: 0 10px 20px;
-    display: inline-block;
+   text-align: center;
+   width: 200px;
+   margin: 0 10px 20px;
+   display: inline-block;
 }
 
 .service img {
-    height: 55px;
-    margin: 0 auto;
+   height: 55px;
+   margin: 0 auto;
 }
 
 .merchEdit {

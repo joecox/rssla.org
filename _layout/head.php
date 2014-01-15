@@ -6,4 +6,6 @@
 <?php 
    include($_SERVER['DOCUMENT_ROOT']."/_layout/scripts/officernames.php"); 
    include($_SERVER['DOCUMENT_ROOT']."/_layout/globals.php");
+   include($_SERVER['DOCUMENT_ROOT']."/_modules/globals.php");
+   error_reporting(E_ALL ^ E_NOTICE);
 ?>

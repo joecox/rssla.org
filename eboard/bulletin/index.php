@@ -24,7 +24,7 @@
                   <option value="opportunity">Opportunity</option>
                </select>
                <div class="post_form" id="event_post">
-                  
+                  Event
                </div>
                <div class="post_form" id="committee_post">Committee
                </div>

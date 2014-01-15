@@ -1,0 +1,12 @@
+input {
+   margin-bottom: 10px;
+}
+
+#event_budget_table th,
+#event_budget_table td {
+   font-weight: normal;
+}
+
+#event_budget_table input {
+   margin-right: 15px;
+}

@@ -3,9 +3,6 @@ http://distilleryimage1.s3.amazonaws.com/3265c6369f0b11e2ae8022000a9e2946_6.jpg
 http://distilleryimage3.s3.amazonaws.com/3e8bf5a0a18811e2890322000a9e48f1_6.jpg
 http://distilleryimage6.s3.amazonaws.com/2ac74d42c80411e29e1922000a9f4dd0_6.jpg
 http://distilleryimage1.s3.amazonaws.com/6f0a2bac765e11e2bb5122000a9e2955_6.jpg
-http://distilleryimage4.s3.amazonaws.com/7006897888d911e2a3b222000a9f1696_6.jpg
 http://distilleryimage8.s3.amazonaws.com/545c38fa8c6011e28ea222000a9f1946_6.jpg
 http://distilleryimage8.s3.amazonaws.com/33172d868d0e11e282e122000a1f9aae_6.jpg
-http://distilleryimage0.s3.amazonaws.com/0ca0260e31bd11e390d222000a9e0851_6.jpg
-http://distilleryimage10.s3.amazonaws.com/5d6dab862fe411e39d2822000ae9062a_6.jpg
-http://distilleryimage8.s3.amazonaws.com/3fdc43782bd611e38c8022000ae912e8_6.jpg
+http://distilleryimage2.s3.amazonaws.com/28eccd5e498111e3aee812d648911e79_6.jpg

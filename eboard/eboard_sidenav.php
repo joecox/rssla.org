@@ -90,5 +90,19 @@
             <span>Manage Eboard Info</span>
          </div>
       </a>
+      <a href="/eboard/reimbursement">
+      <?php
+         if ($selected == "reimbursement")
+         {
+            echo "<div class=\"sidenavitem selected\">";
+         }
+         else
+         {
+            echo "<div class=\"sidenavitem\">";
+         }
+      ?>
+            <span>Submit Reimbursement</span>
+         </div>
+      </a>
    </div>
 </div>

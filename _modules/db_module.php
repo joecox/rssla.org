@@ -33,7 +33,7 @@
         return $results;
     }
 
-    function db_insert_update_delete ($query)
+    function db_insert ($query)
     {
         global $dbh;
 

@@ -55,6 +55,8 @@ $(function ()
 
 /* MAIN */
 
+var $html = $("html");
+
 function setContHeight () 
 {
    var maxHeight = Math.max.apply(null, $(".cont").map(function ()
@@ -209,4 +211,95 @@ function isOverflowed (element)
 function jq_isOverflowed (element)
 {
    return element[0].scrollHeight > element[0].clientHeight || element[0].scrollWidth > element[0].clientWidth;
+}
+
+function goTo (url)
+{
+   window.location = url;
+}
+
+function showModal (type, options, persistent)
+{
+   if ($(".modal").length > 0)
+   {
+      var $modal = $(".modal").removeClass()
+                              .addClass("modal")
+                              .html("")
+                              .show();
+   }
+   else
+   {
+      var $modal = $("<div>").addClass("modal");
+   }
+
+   if ($(".veil").length > 0)
+   {
+      var $veil = $(".veil").show();
+   }
+   else
+   {
+      var $veil = $("<div>").addClass("veil");
+   }
+
+   switch (type)
+   {
+      case "notif":
+      {
+         $modal.addClass("notif");
+         
+         var src = options["src"];
+         var text = options["text"];
+
+         $inner = $("<div>").addClass("notif-inner");
+
+         $inner.append($("<img>").addClass("image")
+                                 .attr("src", src));
+         $inner.append($("<div>").addClass("text")
+                                 .html(text));
+         $modal.append($inner);
+      }
+      case "custom":
+      {
+         var styles = options['styles'];
+         for (var style_name in styles)
+         {
+            $modal.css(style_name, styles[style_name]);
+         }
+
+         $inner = $("<div>").addClass("notif-inner");
+
+         $modal.append($inner);
+      }
+   }
+
+   $("body").append($modal);
+   $("body").append($veil);
+
+   $modal.fadeIn(100);
+   $veil.fadeIn(100);
+
+   if (!persistent)
+   {
+      setTimeout(function ()
+      {
+         $modal.fadeOut(200, function ()
+         {
+            $modal.remove();        
+         });
+
+         $veil.fadeOut(200, function ()
+         {
+            $veil.remove();
+         });
+      }, 2000);
+   }
+}
+
+function showProcessingModal ()
+{
+   var options = {
+      src: "/resources/images/UI/loading.gif",
+      text: "Processing, please wait."
+   };
+   showModal("notif", options, true);
 }
