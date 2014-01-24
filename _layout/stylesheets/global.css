@@ -305,7 +305,7 @@ body.dialog-open { overflow: hidden; }
    width: 100%;
    background-color: white;
    border: 1px solid #c2c2c2;
-   padding: 20px 0 10px;
+   padding: 15px 0 10px;
    font-weight: 300;
    z-index: 0;
    position: relative;
@@ -682,7 +682,15 @@ table.data td {
    color: rgb(36, 114, 211);
 }
 .nav-card .description {
+   margin: 10px 0;
+}
 
+.nav-card .comingsoon {
+   margin-top: 20px;
+   text-align: center;
+   font-size: 1.2rem;
+   color: rgb(36, 114, 211);
+   font-weight: bold;
 }
 
 .modal {
@@ -701,11 +709,13 @@ table.data td {
    margin-left: -75px;
    text-align: center;
 }
-.modal.notif > .notif-inner {
+.modal-inner {
    margin: 9px;
+   border: 1px solid #aaa;
+}
+.modal.notif > .modal-inner {
    width: 230px;
    height: 280px;
-   border: 1px solid #aaa;
 }
 
 /* CUSTOM FONTS */

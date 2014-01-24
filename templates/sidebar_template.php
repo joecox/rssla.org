@@ -7,10 +7,6 @@
    <div id="wrapper">
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/header.php"); ?>
       <div class="main clearfix">
-         <div class="bannerwrap">
-            <img class="photobanner" src="">
-            <div class="bannertext"></div>
-         </div>
          <div class="cont quarter left" id="sidebar">
             <div class="pagetitle">RSSLA.ORG</div>
             <div class="sidenav">

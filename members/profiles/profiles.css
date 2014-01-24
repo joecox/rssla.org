@@ -34,3 +34,72 @@ table.memberList td {
    padding: 10px;
    background: rgb(230,230,230);
 }
+
+.edit.button {
+   position: absolute;
+   right: 20px;
+   top: 20px;
+}
+
+.login.button {
+   position: absolute;
+   right: 40px;
+   top: 3px;
+}
+
+.goto-profile-link {
+   position: absolute;
+   right: 40px;
+   cursor: pointer;
+   padding: 6px 8px;
+   background: rgb(36,115,211);
+   opacity: 0.8;
+   color: white;
+}
+.goto-profile-link:hover {
+   opacity: 1;
+}
+
+/* Individual profile styles */
+.profile#sidebar {
+   float: left;
+   width: 250px;
+   margin-left: 20px;
+   margin-bottom: 20px;
+}
+
+.profile#image-container {
+   text-align: center;
+   width: 250px;
+}
+.profile#profile-image {
+   width: 200px;
+   border: 1px solid #aaa;
+   vertical-align: top;
+}
+
+.profile#main-space {
+   float: right;
+   width: 675px;
+}
+
+.profile#name {
+   font-size: 2rem;
+}
+
+.profile#year {
+   font-size: 1.3rem;
+   text-transform: uppercase;
+   color: rgb(36, 114, 211);
+}
+
+.profile#quote {
+   font-style: italic;
+}
+
+#contact {
+   position: absolute;
+   right: 40px;
+   top: 30px;
+   text-align: right;
+}

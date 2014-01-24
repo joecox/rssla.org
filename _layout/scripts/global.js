@@ -157,7 +157,7 @@ $(document).ready(function ()
    $(".rowtitle").not(".top").children("div").css("position", "absolute");
    $(".rowtitle").not(".top").children("div").css("right", "0");
    $(".rowtitle").not(".top").children("div").css("background-color", "#ccc");
-   $(".rowtitle").not(".top").children("div").css("height", "1px");
+   $(".rowtitle").not(".top").children("div").css("height", "2px");
    $(".rowtitle").not(".top").each(function () 
    {
       var width = $(this).width() - 20 - $(this).children("span").width();
@@ -191,8 +191,7 @@ $(document).ready(function ()
       if ($(this).width() > $(this).parent().width())
          $(this).width = $(this).parent().width();
    });
-*/
-   
+*/   
 });
 
 function selectSideItem (obj)
@@ -250,7 +249,7 @@ function showModal (type, options, persistent)
          var src = options["src"];
          var text = options["text"];
 
-         $inner = $("<div>").addClass("notif-inner");
+         $inner = $("<div>").addClass("modal-inner");
 
          $inner.append($("<img>").addClass("image")
                                  .attr("src", src));
@@ -260,13 +259,18 @@ function showModal (type, options, persistent)
       }
       case "custom":
       {
-         var styles = options['styles'];
-         for (var style_name in styles)
-         {
-            $modal.css(style_name, styles[style_name]);
-         }
+         $modal.css("height", options["height"] + "px");
+         $modal.css("width", options["width"] + "px");
 
-         $inner = $("<div>").addClass("notif-inner");
+         $modal.css("margin-top", "-" + (options["height"] / 2) + "px");
+         $modal.css("margin-left", "-" + (options["width"] / 2) + "px");
+
+         $inner = $("<div>").addClass("modal-inner");
+
+         $inner.css("height", (options["height"] - 20) + "px");
+         $inner.css("width", (options["width"] - 20) + "px");
+
+         $inner.append(options["html"]);
 
          $modal.append($inner);
       }
@@ -275,23 +279,27 @@ function showModal (type, options, persistent)
    $("body").append($modal);
    $("body").append($veil);
 
+   $veil.click(function(){ removeModal(); });
+
    $modal.fadeIn(100);
    $veil.fadeIn(100);
 
    if (!persistent)
    {
-      setTimeout(function ()
-      {
-         $modal.fadeOut(200, function ()
-         {
-            $modal.remove();        
-         });
+      setTimeout(removeModal(), 2000);
+   }
 
-         $veil.fadeOut(200, function ()
-         {
-            $veil.remove();
-         });
-      }, 2000);
+   function removeModal()
+   {
+      $modal.fadeOut(200, function ()
+      {
+         $modal.remove();        
+      });
+
+      $veil.fadeOut(200, function ()
+      {
+         $veil.remove();
+      });
    }
 }
 

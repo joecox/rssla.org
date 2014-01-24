@@ -1,0 +1,23 @@
+input[type="text"],
+input[type="password"] {
+   border: 1px solid #aaa;
+   border-radius: 3px;
+   box-shadow: 0 0 1px 1px #ddd inset;
+   font-family: 'ProximaNova', sans-serif;
+   height: 20px;
+   padding: 10px;
+   margin: 10px;
+   font-size: 1.1rem;
+}
+
+select {
+   width: 259px;
+   height: 40px;
+   padding: 5px;
+   font-size: 1.1rem;
+   margin: 10px;
+   border: 1px solid #aaa;
+   border-radius: 3px;
+   box-shadow: 0 0 1px 1px #ddd inset;
+   font-family: 'ProximaNova', sans-serif;
+}
