@@ -46,3 +46,7 @@ globals.php
 # Configuration Files #
 #######################
 sftp-config.json
+
+# User-Defined Ignores #
+########################
+~nosync
