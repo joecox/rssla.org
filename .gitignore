@@ -41,7 +41,7 @@ Thumbs.db
 ##################
 .htaccess
 .htpasswd
-globals.php
+_layout/globals.php
 
 # Configuration Files #
 #######################
