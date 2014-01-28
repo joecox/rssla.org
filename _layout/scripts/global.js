@@ -259,9 +259,6 @@ function showModal (type, options, persistent)
       }
       case "custom":
       {
-         $modal.css("height", options["height"] + "px");
-         $modal.css("width", options["width"] + "px");
-
          $modal.css("margin-top", "-" + (options["height"] / 2) + "px");
          $modal.css("margin-left", "-" + (options["width"] / 2) + "px");
 

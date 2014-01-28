@@ -21,8 +21,8 @@
                <span class="navtext">Outreach</span>
             </a>
          </td>
-         <td class="navbutton" id="members" onclick="goTo('#');">
-            <a href="#">
+         <td class="navbutton" id="members" onclick="goTo('/members/');">
+            <a href="/members/">
                <span class="navtext">Members</span>
             </a>
          </td>
@@ -120,7 +120,7 @@
          </td>
          <td class="nav-list" id="members">
             <ul>
-               <a href="#" class="coming">
+               <a href="/members/profiles/">
                   <li>Profiles</li>
                </a>
                <a href="/members/classpoints/">

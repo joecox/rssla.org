@@ -8,7 +8,7 @@ function showCreateProfileDialogue ()
 {
    var html = "<p style=\"text-align:center\"><i>All fields required</i></p>";
        html+= "<form id=\"create\" method=\"post\" style=\"text-align:center\">";
-       html+= "<input name=\"sid\" type=\"text\" size=\"25\" placeholder=\"Student ID Number\"/>";
+       html+= "<input id=\"sid_input\" name=\"sid\" type=\"text\" size=\"25\" placeholder=\"Student ID Number\"/>";
        html+= "<input name=\"fname\" type=\"text\" size=\"25\" placeholder=\"First Name\"/>";
        html+= "<input name=\"lname\" type=\"text\" size=\"25\" placeholder=\"Last Name\"/>";
        html+= "<select name=\"year\">";
@@ -36,28 +36,41 @@ function showCreateProfileDialogue ()
    showModal("custom", options, true);
 }
 
+var valid_sid;
 $("body").on("click", "form#create .button", function()
 {
-   var valid = true;
+   var form_valid = true;
    var invalidArr = Array();
 
    $("form input").each(function ()
    {
       if ($(this).val() == "")
       {
-         valid = false;
+         form_valid = false;
          invalidArr.push($(this).attr("name"));
       }
    });
 
+   var sid = $("input[name=sid]").val();
+   if (sid.length < 9)
+   {
+      form_valid = false;
+      invalidArr.push("sid");
+   }
+   else if (!valid_sid)
+   {
+      form_valid = false;
+      invalidArr.push("sid");
+   }
+
    var pw = $("input[name=pw]").val();
    if (pw.length < 6 || pw.length > 30)
    {
-      valid = false;
+      form_valid = false;
       invalidArr.push("pw");
    }
 
-   if (valid)
+   if (form_valid)
    {
       $("form input").each(function ()
       {
@@ -77,6 +90,36 @@ $("body").on("click", "form#create .button", function()
       {
          $("input[name=" + invalidArr[input] + "]").css("background", "#ff4c4c");
       }
+   }
+});
+
+// SID Check
+$("body").on("input", "input[name=sid]", function()
+{
+   var sid = $(this).val();
+
+   if (sid.length >= 9)
+   {
+      $.ajax({
+         url: "check_sid.php",
+         type: "POST",
+         dataType: "JSON",
+         data: {sid: sid}
+      })
+      .done(function(response)
+      {
+         if (response.success)
+         {
+            if (!response.valid_sid)
+            {
+               valid_sid = false;
+            }
+            else
+            {
+               valid_sid = true;
+            }
+         }
+      });
    }
 });
 
