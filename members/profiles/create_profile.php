@@ -24,6 +24,14 @@
 
       db_connect();
 
+      $results = db_select("SELECT id from members WHERE sid=".$sid);
+      if (count($results) > 0)
+      {
+         $results["success"] = false;
+         $results["user_exists"] = true;
+         exit(json_encode($results));
+      }
+
       $query = "INSERT INTO members(sid, hash, first_name, last_name, is_active, year, is_transfer, email) ";
       $query.= "VALUES('".$sid."','".$hashed_pw."','".$fname."','".$lname."',"."1".",".$year.",".$transfer.",'".$email."');";
 

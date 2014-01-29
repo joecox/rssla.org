@@ -110,23 +110,51 @@ $("body").on("input", "input[name=sid]", function()
       {
          if (response.success)
          {
-            if (!response.valid_sid)
-            {
-               valid_sid = false;
-            }
-            else
-            {
-               valid_sid = true;
-            }
+            valid_sid = response.valid_sid;
          }
       });
    }
 });
 
+// Check for enter keyup event
+$("body").on("keyup", "input[name=pw]", function(event)
+{
+   var key = (event.keyCode ? event.keyCode : event.which);
+   if (key == '13')
+   {
+      $("form#create .button").trigger("click");
+   }
+});
+
 function createProfileAjax()
 {
+   // Add modal veil & loading gif
+   $modal = $(".modal");
+   $modal_veil = $("<div>").css("position", "absolute")
+                           .css("top", "0")
+                           .css("height", "100%")
+                           .css("width", "100%")
+                           .css("z-index", "99")
+                           .css("background", "rgba(163,163,163,0.42)");
+
+   $loading_gif = $("<img>").attr("src", "/resources/images/UI/rss_seal_loading.gif")
+                            .css("position", "absolute")
+                            .css("height", "150px")
+                            .css("width", "150px")
+                            .css("top", "50%")
+                            .css("left", "50%")
+                            .css("margin-top", "-75px")
+                            .css("margin-left", "-75px")
+                            .css("z-index", "100");
+
+   $(".modal-inner").css("-webkit-filter", "blur(1px)");
+   $modal.append($modal_veil);
+   $modal.append($loading_gif);
+
+   setTimeout(function(){}, 1000);
+
    $.ajax({
-      url: "processCreate.php",
+      url: "create_profile.php",
       type: "POST",
       dataType: "JSON",
       data: $("form#create").serialize(),
@@ -142,6 +170,18 @@ function createProfileAjax()
       else
       {
          $("veil").trigger("click");
+         if (response.user_exists)
+         {
+            var html = "<p style=\"text-align:center\">You already have a profile. Please log in.</p>";
+
+            var options = {
+               "height": 70,
+               "width": 400,
+               "html": html,
+            };
+
+            showModal("custom", options, true);
+         }
       }
    });
 }
