@@ -151,7 +151,7 @@ function createProfileAjax()
    $modal.append($modal_veil);
    $modal.append($loading_gif);
 
-   setTimeout(function(){}, 1000);
+   $("html").css("cursor", "none");
 
    $.ajax({
       url: "create_profile.php",
@@ -182,6 +182,8 @@ function createProfileAjax()
 
             showModal("custom", options, true);
          }
+
+         $("html").css("cursor", "default");
       }
    });
 }
@@ -282,6 +284,8 @@ function loginAjax()
    $modal.append($modal_veil);
    $modal.append($loading_gif);
 
+   $("html").css("cursor", "none");
+
    $.ajax({
       url: "/members/login.php",
       type: "POST",
@@ -299,6 +303,7 @@ function loginAjax()
       else
       {
          $("#msg").html(response.fail_msg);
+         $("html").css("cursor", "default");
       }
    });
 }

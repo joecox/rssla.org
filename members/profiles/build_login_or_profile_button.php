@@ -19,7 +19,7 @@
          <span id="name" style="margin-left: 10px" onclick="goTo('/members/profiles/?id=<?php echo $userId; ?>')"><?php echo $first_name . " " . $last_name; ?></span>
          <div style="margin-top: 20px">
             <span class="button" style="margin-right: 90px">Edit Profile</span>
-            <span class="button">Log Out</span>
+            <span class="button" id="logout">Log Out</span>
          </div>
       </div>
    </span>
@@ -39,6 +39,11 @@
       $("html").on("click", function()
       {
          hideProfileBox();
+      });
+
+      $("#logout").on("click", function()
+      {
+         logout();
       });
 
       function showProfileBox()
@@ -70,6 +75,18 @@
                             "z-index": 0,
                             cursor: "pointer",
                             color: "white" });
+      }
+
+      function logout()
+      {
+         deleteCookie("userId", "/");
+         deleteCookie("sessionId", "/");
+         window.location = ".";
+      }
+
+      function deleteCookie(name, path)
+      {
+         document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;" + ( path ? "; path=" + path : "");
       }
    </script>
 <?php endif; ?>
