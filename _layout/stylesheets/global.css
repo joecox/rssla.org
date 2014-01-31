@@ -342,17 +342,6 @@ body.dialog-open { overflow: hidden; }
    font-size: 1.1rem;
 }
 
-.flatbutton {
-   cursor: pointer;
-   padding: 6px 8px;
-   background: #2473D3;
-   opacity: 0.8;
-   color: #fff;
-}
-.flatbutton:hover {
-   opacity: 1;
-}
-
 .topnav {
    text-align: center;
    display: inline-block;
@@ -811,6 +800,17 @@ font-family:'ProximaNova'; src:url('/resources/fonts/ProximaNova/proximanova-sem
 
 .button.del {
    margin-left: 20px;
+}
+
+.flatbutton {
+   cursor: pointer;
+   padding: 6px 8px;
+   background: rgb(36,115,211);
+   opacity: 0.8;
+   color: white;
+}
+.flatbutton:hover {
+   opacity: 1;
 }
 
 .selectbar {

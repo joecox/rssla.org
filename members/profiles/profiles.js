@@ -117,7 +117,7 @@ $("body").on("input", "input[name=sid]", function()
 });
 
 // Check for enter keyup event
-$("body").on("keyup", "input[name=pw]", function(event)
+$("body").on("keyup", "form#create input[name=pw]", function(event)
 {
    var key = (event.keyCode ? event.keyCode : event.which);
    if (key == '13')
@@ -186,7 +186,7 @@ function createProfileAjax()
    });
 }
 
-$(".login.button").click(function ()
+$("#login").click(function ()
 {
    openLogInDialogue();
 });
@@ -210,6 +210,15 @@ function openLogInDialogue()
 
    showModal("custom", options, true);
 }
+
+$("body").on("keyup", "form#login input[name=pw]", function(event)
+{
+   var key = (event.keyCode ? event.keyCode : event.which);
+   if (key == '13')
+   {
+      $("form#login .button").trigger("click");
+   }
+});
 
 $("body").on("click", "form#login .button", function()
 {
@@ -250,7 +259,30 @@ $("body").on("click", "form#login .button", function()
 
 function loginAjax()
 {
-    $.ajax({
+   // Add modal veil & loading gif
+   $modal = $(".modal");
+   $modal_veil = $("<div>").css("position", "absolute")
+                           .css("top", "0")
+                           .css("height", "100%")
+                           .css("width", "100%")
+                           .css("z-index", "99")
+                           .css("background", "rgba(163,163,163,0.42)");
+
+   $loading_gif = $("<img>").attr("src", "/resources/images/UI/rss_seal_loading.gif")
+                            .css("position", "absolute")
+                            .css("height", "150px")
+                            .css("width", "150px")
+                            .css("top", "50%")
+                            .css("left", "50%")
+                            .css("margin-top", "-75px")
+                            .css("margin-left", "-75px")
+                            .css("z-index", "100");
+
+   $(".modal-inner").css("-webkit-filter", "blur(1px)");
+   $modal.append($modal_veil);
+   $modal.append($loading_gif);
+
+   $.ajax({
       url: "/members/login.php",
       type: "POST",
       dataType: "JSON",
