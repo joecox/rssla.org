@@ -6,20 +6,32 @@
    <span class="flatbutton v-align" id="login">Log In</span>
 <?php else : ?>
    <?php
-      $results = db_select("SELECT first_name, last_name, pf_photo_path FROM members WHERE id=".$userId);
+      $results = db_select("SELECT first_name, last_name, email, pf_photo_path FROM members WHERE id=".$userId);
       $row = $results[0];
       $first_name = $row["first_name"];
       $last_name = $row["last_name"];
+
+      if (strlen($row["email"]) > 28)
+      {
+         $email = substr($row["email"], 0, 25) . "...";
+      }
+      else
+      {
+         $email = $row["email"];
+      }
       $image_src = $row["pf_photo_path"] ? $row["pf_photo_path"] : "general_profile_image.png";
    ?>
    <span class="flatbutton v-align" id="profilebox">
       <span id="name"><?php echo $first_name; ?></span>
       <div id="profile_box_content">
-         <img src="/resources/images/members/<?php echo $image_src; ?>" onclick="goTo('/members/profiles/?id=<?php echo $userId; ?>')"/>
-         <span id="name" style="margin-left: 10px" onclick="goTo('/members/profiles/?id=<?php echo $userId; ?>')"><?php echo $first_name . " " . $last_name; ?></span>
-         <div style="margin-top: 20px">
-            <span class="button" style="margin-right: 90px">Edit Profile</span>
-            <span class="button" id="logout">Log Out</span>
+         <div class="account_control profile">
+            <img src="/resources/images/members/<?php echo $image_src; ?>"/>
+            <div id="name"><?php echo $first_name . " " . $last_name; ?></div>
+            <div id="email"><i><?php echo $email; ?></i></div>
+         </div>
+         <div class="account_control buttons">
+            <span class="account_control edit">Edit Profile</span>
+            <span class="account_control logout" id="logout">Log Out</span>
          </div>
       </div>
    </span>
@@ -30,6 +42,8 @@
       var profile_box_width = $profile_box.width();
       var profile_box_height = $profile_box.height();
 
+      var profile_box_open = false;
+
       $profile_box.on("click", function(event)
       {
          event.stopPropagation();
@@ -38,7 +52,15 @@
 
       $("html").on("click", function()
       {
-         hideProfileBox();
+         if (profile_box_open)
+         {
+            hideProfileBox();
+         }
+      });
+
+      $(".account_control.profile").on("click", function()
+      {
+         window.location = '/members/profiles/?id=<?php echo $userId; ?>';
       });
 
       $("#logout").on("click", function()
@@ -52,7 +74,8 @@
          $profile_box.animate({ "width": "300px",
                                 "height": "120px",
                                 "opacity": 1,
-                                "backgroundColor": "#fff" }, 300, function ()
+                                "backgroundColor": "#fff",
+                                "padding": 0 }, 300, function ()
                                 {
                                     $box_content.fadeIn(100);
                                 });
@@ -60,6 +83,7 @@
                             "z-index": 99,
                             cursor: "default",
                             color: "black" });
+         profile_box_open = true;
       }
 
       function hideProfileBox()
@@ -70,11 +94,14 @@
          $profile_box.animate({ "width": profile_box_width + "px",
                                 "height": profile_box_height + "px",
                                 "opacity": 0.8,
-                                "backgroundColor": "rgb(36,115,211)" }, 300);
+                                "backgroundColor": "rgb(36,115,211)",
+                                "padding": "6px 8px" }, 300);
          $profile_box.css({ border: "", 
                             "z-index": 0,
                             cursor: "pointer",
-                            color: "white" });
+                            color: "white", });
+
+         profile_box_open = false;
       }
 
       function logout()

@@ -211,6 +211,8 @@ function openLogInDialogue()
    };
 
    showModal("custom", options, true);
+
+   $("#login > [name=email]").trigger("focus");
 }
 
 $("body").on("keyup", "form#login input[name=pw]", function(event)
