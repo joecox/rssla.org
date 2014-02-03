@@ -36,10 +36,49 @@
             </div>
    			<div class="cont half">
                <div class="rowtitle top">
-                  <span>Senior Medals</span>
+                  <span>Donate to RSS!</span>
                </div>
                <div class="contentblock">
-      				<p>Senior Medals are $10, or $7 with an Alumni profile.</p>
+                  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="text-align:center" id="donate">
+                     <div id="name_wrapper">
+                       Your name: <input type="text" name="donate_name" id="donate_name" size="30"/><br/><br/>
+                     </div>
+                     <input type="checkbox" name="donate_anon" id="donate_anon"/>Donate Anonymously<br/><br/>
+                     <input type="hidden" name="cmd" value="_s-xclick"/>
+                     <input type="hidden" name="hosted_button_id" value="6S6QFU4RWBAHW"/>
+                     <img id="donate_button" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!" style="cursor:pointer"/>
+                     <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
+                  </form>
+                  <script>
+                     $("#donate_anon").on("change", function(){
+                         if ($(this).is(":checked")) $("#name_wrapper").hide();
+                         else $("#name_wrapper").show();
+                     });
+
+                     $("#donate_button").on("click", function(){
+                         if (!$("#donate_anon").is(":checked") && $("#donate_name").val())
+                         {
+                             $.ajax({
+                                 url: "saveDonorName.php",
+                                 type: "POST",
+                                 dataType: "JSON",
+                                 data: {name: $("#donate_name").val()}
+                             })
+                             .done(function(response){
+                                $("form#donate").submit();
+                             })
+                             .fail(function(response){
+                                $("form#donate").submit();
+                             })
+                         }
+                         else
+                         {
+                           $("form#donate").submit();
+                         }
+                     });
+                  </script>
+
+      				<!-- <p>Senior Medals are $10, or $7 with an Alumni profile.</p>
                   <p><b>Already have a profile?</b>  Enter your Student ID in the field below and click Submit to access the discounted price.</p>
                   <p><b>Don't have a profile?</b>  Create one by clicking the link on the left.</p>
                   <input type="text" name="sid" size="10">
@@ -65,7 +104,7 @@
                         <input type="hidden" name="currency_code" value="USD">
                         <input type="submit" class="button">
                      </form>
-                  </div>
+                  </div> -->
                </div>
    			</div>
          </div>
