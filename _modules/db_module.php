@@ -41,4 +41,10 @@
         return $affected_rows;
     }
 
+    function db_close()
+    {
+        global $dbh;
+        $dbh = null;
+    }
+
 ?>

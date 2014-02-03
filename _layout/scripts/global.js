@@ -308,3 +308,214 @@ function showProcessingModal ()
    };
    showModal("notif", options, true);
 }
+
+/* ACCOUNT CONTROL */
+
+$(document).ready(function()
+{
+   var $profile_box = $("#account_control");
+   var $name = $("#account_control > #name");
+   var $box_content = $("#profile_box_content");
+   var profile_box_width = $profile_box.width();
+   var profile_box_height = $profile_box.height();
+
+   var profile_box_open = false;
+
+   $profile_box.on("click", function(event)
+   {
+      event.stopPropagation();
+      showProfileBox();
+   });
+
+   $("html").on("click", function()
+   {
+      if (profile_box_open)
+      {
+         hideProfileBox();
+      }
+   });
+
+   $(".account_control.profile").on("click", function()
+   {
+      window.location = '/members/profiles/?id=' + userId;
+   });
+
+   $("#logout").on("click", function()
+   {
+      logout();
+   });
+
+   $("#login").click(function ()
+   {
+      openLogInDialogue();
+   });
+
+   $("body").on("keyup", "form#login input[name=pw]", function(event)
+   {
+      var key = (event.keyCode ? event.keyCode : event.which);
+      if (key == '13')
+      {
+         $("form#login .button").trigger("click");
+      }
+   });
+
+   $("body").on("click", "form#login .button", function()
+   {
+      var valid = true;
+      var invalidArr = Array();
+
+      $("form input").each(function ()
+      {
+         if ($(this).val() == "")
+         {
+            valid = false;
+            invalidArr.push($(this).attr("name"));
+         }
+      });
+
+      if (valid)
+      {
+         $("form input").each(function ()
+         {
+            $(this).css("background", "white");
+         });
+
+         loginAjax();
+      }
+      else
+      {
+         $("form input").each(function ()
+         {
+            $(this).css("background", "white");
+         });
+
+         for (var input in invalidArr)
+         {
+            $("input[name=" + invalidArr[input] + "]").css("background", "#ff4c4c");
+         }
+      }
+   });
+
+   function showProfileBox()
+   {
+      $name.animate({ opacity: 0 }, 100, function () { $name.hide(); });
+      $profile_box.animate({ "width": "300px",
+                             "height": "120px",
+                             "opacity": 1,
+                             "backgroundColor": "#fff",
+                             "padding": 0 }, 300, function ()
+                             {
+                                 $box_content.fadeIn(100);
+                                 $(this).css("color", "black");
+                             });
+      $profile_box.css({ border: "1px solid #bbb", 
+                         cursor: "default" });
+      profile_box_open = true;
+   }
+
+   function hideProfileBox()
+   {
+      $box_content.hide();
+      $name.show()
+           .animate({ opacity: 1 });
+      $profile_box.animate({ "width": profile_box_width + "px",
+                             "height": profile_box_height + "px",
+                             "opacity": 0.9,
+                             "backgroundColor": "rgb(61,106,162)",
+                             "padding": "6px 8px" }, 300, function()
+                             {
+                                 $(this).css("opacity", "");
+                             });
+      $profile_box.css({ border: "", 
+                         cursor: "pointer",
+                         color: "white", });
+
+      profile_box_open = false;
+   }
+
+   function logout()
+   {
+      deleteCookie("userId", "/");
+      deleteCookie("sessionId", "/");
+      window.location = ".";
+   }
+
+   function deleteCookie(name, path, domain)
+   {
+      document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;" + ( path ? "; path=" + path : "") + ( domain ? "; domain=" + domain : "");
+   }
+
+   function openLogInDialogue()
+   {
+      var html = "<p style=\"text-align:center\"><i id=\"msg\">All fields required</i></p>";
+          html+= "<form id=\"login\" method=\"post\" style=\"text-align:center\">";
+          html+= "<input name=\"email\" type=\"text\" size=\"25\" placeholder=\"Email\"/>";
+          html+= "<input name=\"pw\" type=\"password\" size=\"25\" placeholder=\"Password\"/>";
+          html+= "<div style=\"margin-top:20px\">";
+          html+= "<span class=\"button\">Log In</span>";
+          html+= "</div>";
+          html+= "</form>";
+
+      var options = {
+         "height": 275,
+         "width": 500,
+         "html": html,
+      };
+
+      showModal("custom", options, true);
+
+      $("#login > [name=email]").trigger("focus");
+   }
+
+   function loginAjax()
+   {
+      // Add modal veil & loading gif
+      $modal = $(".modal");
+      $modal_veil = $("<div>").css("position", "absolute")
+                              .css("top", "0")
+                              .css("height", "100%")
+                              .css("width", "100%")
+                              .css("z-index", "99")
+                              .css("background", "rgba(163,163,163,0.42)");
+
+      $loading_gif = $("<img>").attr("src", "/resources/images/UI/rss_seal_loading.gif")
+                               .css("position", "absolute")
+                               .css("height", "150px")
+                               .css("width", "150px")
+                               .css("top", "50%")
+                               .css("left", "50%")
+                               .css("margin-top", "-75px")
+                               .css("margin-left", "-75px")
+                               .css("z-index", "100");
+
+      $(".modal-inner").css("-webkit-filter", "blur(1px)");
+      $modal.append($modal_veil);
+      $modal.append($loading_gif);
+
+      $("html").css("cursor", "none");
+
+      $.ajax({
+         url: "/members/login.php",
+         type: "POST",
+         dataType: "JSON",
+         data: $("form#login").serialize(),
+      })
+      .done(function(response)
+      {
+         if (response.success)
+         {
+            document.cookie = "userId=" + response.userId + ";path=/";
+            document.cookie = "sessionId=" + response.sessionId + ";path=/";
+            window.location = ".";
+         }
+         else
+         {
+            $("#msg").html(response.fail_msg);
+            $("html").css("cursor", "default");
+            $loading_gif.remove();
+            $modal_veil.remove();
+            $(".modal-inner").css("-webkit-filter", "");
+         }
+      });
+   }
+});

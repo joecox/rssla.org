@@ -35,17 +35,6 @@ table.memberList td {
    background: rgb(230,230,230);
 }
 
-.flatbutton#login {
-   position: absolute;
-   right: 40px;
-   top: 3px;
-}
-
-.flatbutton#profilebox {
-   position: absolute;
-   right: 40px;
-}
-
 /* Individual profile styles */
 .profile#sidebar {
    float: left;
@@ -88,66 +77,4 @@ table.memberList td {
    right: 40px;
    top: 30px;
    text-align: right;
-}
-
-#profile_box_content {
-   width: 100%;
-   height: 100%;
-   display: none;
-}
-
-#profile_box_content > #name {
-   font-size: 1.1rem;
-   cursor: pointer;
-}
-
-#profile_box_content > #name:hover {
-   color: rgb(36, 114, 211);
-   text-decoration: underline;
-}
-
-#profilebox img {
-   height: 60px;
-   border: 1px solid #aaa;
-   vertical-align: top;
-   cursor: pointer;
-   float: left;
-   margin-right: 8px;
-}
-
-/* Account Control */
-.account_control.profile:hover,
-.account_control.edit:hover,
-.account_control.logout:hover {
-   cursor: pointer;
-   background-color: #eee;
-   box-shadow: 0 0 4px #aaa inset;
-}
-
-.account_control.profile {
-   height: 80px;
-   border-bottom: 1px solid #ccc;
-   padding: 8px;
-   box-sizing: border-box;
-   -moz-box-sizing: border-box;
-}
-
-.account_control.edit,
-.account_control.logout {
-   text-align: center;
-   padding: 11px 0;
-   width: 50%;
-   box-sizing: border-box;
-   -moz-box-sizing: border-box;
-}
-
-.account_control.edit {
-   float: left;
-   border-right: 1px solid #ccc;
-}
-.account_control.logout { float: right; }
-
-.account_control #email {
-   font-size: 1rem;
-   margin-top: 5px;
 }

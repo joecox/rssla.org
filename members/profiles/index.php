@@ -7,21 +7,9 @@
 </head>
 
 <?php
-
-   include($_SERVER['DOCUMENT_ROOT']."/_modules/globals.php");
-   include($DB_MODULE);
-
-   db_connect();
-   $results = db_select("SELECT * FROM session WHERE userId='".$_COOKIE["userId"]."' AND sessionId='".$_COOKIE["sessionId"]."';");
-
-   if (count($results) > 0)
-      $sessionIsValid = true;
-   else
-      $sessionIsValid = false;
-
+   include_once($DB_MODULE);
    $id = $_GET['id'];
    $memberView = ($id != null && $id != "" && memberExists($id))
-
 ?>
 
 <body class="members">
@@ -31,19 +19,13 @@
          <div class="wrap border-bottom shadow-bottom">
             <span class="pagetitle">MEMBER PROFILES</span>
             <div class="topnav v-align">
-               <?php
-                  if (!$memberView)
-                     echo "<a href=\"/members/profiles\" class=\"topnavitem selected\">Profile List</a>";
-                  else
-                     echo "<a href=\"/members/profiles\" class=\"topnavitem\">Profile List</a>";
-               ?>
+               <?php if (!$memberView) : ?>
+                  <a href="/members/profiles" class="topnavitem selected">Profile List</a>
+               <?php else : ?>
+                  <a href="/members/profiles" class="topnavitem">Profile List</a>
+               <?php endif; ?>
                <a class="topnavitem" onclick="showCreateProfileDialogue()">Create Profile</a>
             </div>
-            <?php
-
-               include("build_login_or_profile_button.php");
-
-            ?>
          </div>
          <div class="fullpage-contwrap">
             <div class="contentblock">
@@ -63,6 +45,8 @@
 
                   function memberExists($id)
                   {
+                     db_connect();
+                     
                      $results = db_select("SELECT id FROM `members` where id=".$id);
                      return ($results != null);
                   }
@@ -70,7 +54,7 @@
                   function buildMemberListView()
                   {
                      echo "<div class=\"members-list\">";
-                     if (!$GLOBALS['sessionIsValid'])
+                     if (!$GLOBALS['valid_session'])
                      {
                         echo "<div class=\"create-msg-container\">";
                         echo "<span class=\"create-msg\">Don't have a member profile?  Create one ";
