@@ -33,7 +33,7 @@
    else
    {
       $response["success"] = false;
-      $response["fail_msg"] = "Incorrect Email.";
+      $response["fail_msg"] = "Incorrect Email and/or Password.";
       echo json_encode($response);
    }
 

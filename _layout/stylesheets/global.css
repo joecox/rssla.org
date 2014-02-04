@@ -372,8 +372,6 @@ body.dialog-open { overflow: hidden; }
    -moz-box-sizing: border-box;
 }
 
-#account_control { padding: 7px 8px; }
-
 .flatbutton#login,
 #account_control {
    z-index: 99;
@@ -384,6 +382,7 @@ body.dialog-open { overflow: hidden; }
    border-radius: 3px;
    background-color: rgb(61,106,162);
    opacity: 0.9;
+   padding: 7px 10px;
 }
 
 .flatbutton#login:hover,
@@ -445,6 +444,31 @@ body.dialog-open { overflow: hidden; }
 .account_control #email {
    font-size: 1rem;
    margin-top: 5px;
+}
+
+/* Login */
+form#login input[type="text"],
+form#login input[type="password"] {
+   border: 1px solid #aaa;
+   border-radius: 3px;
+   box-shadow: 0 0 1px 1px #ddd inset;
+   font-family: 'ProximaNova', sans-serif;
+   height: 20px;
+   padding: 10px;
+   margin: 10px;
+   font-size: 1.1rem;
+}
+
+form#login select {
+   width: 259px;
+   height: 40px;
+   padding: 5px;
+   font-size: 1.1rem;
+   margin: 10px;
+   border: 1px solid #aaa;
+   border-radius: 3px;
+   box-shadow: 0 0 1px 1px #ddd inset;
+   font-family: 'ProximaNova', sans-serif;
 }
 
 /* FOOTER */

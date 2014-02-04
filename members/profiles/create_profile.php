@@ -37,6 +37,16 @@
 
       if (db_insert($query))
       {
+         /* Send Mail */
+         $to = $fname . " " . $lname . "<" . $email . ">";
+         $subject = "Welcome to rssla.org!";
+         $from = "From: rssla.org <website@rssla.org>";
+         $msg = "Test";
+         mail($to, $subject, $msg, $from, '-fwebsite@rssla.org');
+
+         /*************/
+
+
          $response["success"] = true;
 
          $results = db_select("SELECT id from members WHERE sid=".$sid);

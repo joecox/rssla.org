@@ -169,6 +169,8 @@ function createProfileAjax()
       }
       else
       {
+         $loading_gif.remove();
+         $modal_veil.remove();
          $("veil").trigger("click");
          if (response.user_exists)
          {

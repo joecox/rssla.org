@@ -46,13 +46,15 @@
                   function memberExists($id)
                   {
                      db_connect();
-                     
+
                      $results = db_select("SELECT id FROM `members` where id=".$id);
                      return ($results != null);
                   }
 
                   function buildMemberListView()
                   {
+                     db_connect();
+                     
                      echo "<div class=\"members-list\">";
                      if (!$GLOBALS['valid_session'])
                      {

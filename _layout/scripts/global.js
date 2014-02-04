@@ -422,7 +422,7 @@ $(document).ready(function()
                              "height": profile_box_height + "px",
                              "opacity": 0.9,
                              "backgroundColor": "rgb(61,106,162)",
-                             "padding": "6px 8px" }, 300, function()
+                             "padding": "7px 10px" }, 300, function()
                              {
                                  $(this).css("opacity", "");
                              });
