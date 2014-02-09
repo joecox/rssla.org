@@ -72,6 +72,6 @@
       db_close();
    }
 
-   echo pretty_print(json_encode($results));
+   echo json_encode($results);
 
 ?>
