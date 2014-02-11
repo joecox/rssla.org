@@ -43,12 +43,14 @@
    $num_scans = $_POST['scans_row_count'];
 
    $scans = array();
+   $exts = array();
 
    for ($ii = 1; $ii <= $num_scans; $ii++)
    {
       if (file_exists($_FILES['scan_'.$ii]['tmp_name']) && is_uploaded_file($_FILES['scan_'.$ii]['tmp_name']))
       {
          array_push($scans, $_FILES['scan_'.$ii]['tmp_name']);
+         array_push($exts, pathinfo($_FILES['scan_'.$ii]['name'], PATHINFO_EXTENSION);
       }
    }
 
@@ -87,13 +89,13 @@
    $mailer = new PHPMailer();
    $mailer->SetFrom("website@rssla.org", "rssla.org");
    $mailer->Sender = "website@rssla.org";
-   $mailer->AddAddress("communications@rssla.org");
+   $mailer->AddAddress("treasurer@rssla.org");
    $mailer->Subject = $subject;
 
    // Handle scan embed
    for ($ii = 0; $ii < count($scans); $ii++)
    {
-      $mailer->AddEmbeddedImage($scans[$ii], "scan_".$ii, "scan_".$ii.".png");
+      $mailer->AddEmbeddedImage($scans[$ii], "scan_".$ii, "scan_".$ii.".".$exts[$ii]);
       $message .= '<img alt="PHPMailer" src="cid:scan_'.$ii.'"/><br/><br/>';
    }
    
