@@ -61,7 +61,7 @@ body.dialog-open { overflow: hidden; }
    height: 100%;
    top: 0;
    left: 0;
-   z-index: 6;
+   z-index: 999;
 }
 .overlay {
    display: none;
@@ -342,17 +342,6 @@ body.dialog-open { overflow: hidden; }
    font-size: 1.1rem;
 }
 
-.flatbutton {
-   cursor: pointer;
-   padding: 6px 8px;
-   background: #2473D3;
-   opacity: 0.8;
-   color: #fff;
-}
-.flatbutton:hover {
-   opacity: 1;
-}
-
 .topnav {
    text-align: center;
    display: inline-block;
@@ -375,6 +364,111 @@ body.dialog-open { overflow: hidden; }
    height: 0;
    clear: both;
    visibility: hidden;
+}
+
+/* ACCOUNT CONTROL */
+.flatbutton#login {
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;
+}
+
+.flatbutton#login,
+#account_control {
+   z-index: 99;
+   position: absolute;
+   top: 5px;
+   right: 0;
+   box-shadow: 4px 4px 25px black;
+   border-radius: 3px;
+   background-color: rgb(61,106,162);
+   opacity: 0.9;
+   padding: 7px 10px;
+}
+
+.flatbutton#login:hover,
+#account_control:hover { opacity: 1; }
+
+.flatbutton#login,
+#account_control > #name {
+   font-size: 1.2rem;
+   height: 35px;
+}
+
+#profile_box_content {
+   width: 100%;
+   height: 100%;
+   display: none;
+   background-color: white;
+}
+
+#account_control img {
+   height: 60px;
+   border: 1px solid #aaa;
+   vertical-align: top;
+   cursor: pointer;
+   float: left;
+   margin-right: 8px;
+}
+
+.account_control.profile:hover,
+.account_control.edit:hover,
+.account_control.logout:hover {
+   cursor: pointer;
+   background-color: #eee;
+   box-shadow: 0 0 4px #aaa inset;
+}
+
+.account_control.profile {
+   height: 80px;
+   border-bottom: 1px solid #ccc;
+   padding: 8px;
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;
+}
+
+.account_control.edit,
+.account_control.logout {
+   text-align: center;
+   padding: 11px 0;
+   width: 50%;
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;
+}
+
+.account_control.edit {
+   float: left;
+   border-right: 1px solid #ccc;
+}
+.account_control.logout { float: right; }
+
+.account_control #email {
+   font-size: 1rem;
+   margin-top: 5px;
+}
+
+/* Login */
+form#login input[type="text"],
+form#login input[type="password"] {
+   border: 1px solid #aaa;
+   border-radius: 3px;
+   box-shadow: 0 0 1px 1px #ddd inset;
+   font-family: 'ProximaNova', sans-serif;
+   height: 20px;
+   padding: 10px;
+   margin: 10px;
+   font-size: 1.1rem;
+}
+
+form#login select {
+   width: 259px;
+   height: 40px;
+   padding: 5px;
+   font-size: 1.1rem;
+   margin: 10px;
+   border: 1px solid #aaa;
+   border-radius: 3px;
+   box-shadow: 0 0 1px 1px #ddd inset;
+   font-family: 'ProximaNova', sans-serif;
 }
 
 /* FOOTER */
@@ -811,6 +905,17 @@ font-family:'ProximaNova'; src:url('/resources/fonts/ProximaNova/proximanova-sem
 
 .button.del {
    margin-left: 20px;
+}
+
+.flatbutton {
+   cursor: pointer;
+   padding: 6px 8px;
+   background: rgb(36,115,211);
+   opacity: 0.8;
+   color: white;
+}
+.flatbutton:hover {
+   opacity: 1;
 }
 
 .selectbar {

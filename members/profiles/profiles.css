@@ -35,31 +35,6 @@ table.memberList td {
    background: rgb(230,230,230);
 }
 
-.edit.button {
-   position: absolute;
-   right: 20px;
-   top: 20px;
-}
-
-.login.button {
-   position: absolute;
-   right: 40px;
-   top: 3px;
-}
-
-.goto-profile-link {
-   position: absolute;
-   right: 40px;
-   cursor: pointer;
-   padding: 6px 8px;
-   background: rgb(36,115,211);
-   opacity: 0.8;
-   color: white;
-}
-.goto-profile-link:hover {
-   opacity: 1;
-}
-
 /* Individual profile styles */
 .profile#sidebar {
    float: left;

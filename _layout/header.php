@@ -37,5 +37,20 @@
       ?>
    </div>
    <div id="photobarCoverPanelRight"></div>
+
+   <?php include($SESSION_MODULE); ?>
+   <?php include($ACCOUNT_CONTROL_MODULE); ?>
+
+   <?php
+      if (($userId = valid_login_session()) != -1)
+      {
+         show_account_control($userId);
+      }
+      else
+      {
+         show_login();
+      }
+   ?>
+
    <?php include($_SERVER['DOCUMENT_ROOT'].'/_layout/nav.php'); ?>
 </div>

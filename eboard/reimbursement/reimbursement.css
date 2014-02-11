@@ -2,11 +2,21 @@ input {
    margin-bottom: 10px;
 }
 
-#event_budget_table th,
-#event_budget_table td {
+th,
+td {
    font-weight: normal;
 }
 
-#event_budget_table input {
+table input {
    margin-right: 15px;
+}
+
+.addRow-button {
+   background-image: url("/resources/images/UI/plus-sign-32.png");
+   background-repeat: no-repeat;
+   background-size: cover;
+   width: 24px;
+   height: 24px;
+   cursor: pointer;
+   margin-top: -9px;
 }

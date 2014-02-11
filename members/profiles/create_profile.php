@@ -24,11 +24,29 @@
 
       db_connect();
 
+      $results = db_select("SELECT id from members WHERE sid=".$sid);
+      if (count($results) > 0)
+      {
+         $results["success"] = false;
+         $results["user_exists"] = true;
+         exit(json_encode($results));
+      }
+
       $query = "INSERT INTO members(sid, hash, first_name, last_name, is_active, year, is_transfer, email) ";
       $query.= "VALUES('".$sid."','".$hashed_pw."','".$fname."','".$lname."',"."1".",".$year.",".$transfer.",'".$email."');";
 
       if (db_insert($query))
       {
+         /* Send Mail */
+         $to = $fname . " " . $lname . "<" . $email . ">";
+         $subject = "Welcome to rssla.org!";
+         $from = "From: rssla.org <website@rssla.org>";
+         $msg = "Test";
+         mail($to, $subject, $msg, $from, '-fwebsite@rssla.org');
+
+         /*************/
+
+
          $response["success"] = true;
 
          $results = db_select("SELECT id from members WHERE sid=".$sid);

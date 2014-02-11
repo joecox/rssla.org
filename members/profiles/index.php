@@ -7,27 +7,9 @@
 </head>
 
 <?php
-
-   include($_SERVER['DOCUMENT_ROOT']."/_modules/globals.php");
-   include($DB_MODULE);
-
-   db_connect();
-   $results = db_select("SELECT * FROM session WHERE userId='".$_COOKIE["userId"]."' AND sessionId='".$_COOKIE["sessionId"]."';");
-
-   if (count($results) > 0)
-      $sessionIsValid = true;
-   else
-      $sessionIsValid = false;
-
+   include_once($DB_MODULE);
    $id = $_GET['id'];
-   if ($id != null && $id != "" && memberExists($id))
-   {
-      $memberView = true;
-   }
-   else
-   {
-      $memberView = false;
-   }
+   $memberView = ($id != null && $id != "" && memberExists($id))
 ?>
 
 <body class="members">
@@ -37,39 +19,20 @@
          <div class="wrap border-bottom shadow-bottom">
             <span class="pagetitle">MEMBER PROFILES</span>
             <div class="topnav v-align">
-               <?php
-                  if (!$memberView)
-                     echo "<a href=\"/members/profiles\" class=\"topnavitem selected\">Profile List</a>";
-                  else
-                     echo "<a href=\"/members/profiles\" class=\"topnavitem\">Profile List</a>";
-               ?>
+               <?php if (!$memberView) : ?>
+                  <a href="/members/profiles" class="topnavitem selected">Profile List</a>
+               <?php else : ?>
+                  <a href="/members/profiles" class="topnavitem">Profile List</a>
+               <?php endif; ?>
                <a class="topnavitem" onclick="showCreateProfileDialogue()">Create Profile</a>
             </div>
-            <?php
-
-               $userId = $_COOKIE['userId'];
-
-               if (!$sessionIsValid)
-               {
-                  echo "<span class=\"login button\">Log In</span>";
-               }
-               else if ($sessionIsValid && (!isset($id) || $id != $userId))
-               {
-                  $results = db_select("SELECT first_name FROM members WHERE id=".$userId);
-                  $name = $results[0]["first_name"];
-                  echo "<span class=\"goto-profile-link v-align\" onclick=\"goTo('?id=".$userId."')\">".$name." - Your Profile</span>";
-               }
-               else
-               {
-                  echo "<span class=\"goto-profile-link v-align\" onclick=\"goTo('edit?id=".$userId."')\">Edit Profile</span>";
-               }
-
-            ?>
          </div>
          <div class="fullpage-contwrap">
             <div class="contentblock">
                
                <?php
+
+                  include("build_member_view.php");
 
                   if ($memberView)
                   {
@@ -82,14 +45,18 @@
 
                   function memberExists($id)
                   {
+                     db_connect();
+
                      $results = db_select("SELECT id FROM `members` where id=".$id);
                      return ($results != null);
                   }
 
                   function buildMemberListView()
                   {
+                     db_connect();
+                     
                      echo "<div class=\"members-list\">";
-                     if (!$GLOBALS['sessionIsValid'])
+                     if (!$GLOBALS['valid_session'])
                      {
                         echo "<div class=\"create-msg-container\">";
                         echo "<span class=\"create-msg\">Don't have a member profile?  Create one ";
@@ -215,96 +182,6 @@
                      echo "<a style=\"float:left\" class=\"member-link\" href=\"?id=".$data['id']."\">".
                         $data['first_name']." ".$data['last_name']."</a>";
                      echo "</td>";
-                  }
-
-                  function buildMemberView($id)
-                  {
-                     $years = array(
-                        '1' => "First Year",
-                        '2' => "Second Year",
-                        '3' => "Third Year",
-                        '4' => "Fourth Year"
-                     );
-
-                     $results = db_select("SELECT * FROM `members` where id=".$id);
-                     $row = $results[0];
-
-                     echo "<div class=\"profile\" id=\"sidebar\">";
-                     echo "<div class=\"profile\" id=\"image-container\">";
-                     $image_src = $row["pf_photo_path"] ? $row["pf_photo_path"] : "general_profile_image.png";
-                     echo "<img class=\"profile\" id=\"profile-image\" src=\"/resources/images/members/" . $image_src . "\">";
-                     echo "</div>";
-                     echo "</div>";
-                     
-                     echo "<div class=\"profile\" id=\"main-space\">";
-
-                     if ($row['show_email'])
-                     {
-                        echo "<div id=\"contact\">";
-                        echo "<b>Contact</b><br>";
-                        echo $row['email'];
-                        echo "</div>";
-                     }
-
-                     echo "<div>";
-                     echo "<span class=\"profile\" id=\"name\">" . $row['first_name'] . " " . $row['last_name'] . " / ";
-                     echo "<span class=\"profile\" id=\"year\">" . $years[$row['year']] . "</span>";
-                     echo "<span>";
-                     echo "</div>";
-
-                     if ($row['message'])
-                     {
-                        echo "<p class=\"profile\" id=\"quote\">" . $row['message'] ."</p>";
-                     }
-
-                     echo "<p class=\"profile\" id=\"basic-info\">";
-
-                     $basicInfo = array(
-                        "Birthday" => "birthday",
-                        "Birthplace" => "birthplace",
-                        "Hometown" => "hometown",
-                     );
-
-                     foreach ($basicInfo as $key => $value)
-                     {
-                        if ($row[$value])
-                           echo "<b>" . $key . ": </b>" . $row[$value] . "<br>";
-                     }
-
-                     echo "</p>";
-
-                     echo "<p class=\"profile\" id=\"school-info\">";
-
-                     $schoolInfo = array(
-                        "Major" => "major",
-                        "Minor" => "minor",
-                     );
-
-                     foreach ($schoolInfo as $key => $value)
-                     {
-                        if ($row[$value])
-                           echo "<b>" . $key . ": </b>" . $row[$value] . "<br>";
-                     }
-
-                     echo "</p>";
-
-                     echo "<p class=\"profile\" id=\"personal-interests\">";
-
-                     $personalInterests = array(
-                        "Favorite Food" => "food",
-                        "Favorite Music" => "music",
-                        "Favorite Sports" => "sports",
-                     );
-
-                     foreach ($personalInterests as $key => $value)
-                     {
-                        if ($row[$value])
-                           echo "<b>" . $key . ": </b>" . $row[$value] . "<br>";
-                     }
-
-                     echo "</p>";
-
-                     echo "</div>";
                   }
 
                ?>
