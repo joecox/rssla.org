@@ -15,69 +15,96 @@
       </style>
    </head>
    <body>
+      <div id="noUsers"><div>There are no current users.</div></div>
       <div id="sidebar"></div>
       <div id="main-viewer">
          <div id="editor"></div>
       </div>
    </body>
    <script>
-      var userRef = new Firebase('https://fiery-fire-3705.firebaseio.com/users/');
+      var instanceRef = new Firebase('https://rcce-rsslaorg.firebaseio.com/instances/');
       var loadedRef;
       var oUsers = {};
       var numUsers = 0;
       var $sidebar = $("#sidebar");
       var $mainViewer = $("#main-viewer");
+      var $noUsers = $("#noUsers");
 
       var editor;
 
-      userRef.on('child_added', function(snapshot)
+      instanceRef.on('child_added', function(snapshot)
       {
-         var userName = snapshot.name();
+         var userId = snapshot.name();
          var userData = snapshot.val();
 
-         oUsers[userName] = {
-            ref: userRef.child(userName),
-            data: userData,
-            preview: undefined
-         };
+         var now = new Date();
+         var expires = new Date(userData.expires);
 
-         addUser(snapshot);
-         updateSidebar();
-
-         if (numUsers == 0)
+         if (expires < now)
          {
-            initializeEditor();
-            loadUserToMainViewer(snapshot);
+            snapshot.ref().remove();
          }
+         else if (userData.active)
+         {
+            addUser(snapshot);
+            addToSidebar(userId);
 
-         numUsers++;
+            if (numUsers == 0)
+            {
+               initializeEditor();
+               loadUserToMainViewer(userId);
+            }
+
+            numUsers++;
+            $noUsers.hide();
+         }         
       });
 
-      userRef.on('child_changed', function(snapshot)
+      instanceRef.on('child_changed', function(snapshot)
       {
-         var userName = snapshot.name();
+         var userId = snapshot.name();
          var userData = snapshot.val();
 
-         oUsers[userName].data = userData;
-         if (loadedRef == oUsers[userName].ref)
+         if (userData.active)
          {
-            // Before update, store cursor position
-            var cursorPos = editor.getSession().selection.getCursor();
+            if (!oUsers[userId])
+            {
+               addUser(snapshot);
+               addToSidebar(userId);
+               $noUsers.hide();
+            }
+            else
+            {
+               oUsers[userId].data = userData;
 
-            // Update code
-            editor.getSession().setValue(userData.code);
+               oUsers[userId].previewEditor.getSession().setValue(userData.code);
 
-            // Move cursor back to previous position
-            editor.getSession().selection.moveCursorTo(cursorPos.row, cursorPos.column, false);
+               if (loadedRef == oUsers[userId].ref)
+               {
+                  // Before update, store cursor position
+                  var cursorPos = editor.getSession().selection.getCursor();
+
+                  // Update code
+                  editor.getSession().setValue(userData.code);
+
+                  // Move cursor back to previous position
+                  editor.getSession().selection.moveCursorTo(cursorPos.row, cursorPos.column, false);
+               }
+            }
+         }
+         else
+         {
+            removeUser(userId);
+            loadNextUser();
          }
       });
 
-      userRef.on('child_removed', function(snapshot)
+      instanceRef.on('child_removed', function(snapshot)
       {
-         var userName = snapshot.name();
+         var userId = snapshot.name();
 
-         oUsers[userName].preview.remove();
-         delete oUsers[userName];
+         removeUser(userId);
+         loadNextUser();
       });
 
       function initializeEditor()
@@ -85,85 +112,116 @@
          editor = ace.edit("editor");
          editor.setTheme("ace/theme/monokai");
          editor.getSession().setMode("ace/mode/html");
-      }
-
-      function addUser(snapshot)
-      {
-         var userName = snapshot.name();
-         var userData = snapshot.val();
-
-         var $userPreview = $("<div>").addClass("user-preview")
-                                      .css("text-align", "center")
-                                      .text(userName);
-
-         oUsers[userName].preview = $userPreview;
-
-         $userPreview.on("click", function()
-         {
-            editor.getSession().setValue(oUsers[userName].data.code);
-            loadedRef = oUsers[userName].ref;
-         });
-      }
-
-      function updateSidebar()
-      {
-         for (key in oUsers)
-         {
-            var user = oUsers[key];
-            $sidebar.append(user.preview);
-         }
-      }
-
-      function loadUserToMainViewer(snapshot)
-      {
-         var userName = snapshot.name();
-         var userData = snapshot.val();
-
-         loadedRef = oUsers[userName].ref;
-
-         editor.getSession().setValue(userData.code);
 
          // Build input handler
          $(".ace_text-input").on("keyup", function ()
          {
             var code = editor.getSession().getValue();
-            loadedRef.set({ code: code });
+
+            loadedRef.once('value', function(snapshot)
+            {
+               var expires = new Date(snapshot.val().expires);
+               var now = new Date();
+
+               if (expires > now)
+               {
+                  loadedRef.update({ code: code });
+               }
+               else
+               {
+                  removeUser(snapshot.name());
+                  loadNextUser();
+               }
+            });
          });
       }
 
-      // setInterval(function()
-      // {
-      //    getCode();
-      // }, 100);
+      function addUser(snapshot)
+      {
+         var userId = snapshot.name();
+         var userData = snapshot.val();
 
-      // function getCode()
-      // {
-      //    var oCode;
-      //    $.ajax({
-      //       url: "getCode.php",
-      //       type: "GET",
-      //       dataType: "JSON"
-      //    })
-      //    .done(function(response)
-      //    {
-      //       if (response.success)
-      //       {
-      //          oCode = response.code;
-      //          updateCodes(oCode);
-      //       }
-      //    });
-      // }
+         oUsers[userId] = {
+            ref: instanceRef.child(userId),
+            data: userData,
+            preview: undefined,
+            previewEditor: undefined
+         };
 
-      // function updateCodes(oCode)
-      // {
-      //    for (index in oCode)
-      //    {
-      //       var entry = oCode[index];
-      //       var id = entry.id;
-      //       var code = entry.code;
+         var $previewEditor = $("<div>").attr("id", userId)
+                                        .addClass("preview-code-layer");
+         var $previewText = $("<div>").addClass("preview-text-layer")
+                                      .append($("<p>").addClass("text")
+                                                      .append($("<span>").text(oUsers[userId].data.name)));
+         var $userPreview = $("<div>").addClass("user-preview")
+                                      .append($previewEditor)
+                                      .append($previewText);
 
-      //       $("textarea#" + id).val(code);
-      //    }
-      // }
+         oUsers[userId].preview = $userPreview;
+
+         $userPreview.on("click", function()
+         {
+            loadUserToMainViewer(userId);
+         });
+      }
+
+      function addToSidebar(userId)
+      {
+         var user = oUsers[userId];
+         $sidebar.append(user.preview);
+
+         user.preview.css("margin-left", "-300px")
+                     .animate({ "margin-left": "0"}, 100);
+
+         user.previewEditor = ace.edit(userId);
+         user.previewEditor.setTheme("ace/theme/monokai");
+         user.previewEditor.getSession().setMode("ace/mode/html");
+         user.previewEditor.setReadOnly(true);
+         user.previewEditor.setFontSize(3);
+         user.previewEditor.renderer.setShowGutter(false);
+         user.previewEditor.getSession().setValue(oUsers[userId].data.code);
+
+      }
+
+      function loadUserToMainViewer(userId)
+      {
+         loadedRef = oUsers[userId].ref;
+
+         editor.getSession().setValue(oUsers[userId].data.code);
+
+         // Add selected class
+         for (key in oUsers)
+         {
+            oUsers[key].preview.removeClass("selected");
+         }
+
+         oUsers[userId].preview.addClass("selected");
+      }
+
+      function removeUser(userId)
+      {
+         // Remove elements & objects
+         if (oUsers[userId].preview)
+            oUsers[userId].preview.animate({ "margin-left": "-300px" },
+                                           100, 
+                                           function()
+                                           {
+                                              $(this).remove();
+                                           });
+
+         delete oUsers[userId];
+      }
+
+      function loadNextUser()
+      {
+         if (Object.keys(oUsers).length == 0)
+         {
+            $noUsers.show();
+         }
+         else
+         {
+            loadUserToMainViewer(Object.keys(oUsers)[0]);
+         }
+      }
    </script>
 </html>

@@ -1,12 +1,11 @@
 <?php
 
-   $userSet = isset($_COOKIE["user"]);
+   $userSet = isset($_COOKIE["userId"]);
 
 ?>
 <html>
    <head>
       <script type="text/javascript" src="/_layout/scripts/jquery.js"></script>
-      <?php if ($userSet) :?>
       <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.3/firebase.js'></script>
       <style media="screen">
          #editor { 
@@ -17,12 +16,11 @@
             left: 0;
          }
       </style>
-      <?php endif; ?>
       <link rel="stylesheet" type="text/css" href="/editor/editor.css"/>
    </head>
    <?php if ($userSet) : ?>
       <body>
-         <p>Editing as: <?php echo $_COOKIE["user"]; ?></p>
+         <p id="name"></p>
          <div id="editor"></div>
       </body>
       <script src="ace/src/ace.js"></script>
@@ -33,12 +31,20 @@
          editor.getSession().setMode("ace/mode/html");
 
          // Initialize Firebase
-         var user = "<?php echo $_COOKIE["user"]; ?>";
-         var userRef = new Firebase('https://fiery-fire-3705.firebaseio.com/users/');
-         var thisUser = userRef.child(user);
+         var userId = "<?php echo $_COOKIE["userId"]; ?>";
+         var instanceRef = new Firebase('https://rcce-rsslaorg.firebaseio.com/instances/');
+         var userName;
+
+         var userDataRef = instanceRef.child(userId);
+         userDataRef.update({ active: true });
+         userDataRef.once('value', function(snapshot)
+         {
+            userName = snapshot.val().name;
+            $("#name").text("Editing as: " + userName);
+         });
 
          // Load code from Firebase
-         thisUser.on('value', function(snapshot)
+         userDataRef.on('value', function(snapshot)
          {
             var code = snapshot.val().code;
 
@@ -56,30 +62,54 @@
          $(".ace_text-input").on("keyup", function ()
          {
             var code = editor.getSession().getValue();
-            thisUser.set({ code: code });
+
+            userDataRef.once('value', function(snapshot)
+            {
+               var expires = new Date(snapshot.val().expires);
+               var now = new Date();
+
+               if (expires > now)
+               {
+                  userDataRef.update({ code: code });
+               }
+            });
          });
 
-         // Remove Firebase ref on window close
-         window.onbeforeunload = function ()
+         window.onbeforeunload = function()
          {
-            thisUser.remove();
+            userDataRef.update({ active: false });
          }
       </script>
    <?php else : ?>
       <body>
-         <form method="post" id="userInput">
+         <div id="userInput">
             <p>Enter your name and hit enter:</p>
             <input type="text" name="user"/>
-         </form>
+         </div>
       </body>
       <script>
          $("#userInput > input").keypress(function(e)
          {
             if (e.keyCode == 13)
             {
-               var user = $(this).val();
-               document.cookie = "user=" + user;
-               window.location = '.';
+               var userName = $(this).val();
+               var instanceRef = new Firebase('https://rcce-rsslaorg.firebaseio.com/instances/');
+
+               var now = new Date();
+               var time = now.getTime();
+               var nhours = 10;
+               time += nhours * 3600 * 1000;
+               now.setTime(time);
+               var timeStr = now.toUTCString();
+
+               var userRef = instanceRef.push({ name: userName, expires: timeStr, active: true, code: "" }, function()
+               {
+                  var userId = userRef.name();
+
+                  document.cookie = "userId=" + userId + "; expires=" + timeStr;
+
+                  window.location = '.';
+               });   
             }
          });
       </script>
