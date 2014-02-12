@@ -46,17 +46,19 @@
          }
          else if (userData.active)
          {
-            addUser(snapshot);
-            addToSidebar(userId);
-
-            if (numUsers == 0)
+            if (Object.keys(oUsers).length == 0)
             {
+               addUser(snapshot);
+               addToSidebar(userId);
                initializeEditor();
                loadUserToMainViewer(userId);
+               $noUsers.hide();
             }
-
-            numUsers++;
-            $noUsers.hide();
+            else
+            {
+               addUser(snapshot);
+               addToSidebar(userId);
+            }
          }         
       });
 
@@ -69,9 +71,18 @@
          {
             if (!oUsers[userId])
             {
-               addUser(snapshot);
-               addToSidebar(userId);
-               $noUsers.hide();
+               if (Object.keys(oUsers).length == 0)
+               {
+                  addUser(snapshot);
+                  addToSidebar(userId);
+                  loadUserToMainViewer(userId);
+                  $noUsers.hide();
+               }
+               else
+               {
+                  addUser(snapshot);
+                  addToSidebar(userId);
+               }
             }
             else
             {
