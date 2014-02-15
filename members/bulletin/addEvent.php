@@ -167,7 +167,7 @@ foreach ($_POST as $k => $v) {
 $e->prepareFields();
 $query = "INSERT INTO bulletin_events (title, description, date, enddate, time, place, committee)
 VALUES ($e->title, $e->description, $e->date, $e->enddate, $e->time, $e->place, $e->committee)";
-db_insert_update_delete($query);
+db_insert($query);
 $id = getLast(); // gets id of last inserted item (the bulletin_event just added)
 
 
@@ -189,7 +189,7 @@ if ($found[0]["id"] == NULL) { // no current bulletin exists yet
     // make new bulletin entry for this date, set as unsent
     $query = "INSERT INTO bulletins (events, quarter, year, week, sent)
             VALUES (NULL, '$q', '$y', $w, 0)";
-    db_insert_update_delete($query);
+    db_insert($query);
 }
 
 
@@ -207,10 +207,12 @@ if ($thisbulletin == NULL) {
 $id = (int) $id;
 // updates the events part of the current bulletin by appending , and the id of the added event
 // unless events is null, then don't bother with the comma
-$query = "UPDATE bulletins 
-SET events=IFNULL(CONCAT(events, ',$id'), '$id')
-WHERE id=$thisbulletin";
-db_insert_update_delete($query);
+if ($e->enddate != NULL) {
+    $query = "UPDATE bulletins 
+    SET events=IFNULL(CONCAT(events, ',$id'), '$id')
+    WHERE id=$thisbulletin";
+    db_insert($query);
+}
 
 
 /* display thank you message */
