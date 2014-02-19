@@ -1,6 +1,6 @@
 $(document).ready(function () 
 {
-   var names = ["hosts",
+   var names = ["host",
                 "Crystal",
                 "DylanB",
                 "Jordan",
@@ -12,8 +12,10 @@ $(document).ready(function ()
    
    var currentframe = 0;
 
+   /*$(".auctionee").hover(function(){$(this).append($("<p>Name</p>"));});*/
+   
    // frame selection
-   $(".profilenavitem").click(function ()
+   $(".auctionee").click(function ()
    {
       $("#currentframe").animate({left: 0}, 200);
       $("#currentframe").attr("id", "frame" + currentframe);
@@ -22,11 +24,6 @@ $(document).ready(function ()
       var prevframe = currentframe - 1;
       var nextframe = currentframe + 1;
       
-      $(".profilewrap img").fadeOut(200, function ()
-      {
-         $(".profilewrap img").attr("src", "/resources/images/dateauction/" + names[currentframe] + ".png");
-      });
-      $(".profilewrap img").fadeIn(200);
       
       $("#frame" + currentframe).animate({left: "380px"}, 200);
       $("#frame" + currentframe).attr("id", "currentframe");
@@ -49,12 +46,6 @@ $(document).ready(function ()
       currentframe = currentframe + 1;
       var nextframe = currentframe + 1;
 
-      $(".profilewrap img").fadeOut(200, function ()
-      {
-         $(".profilewrap img").attr("src", "/resources/images/dateauction/" + names[currentframe] + ".png");
-      });
-      $(".profilewrap img").fadeIn(200);
-
       $("#frame" + currentframe).animate({left: "380px"}, 200);
       $("#frame" + currentframe).attr("id", "currentframe");
 
@@ -72,11 +63,6 @@ $(document).ready(function ()
       currentframe = currentframe - 1;
       var prevframe = currentframe - 1;
       
-      $(".profilewrap img").fadeOut(200, function ()
-      {
-         $(".profilewrap img").attr("src", "/resources/images/dateauction/" + names[currentframe] + ".png");
-      });
-      $(".profilewrap img").fadeIn(200);
 
       $("#frame" + currentframe).animate({left: "380px"}, 200);
       $("#frame" + currentframe).attr("id", "currentframe");
