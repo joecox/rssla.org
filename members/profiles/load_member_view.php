@@ -1,6 +1,6 @@
 <?php
 
-   function buildMemberView($id)
+   function loadMemberData($id, $json_mode)
    {
       $years = array(
          '1' => "First Year",
@@ -12,24 +12,48 @@
       $results = db_select("SELECT * FROM `members` where id=".$id);
       $row = $results[0];
 
-      echo "<div class=\"profile\" id=\"sidebar\">";
-      echo "<div class=\"profile\" id=\"image-container\">";
       $image_src = $row["pf_photo_path"] ? $row["pf_photo_path"] : "general_profile_image.png";
-      echo "<img class=\"profile\" id=\"profile-image\" src=\"/resources/images/members/" . $image_src . "\">";
-      echo "</div>";
-      echo "</div>";
-      
-      echo "<div class=\"profile\" id=\"main-space\">";
 
-      echo "<div>";
-      echo "<span class=\"profile\" id=\"name\">" . $row['first_name'] . " " . $row['last_name'] . " / ";
-      echo "<span class=\"profile\" id=\"year\">" . $years[$row['year']] . "</span>";
-      if ($row['is_transfer'])
-      {
-         echo "<span class=\"profile\" id=\"transfer\">" . " / Transfer</span>";
-      }
-      echo "<span>";
-      echo "</div>";
+      $email = $row['show_email'] ? $row['email'] : NULL;
+      $contact_info = array(
+         'email' => $email,
+         'linkedin' => $row['linkedin_url'],
+         'twitter' => $row['twitter_url'],
+         'facebook' => $row['facebook_url'],
+         'website' => $row['website_url']
+      );
+
+      $basic_info = array(
+         'year' => $years[$row['year']],
+         'transfer' => $row['is_transfer'],
+         'contact' => $contact_info,
+         'birthday' => $row['birthday'],
+         'birthplace' => $row['birthplace'],
+         'hometown' => $row['hometown']
+      );
+
+      $school_career = array(
+         'majors' => $row['major'],
+         'minors' => $row['minor']
+      );
+
+      $favorites = array(
+      );
+
+      $rss = array(
+      );
+
+      $data = array(
+         'first_name' => $row['first_name'],
+         'last_name' => $row['last_name'],
+         'pf_image_name' => $image_src,
+         'basic_info' => $basic_info,
+         'school_career' => $school_career,
+         'favorites' => $favorites,
+         'rss' => $rss
+      );
+
+      return $json_mode ? json_encode($data) : $data;
 
       if ($row['show_email'] || $row['linkedin_url'] ||
           $row['twitter_url'] || $row['facebook_url'] || $row['website_url'])
@@ -69,18 +93,6 @@
          echo "<p class=\"profile\" id=\"quote\">" . $row['message'] ."</p>";
       }
 
-      echo "<p class=\"profile\" id=\"basic-info\">";
-      $basicInfo = array(
-         "Birthday" => "birthday",
-         "Birthplace" => "birthplace",
-         "Hometown" => "hometown",
-      );
-      foreach ($basicInfo as $key => $value)
-      {
-         if ($row[$value])
-            echo "<b>" . $key . ": </b>" . $row[$value] . "<br>";
-      }
-      echo "</p>";
 
       echo "<p class=\"profile\" id=\"school-info\">";
       $schoolInfo = array(
@@ -138,4 +150,5 @@
 
       echo "</div>";
    }
+
 ?>

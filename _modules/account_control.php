@@ -37,7 +37,7 @@
                <div id="email"><i>$email</i></div>
             </div>
             <div class="account_control buttons">
-               <span class="account_control edit">Edit Profile</span>
+               <span class="account_control edit"><a href="/members/profiles/edit/?id=$userId">Edit Profile</a></span>
                <span class="account_control logout" id="logout">Log Out</span>
             </div>
          </div>
