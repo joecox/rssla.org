@@ -89,7 +89,7 @@
                         printYearHeader($headers[$year]);
                         $size = count($class);
                         $rows = ceil($size/4);
-                        $dangling = count($size) % 4;
+                        $dangling = $size % 4;
 
                         if ($rows == 0)
                         {

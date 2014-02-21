@@ -122,7 +122,7 @@
       $results = db_select("SELECT position_full FROM eboard WHERE profile_id=".$id);
       if (count($results) > 0)
       {
-         echo "<b>Current RSS Position: </b>" . $results[0]['position_full'];
+         echo "<b>Current RSS Position: </b>" . $results[0]['position_full'] . "<br/>";
       }
 
       $personalInterests = array(

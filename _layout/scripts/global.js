@@ -435,8 +435,8 @@ $(document).ready(function()
 
    function logout()
    {
-      deleteCookie("userId", "/");
-      deleteCookie("sessionId", "/");
+      deleteCookie("userId", "/", ".rssla.org");
+      deleteCookie("sessionId", "/", ".rssla.org");
       window.location = ".";
    }
 
@@ -504,9 +504,9 @@ $(document).ready(function()
       {
          if (response.success)
          {
-            document.cookie = "userId=" + response.userId + ";path=/";
-            document.cookie = "sessionId=" + response.sessionId + ";path=/";
-            window.location = ".";
+            document.cookie = "userId=" + response.userId + ";path=/" + ";domain=.rssla.org";
+            document.cookie = "sessionId=" + response.sessionId + ";path=/" + ";domain=.rssla.org";
+            window.location = "./?id=" + response.userId;
          }
          else
          {

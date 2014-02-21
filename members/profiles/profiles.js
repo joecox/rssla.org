@@ -163,8 +163,8 @@ function createProfileAjax()
    {
       if (response.success)
       {
-         document.cookie = "userId=" + response.userId + ";path=/";
-         document.cookie = "sessionId=" + response.sessionId + ";path=/";
+         document.cookie = "userId=" + response.userId + ";path=/" + ";domain=.rssla.org";
+         document.cookie = "sessionId=" + response.sessionId + ";path=/" + ";domain=.rssla.org";
          window.location = "./?id=" + response.userId;
       }
       else

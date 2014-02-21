@@ -192,7 +192,7 @@
       );
       foreach ($string as $col_name)
       {
-         $query .= ", " . $col_name . "=" . ($data[$col_name] == "" ? "NULL" : "'".mysql_real_escape_string($data[$col_name])."'");
+         $query .= ", " . $col_name . "=" . ($data[$col_name] == "" ? "NULL" : "'".str_replace('\'', '\\\'', str_replace('"', '\"', $data[$col_name]))."'");
       }
 
       if (!empty($_FILES['profile-image']['name']))
@@ -204,7 +204,7 @@
 
          move_uploaded_file($_FILES['profile-image']['tmp_name'], $uploadfile);
 
-         $query .= ", pf_photo_path='".mysql_real_escape_string($image_name)."'";
+         $query .= ", pf_photo_path='".str_replace('\'', '\\\'', $image_name)."'";
       }
       
       $query .= " WHERE id=".$data['userId'].";";

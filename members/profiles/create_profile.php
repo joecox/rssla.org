@@ -24,7 +24,7 @@
 
       db_connect();
 
-      $results = db_select("SELECT id from members WHERE sid=".$sid);
+      $results = db_select("SELECT id from members WHERE sid=".$sid." AND is_active=1");
       if (count($results) > 0)
       {
          $results["success"] = false;
@@ -37,15 +37,14 @@
 
       if (db_insert($query))
       {
-         /* Send Mail */
-         $to = $fname . " " . $lname . "<" . $email . ">";
-         $subject = "Welcome to rssla.org!";
-         $from = "From: rssla.org <website@rssla.org>";
-         $msg = "Test";
-         mail($to, $subject, $msg, $from, '-fwebsite@rssla.org');
+         // /* Send Mail */
+         // $to = $fname . " " . $lname . "<" . $email . ">";
+         // $subject = "Welcome to rssla.org!";
+         // $from = "From: rssla.org <website@rssla.org>";
+         // $msg = "Test";
+         // mail($to, $subject, $msg, $from, '-fwebsite@rssla.org');
 
-         /*************/
-
+         // /*************/
 
          $response["success"] = true;
 
