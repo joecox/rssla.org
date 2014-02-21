@@ -1,3 +1,15 @@
+// Style JS
+$(".member-link").hover(function()
+{
+   $(this).animate({ "background-color": "rgb(66, 150, 255)",
+                     "color": "white" }, 50);
+}, function()
+{
+   $(this).animate({ "background-color": "rgb(255,255,255)",
+                     "color": "black" }, 50);
+});
+
+
 // Open Profile Creation Dialogue
 $("#create-profile-link").click(function ()
 {

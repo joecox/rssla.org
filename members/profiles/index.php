@@ -178,7 +178,7 @@
 
                   function printMemberName($data)
                   {
-                     echo "<td>";
+                     echo "<td class=\"member-cell\">";
                      echo "<a style=\"float:left\" class=\"member-link\" href=\"?id=".$data['id']."\">".
                         $data['first_name']." ".$data['last_name']."</a>";
                      echo "</td>";
