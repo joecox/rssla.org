@@ -18,9 +18,6 @@
          if (count($results) > 0)
          {
             $valid_session = true;
-            echo "<script>";
-            echo "var userId = " . $_COOKIE["userId"];
-            echo "</script>";
             return $_COOKIE["userId"];
          }
          else

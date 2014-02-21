@@ -109,7 +109,7 @@ body.dialog-open { overflow: hidden; }
    font-weight: 300;
 }
 
-#header a {text-decoration: none; color: white;}
+#header .nav a {text-decoration: none; color: white;}
 
 #seal {
    position: absolute;
@@ -438,6 +438,10 @@ body.dialog-open { overflow: hidden; }
 .account_control.edit {
    float: left;
    border-right: 1px solid #ccc;
+}
+.account_control.edit a {
+   color: black;
+   text-decoration: none;
 }
 .account_control.logout { float: right; }
 

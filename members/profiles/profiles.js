@@ -163,8 +163,8 @@ function createProfileAjax()
    {
       if (response.success)
       {
-         document.cookie = "userId=" + response.userId + ";path=/";
-         document.cookie = "sessionId=" + response.sessionId + ";path=/";
+         document.cookie = "userId=" + response.userId + ";path=/" + ";domain=.rssla.org";
+         document.cookie = "sessionId=" + response.sessionId + ";path=/" + ";domain=.rssla.org";
          window.location = "./?id=" + response.userId;
       }
       else
@@ -189,3 +189,68 @@ function createProfileAjax()
       }
    });
 }
+
+
+/* Edit form field checks */
+$("body").on("click", "form#edit .button", function()
+{
+   var form_valid = true;
+   var invalidArr = Array();
+
+   var email = $("input[name=email]").val();
+   if (email == "")
+   {
+      form_valid = false;
+      invalidArr.push("email");
+   }
+
+   var first_name = $("input[name=first_name]").val();
+   if (first_name == "")
+   {
+      form_valid = false;
+      invalidArr.push("first_name");
+   }
+   var last_name = $("input[name=last_name]").val();
+   if (last_name == "")
+   {
+      form_valid = false;
+      invalidArr.push("last_name");
+   }
+
+   if (form_valid)
+   {
+      $("form input").each(function ()
+      {
+         $(this).css("background", "white");
+      });
+
+      $("form#edit").submit();
+   }
+   else
+   {
+      $("form input").each(function ()
+      {
+         $(this).css("background", "white");
+      });
+
+      for (var input in invalidArr)
+      {
+         $("input[name=" + invalidArr[input] + "]").css("background", "#ff4c4c");
+      }
+   }
+});
+
+$("input[type=file]").on("change", function (e)
+{
+   var file = e.target.files[0];
+
+   var reader = new FileReader();
+   reader.onload = (function (f)
+   {
+      return function (evt)
+      {
+         $("#profile-image").attr("src", evt.target.result);
+      }
+   })(file);
+   reader.readAsDataURL(file);
+});

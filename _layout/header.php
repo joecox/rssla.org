@@ -8,7 +8,7 @@
    <div id="banner">
       <a href="/">
          <div>
-            REGENTS SCHOLAR SOCIETY AT
+            <span style="color: white;">REGENTS SCHOLAR SOCIETY AT</span>
             <span style="color: #ebc62f;">UCLA</span>
          </div>
       </a>
@@ -38,13 +38,16 @@
    </div>
    <div id="photobarCoverPanelRight"></div>
 
-   <?php include($SESSION_MODULE); ?>
-   <?php include($ACCOUNT_CONTROL_MODULE); ?>
+   <?php include_once($SESSION_MODULE); ?>
+   <?php include_once($ACCOUNT_CONTROL_MODULE); ?>
 
    <?php
       if (($userId = valid_login_session()) != -1)
       {
          show_account_control($userId);
+         echo "<script>";
+         echo "var userId = " . $_COOKIE["userId"] . ";";
+         echo "</script>";
       }
       else
       {
