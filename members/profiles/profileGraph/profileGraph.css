@@ -1,0 +1,36 @@
+#profileGraph {
+   position: relative;
+   height: 600px;
+   z-index: 11;
+}
+
+.profileNode {
+   position: absolute;
+   cursor: pointer;
+   display: none;
+}
+
+.nodeTint {
+   position: absolute;
+   z-index: 12;
+   pointer-events: none;
+}
+
+.nodeTitle {
+   position: absolute;
+   z-index: 13;
+   pointer-events: none;
+
+   color: white;
+   text-align: center;
+}
+.nodeTitle.full {
+   top: 50%;
+   left: 50%;
+}
+
+#edges {
+   position: absolute;
+   top: 10px;
+   z-index: 10;
+}

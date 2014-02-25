@@ -11,6 +11,7 @@
         $dsn = 'mysql:host=localhost;dbname='.$db_name;
         global $dbh;
 
+        db_close();
         $dbh = new PDO($dsn, $db_user, $db_pw);
     }
 

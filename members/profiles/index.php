@@ -80,6 +80,8 @@
 
                      $results = db_select("SELECT id, first_name, last_name, year FROM `members` WHERE is_active=1 ORDER BY last_name ASC");
 
+                     db_close();
+
                      foreach ($results as $row)
                      {
                         array_push($members[$row['year']], $row);
