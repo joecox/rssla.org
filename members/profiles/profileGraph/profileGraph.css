@@ -8,25 +8,36 @@
    position: absolute;
    cursor: pointer;
    display: none;
+   border-radius: 100%;
 }
 
 .nodeTint {
    position: absolute;
    z-index: 12;
    pointer-events: none;
+   border-radius: 100%;
+   top: 0;
+   left: 0;
 }
 
-.nodeTitle {
+.nodeTextWrap {
    position: absolute;
    z-index: 13;
    pointer-events: none;
-
-   color: white;
    text-align: center;
+   color: white;
+   display: none;
 }
+.nodeTextWrap:before {
+   content: '';
+   display: inline-block;
+   height: 100%; 
+   vertical-align: middle;
+}
+
 .nodeTitle.full {
-   top: 50%;
-   left: 50%;
+   display: inline-block;
+   vertical-align: middle;
 }
 
 #edges {

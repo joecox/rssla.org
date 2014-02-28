@@ -1,15 +1,27 @@
 function ProfileNode (radius, type)
 {
-   this.$elem = undefined;
-   this.$parent = $("#profileGraph");
+   this.type = type;
 
-   // Radius: default value of 100
+   // Associated jQuery objects
+   this.$canvas = $("#profileGraph");
+   this.$elem = undefined;
+   this.$textWrap = undefined;
+
+
+   // Associated nodes
+   this.parent = undefined;
+   this.children = Array();
+
+   // Style variables
+   this.baseRadius = radius || 100;
    this.radius = radius || 100;
    this.width = undefined;
    this.height = undefined;
    this.cx = undefined;
    this.cy = undefined;
    this.scalable = undefined;
+
+   this.expanding = false;
 
    this.fill = undefined;
    this.tint = undefined;
@@ -19,9 +31,6 @@ function ProfileNode (radius, type)
    this.$textElem = undefined;
    this.text = undefined;
 
-   this.children = Array();
-
-   this.type = type;
 
    this.init(type);
 }
@@ -37,16 +46,22 @@ function (type)
    this.scalable = type == "leaf" ? false : true;
 
    this.$elem = $("<div>").addClass("profileNode")
-                          .css("border-radius", this.radius)
                           .width(this.width)
                           .height(this.height);
+
+   this.$textWrap = $("<div>").addClass("nodeTextWrap")
+                              .width(this.radius * Math.sqrt(2))
+                              .height(this.radius * Math.sqrt(2))
+                              .css("top", this.cy - this.radius + ((2 - Math.sqrt(2)) * this.radius) / 2)
+                              .css("left", this.cx - this.radius + ((2 - Math.sqrt(2)) * this.radius) / 2);
+
+   this.$canvas.append(this.$textWrap);
 
    this.buildHandlers();
 
    if (type == "root")
    {
       this.tint = $("<div>").addClass("nodeTint")
-                            .css("border-radius", this.radius)
                             .width(this.width)
                             .height(this.height)
                             .css("background-color", "rgba(66, 150, 255, 0.5)");
@@ -58,43 +73,51 @@ function (type)
       this.setFill("rgb(66, 150, 255)");
    }
 
-   $("#profileGraph").append(this.$elem);
+   this.$canvas.append(this.$elem);
 };
 
 ProfileNode.prototype.buildHandlers = 
 function ()
 {
-   var profileNode = this;
+   var node = this;
 
    this.$elem.on("mouseover", function()
    {
-      profileNode.scale(10, 100);
-      if (profileNode.tint)
+      if (node.parent && node.parent.expanding) return;
+
+      node.scaleTo(node.baseRadius+10, 100);
+      if (node.tint)
       {
-         profileNode.tint.animate({ opacity: 0 }, { duration: 100, queue: false });
+         node.tint.animate({ opacity: 0 }, { duration: 100, queue: false });
       }
-      if (profileNode.type == "root")
+      if (node.type == "root")
       {
-         profileNode.$titleElem.animate( { opacity: 0 }, 100);
+         node.$titleElem.stop()
+                        .animate( { opacity: 0 }, 100);
       }
    });
 
    this.$elem.on("mouseout", function()
    {
-      profileNode.scale(-10, 100);
-      if (profileNode.tint)
+      if (node.parent && node.parent.expanding) return;
+
+      node.scaleTo(node.baseRadius, 100);
+      if (node.tint)
       {
-         profileNode.tint.animate({ opacity: 1 }, { duration: 100, queue: false });
+         node.tint.animate({ opacity: 1 }, { duration: 100, queue: false });
       }
-      if (profileNode.type == "root")
+      if (node.type == "root")
       {
-         profileNode.$titleElem.animate( { opacity: 1 }, 100);
+         node.$titleElem.stop()
+                        .animate( { opacity: 1 }, 100);
       }
    });
 
    this.$elem.on("click", function()
    {
-      profileNode.expand();
+      if (node.parent && node.parent.expanding) return;
+
+      node.expand();
    });
 }
 
@@ -106,16 +129,22 @@ function (x, y, time)
 
    this.$elem.css("top", this.cy - this.radius)
              .css("left", this.cx - this.radius);
+
+   this.$textWrap.css("top", this.cy - this.radius + ((2 - Math.sqrt(2)) * this.radius) / 2)
+                 .css("left", this.cx - this.radius + ((2 - Math.sqrt(2)) * this.radius) / 2);
 };
 
 ProfileNode.prototype.center = 
 function ()
 {
-   this.cx = this.$parent.width() / 2;
-   this.cy = this.$parent.height() / 2;
+   this.cx = this.$canvas.width() / 2;
+   this.cy = this.$canvas.height() / 2;
 
    this.$elem.css("top", this.cy - this.radius)
              .css("left", this.cx - this.radius);
+
+   this.$textWrap.css("top", this.cy - this.radius + ((2 - Math.sqrt(2)) * this.radius) / 2)
+                 .css("left", this.cx - this.radius + ((2 - Math.sqrt(2)) * this.radius) / 2);
 };
 
 ProfileNode.prototype.setFill = 
@@ -151,27 +180,27 @@ function (text, full)
       if (full)
       {
          var fontSize = 4 * (this.width / 300) + "rem";
-         var fontWidth = 200 * (this.width / 300);
+         // var fontWidth = 200 * (this.width / 300);
 
-         var marginLeft = -(fontWidth / 2);
+         // var marginLeft = -(fontWidth / 2);
          this.$titleElem.addClass("full")
-                        .css("font-size", fontSize)
-                        .css("width", fontWidth)
-                        .css("margin-left", marginLeft);
+                        .css("font-size", fontSize);
+         //                .css("width", "100%");
+         //                .css("margin-left", marginLeft);
 
-         // Append to HTML to calculate height
-         var $tempEl = this.$titleElem.clone();
+         // // Append to HTML to calculate height
+         // var $tempEl = this.$titleElem.clone();
 
-         $tempEl.css("float", "left").hide();
-         $("html").append($tempEl);
+         // $tempEl.css("float", "left").hide();
+         // $("html").append($tempEl);
 
-         var marginTop = -($tempEl.height() / 2);
-         $tempEl.remove();
+         // var marginTop = -($tempEl.height() / 2);
+         // $tempEl.remove();
 
-         this.$titleElem.css("margin-top", marginTop);
+         // this.$titleElem.css("margin-top", marginTop);
       }
 
-      this.$elem.append(this.$titleElem);
+      this.$textWrap.append(this.$titleElem);
    }
 };
 
@@ -187,14 +216,12 @@ function (radius, time)
       this.$elem.css("width", this.width)
                 .css("height", this.height)
                 .css("top", this.cy - this.radius)
-                .css("left", this.cx - this.radius)
-                .css("border-radius", this.radius);
+                .css("left", this.cx - this.radius);
 
       if (this.tint)
       {
          this.tint.css("width", this.width)
-                  .css("height", this.height)
-                  .css("border-radius", this.radius);
+                  .css("height", this.height);
       }
    }
    else
@@ -203,16 +230,14 @@ function (radius, time)
                 .animate({ "width": this.width,
                            "height": this.height,
                            "top": this.cy - this.radius,
-                           "left": this.cx - this.radius,
-                           "border-radius": this.radius }, time);
+                           "left": this.cx - this.radius }, time);
 
 
       if (this.tint)
       {
          this.tint.stop()
                   .animate({ "width": this.width,
-                             "height": this.height,
-                             "border-radius": this.radius }, { duration: time, queue: false });
+                             "height": this.height }, { duration: time, queue: false });
       }
    }
 };
@@ -228,15 +253,18 @@ ProfileNode.prototype.addChild =
 function (node)
 {
    this.children.push(node);
+   node.parent = this;
 };
 
 ProfileNode.prototype.expand = 
 function ()
 {
+   this.expanding = true;
    this.scaleTo(50, 300);
+   this.baseRadius = 40;
 
    var step = (2 * Math.PI) / this.children.length;
-   var angle = 0;
+   var angle = Math.PI;
    var expandRadius = 150;
    for (var ii = 0; ii < this.children.length; ii++)
    {
@@ -262,6 +290,11 @@ function ()
       for (var ii = 0; ii < node.children.length; ii++)
       {
          node.children[ii].show(300);
+
+         setTimeout(function()
+         {
+            node.expanding = false;
+         }, 300);
       }
    }, 300);
 
@@ -275,9 +308,11 @@ function (time)
    if (!time)
    {
       this.$elem.show();
+      this.$textWrap.show();
    }
    else
    {
       this.$elem.fadeIn(time);
+      this.$textWrap.fadeIn(time);
    }
 };

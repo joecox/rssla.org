@@ -14,7 +14,7 @@
    db_connect();
 
    // TODO: restrict select items
-   $results = db_select("SELECT * FROM members WHERE id=".$userId);
+   $results = db_select("SELECT id, first_name, last_name, birthday, birthplace, books, classes, color, committees, email, facebook_url, food, games, hobbies, hometown, is_transfer, jobs, linkedin_url, major, minor, movies, music, other_organizations, pf_photo_path, profs, research, rss_previous, show_email, sports, tv_shows, twitter_url, website_url, year FROM members WHERE id=".$userId);
 
    if (count($results) > 0)
    {
@@ -50,7 +50,10 @@
       var draw = SVG("edges").size(1000, 600);
 
       var rootNode = new ProfileNode(150, "root");
-      rootNode.setFill(undefined, "/resources/images/members/" + memberData.pf_photo_path);
+
+      var imageName = memberData.pf_photo_path ? memberData.pf_photo_path : "general_profile_image.png";
+      rootNode.setFill(undefined, "/resources/images/members/" + imageName);
+      
       rootNode.center();
       rootNode.setTitle(memberData.first_name + " " + memberData.last_name, true);
 
