@@ -5,6 +5,14 @@
 </head>
 <body>
    <div id="wrapper">
+      <div id="konami" style="display:none">
+         <p style="font-size: 4rem; text-align: center;">
+            Groups: <br/><br/>
+            Jchu / Lisa / Austin<br/>
+            Jenny / Arvin / Max<br/>
+            Evan / Tonya / Patrick<br/>
+            Dylan / Ethan / Nathan
+      </div>
       <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/header.php"); ?>
       <div class="main clearfix">
          <div class="bannerwrap">

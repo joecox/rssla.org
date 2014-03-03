@@ -139,15 +139,20 @@ $(document).ready(function ()
       keys.push( e.keyCode );
       if ( keys.toString().indexOf( konami ) >= 0 )
       {
-         $(".nav")
-            .animate({
-               opacity: 0
-            });
-         $(".nav#hidden")
-            .animate({
-               opacity: 1
-            })
-            .css("z-index", "2");
+         $(".main").animate({ "margin-top": 2000 }, 500, function()
+         {
+            $(this).hide();
+         });
+         $("#header").animate({ "margin-top": "-220px"}, 500, function()
+         {
+            $(this).hide();
+            $("#footer").hide();
+
+            window.scrollTo(0,0);
+
+            $("#konami").fadeIn(300);
+         });
+
          keys = [];
       }
    });
