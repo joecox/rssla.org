@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+   <link type="text/css" rel="stylesheet" href="index.css"/>
    <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/head.php"); ?>
    <script>
       Array.prototype.max = function() {
@@ -300,9 +301,29 @@
             <div class="bannertext"></div>
          </div>
          <div class="wrap border-bottom shadow-bottom">
-            <span class="pagetitle">CLASS POINTS</span>
-            <span class="helptext v-align">Earn points for your class by showing up to events, committee meetings, etc!<br>Points are recorded by eboard members.</span>
+         
+         
+            
+               
+                  <span class="pagetitle">CLASS POINTS</span>
+               
+               
+                  <div class="topnav v-align">
+                  
+                  <table cellspacing="0" cellpadding="0">
+                     <td>
+                        <span class="topnavitem"><a href="index.php">Home</a></span>
+                        <span class="topnavitem"><a href="photosubmit.php">Submit a Photo</a></span>
+                     </td>
+                     <td>
+                     <span id="description">Earn points for your class by showing up to events, committee meetings, etc!<br>Points are recorded by eboard members.</span>
+                     </td>
+                  </table>
+                  </div>
+         
+         
          </div>
+         
          <div class="wrap center" style="height: 650px">
             <p style="font-size: 1.4rem">Current standings:</p>
             <canvas class="h-align" id="canvas" width="550" height="600" style="z-index: 0">[No canvas support, please update your browser.]</canvas>
