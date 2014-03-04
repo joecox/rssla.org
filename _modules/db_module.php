@@ -47,4 +47,10 @@
         $dbh = null;
     }
 
+    function last_insert_id()
+    {
+        global $dbh;
+        return $dbh->lastInsertId();
+    }
+
 ?>
