@@ -180,27 +180,28 @@ function (text, full)
       if (full)
       {
          var fontSize = 4 * (this.width / 300) + "rem";
-         // var fontWidth = 200 * (this.width / 300);
 
-         // var marginLeft = -(fontWidth / 2);
          this.$titleElem.addClass("full")
                         .css("font-size", fontSize);
-         //                .css("width", "100%");
-         //                .css("margin-left", marginLeft);
-
-         // // Append to HTML to calculate height
-         // var $tempEl = this.$titleElem.clone();
-
-         // $tempEl.css("float", "left").hide();
-         // $("html").append($tempEl);
-
-         // var marginTop = -($tempEl.height() / 2);
-         // $tempEl.remove();
-
-         // this.$titleElem.css("margin-top", marginTop);
       }
 
       this.$textWrap.append(this.$titleElem);
+
+      this.$textWrap.css("visibility", "hidden");
+      this.$elem.css("visibility", "hidden");
+
+      this.show();
+
+      this.$titleElem.width(this.$textWrap.width());
+
+      while (this.$titleElem[0].scrollWidth > this.$titleElem.width())
+      {
+         fontSize = parseInt(this.$titleElem.css("font-size"), 10);
+         this.$titleElem.css("font-size", fontSize - 1);
+      }
+
+      this.$textWrap.hide().css("visibility", "");
+      this.$elem.hide().css("visibility", "");
    }
 };
 
