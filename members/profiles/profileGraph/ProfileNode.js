@@ -11,6 +11,7 @@ function ProfileNode (radius, type)
    // Associated nodes
    this.parent = undefined;
    this.children = Array();
+   this.lines = Array();
 
    // Style variables
    this.baseRadius = radius || 100;
@@ -22,6 +23,7 @@ function ProfileNode (radius, type)
    this.scalable = undefined;
 
    this.expanding = false;
+   this.expanded = false;
 
    this.fill = undefined;
    this.tint = undefined;
@@ -127,24 +129,32 @@ function (x, y, time)
    this.cx = x;
    this.cy = y;
 
-   this.$elem.css("top", this.cy - this.radius)
-             .css("left", this.cx - this.radius);
+   if (!time)
+   {
+      this.$elem.css("top", this.cy - this.baseRadius)
+                .css("left", this.cx - this.baseRadius);
 
-   this.$textWrap.css("top", this.cy - this.radius + ((2 - Math.sqrt(2)) * this.radius) / 2)
-                 .css("left", this.cx - this.radius + ((2 - Math.sqrt(2)) * this.radius) / 2);
+      this.$textWrap.css("top", this.cy - this.baseRadius + ((2 - Math.sqrt(2)) * this.baseRadius) / 2)
+                    .css("left", this.cx - this.baseRadius + ((2 - Math.sqrt(2)) * this.baseRadius) / 2);
+   }
+   else
+   {
+      this.$elem.animate({ "top": this.cy - this.baseRadius,
+                           "left": this.cx - this.baseRadius }, { duration: time, queue: false });
+
+      this.$textWrap.animate({ "top": this.cy - this.baseRadius + ((2 - Math.sqrt(2)) * this.baseRadius) / 2,
+                               "left": this.cx - this.baseRadius + ((2 - Math.sqrt(2)) * this.baseRadius) / 2 }, 
+                             { duration: time, queue: false });
+   }
 };
 
 ProfileNode.prototype.center = 
-function ()
+function (time)
 {
-   this.cx = this.$canvas.width() / 2;
-   this.cy = this.$canvas.height() / 2;
+   var x = this.$canvas.width() / 2;
+   var y = this.$canvas.height() / 2;
 
-   this.$elem.css("top", this.cy - this.radius)
-             .css("left", this.cx - this.radius);
-
-   this.$textWrap.css("top", this.cy - this.radius + ((2 - Math.sqrt(2)) * this.radius) / 2)
-                 .css("left", this.cx - this.radius + ((2 - Math.sqrt(2)) * this.radius) / 2);
+   this.move(x, y, time);
 };
 
 ProfileNode.prototype.setFill = 
@@ -231,7 +241,7 @@ function (radius, time)
                 .animate({ "width": this.width,
                            "height": this.height,
                            "top": this.cy - this.radius,
-                           "left": this.cx - this.radius }, time);
+                           "left": this.cx - this.radius }, { duration: time, queue: false });
 
 
       if (this.tint)
@@ -260,10 +270,45 @@ function (node)
 ProfileNode.prototype.expand = 
 function ()
 {
-   this.expanding = true;
-   this.scaleTo(50, 300);
-   this.baseRadius = 40;
+   if (!this.expanded)
+   {
+      this.expanded = true;
+      this.expanding = true;
 
+      switch(this.type)
+      {
+         case "root":
+         {
+            this.scaleTo(70, 300);
+            this.baseRadius = 60;
+
+            this.expandChildren();
+
+            this.$titleElem.hide();
+            break;
+         }
+
+         case "inner":
+         {
+            this.$elem.trigger("mouseout");
+            this.center(200);
+            this.hideRest();
+
+            var node = this;
+
+            setTimeout(function()
+            {
+               node.expandChildren();
+            }, 200);
+         }
+      }
+   }
+
+};
+
+ProfileNode.prototype.expandChildren = 
+function ()
+{
    var step = (2 * Math.PI) / this.children.length;
    var angle = Math.PI;
    var expandRadius = 150;
@@ -278,6 +323,8 @@ function ()
 
       var line = draw.polyline(this.cx + "," + this.cy + " " + this.cx + "," + this.cy)
                      .stroke({ width: 1 });
+
+      this.lines.push(line);
 
       line.animate(400).plot(this.cx + "," + this.cy + " " + childNode.cx + "," + childNode.cy);
 
@@ -298,10 +345,27 @@ function ()
          }, 300);
       }
    }, 300);
-
-   this.$titleElem.hide();
-
 };
+
+ProfileNode.prototype.hideRest = 
+function ()
+{
+   this.parent.hide(100);
+
+   for (var ii = 0; ii < this.parent.lines.length; ii++)
+   {
+      this.parent.lines[ii].hide();
+   }
+
+   for (var ii = 0; ii < this.parent.children.length; ii++)
+   {
+      if (this.parent.children[ii] === this)
+      {
+         continue;
+      }
+      this.parent.children[ii].hide(100);
+   }
+}
 
 ProfileNode.prototype.show = 
 function (time)
@@ -315,5 +379,20 @@ function (time)
    {
       this.$elem.fadeIn(time);
       this.$textWrap.fadeIn(time);
+   }
+};
+
+ProfileNode.prototype.hide = 
+function (time)
+{
+   if (!time)
+   {
+      this.$elem.hide();
+      this.$textWrap.hide();
+   }
+   else
+   {
+      this.$elem.fadeOut(time);
+      this.$textWrap.fadeOut(time);
    }
 };

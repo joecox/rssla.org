@@ -45,3 +45,7 @@
    top: 10px;
    z-index: 10;
 }
+
+.noevent {
+   pointer-events: none;
+}
