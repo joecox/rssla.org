@@ -29,22 +29,20 @@
                </div>
                <div class="formWrapper" id="committee" style="display: none;">
                   <h3>Committee</h3>
-                  <form action="addEvent.php" method="post">
+                  <form action="databaseFile"> /*insert name of Evan's php*/
                      <span>Committee: <input type="text" name="Title" placeholder="Name"></span><br>
-                     <span>Date: <input type="text" name="Date"
-                     placeholder="yyyy-mm-dd"></span><br>
-                     <span>Time: <input type="text" name="Time" placeholder="HH:MM"></span><br>
+                     <span>Date: <input type="text" name="Date" placeholder="mm/dd/yyyy"></span><br> <!-- jQuery UI datepickers: add library to script + call it here or... -->
+                     <span>Time: <input type="text" name="Time" placeholder="HH:MM"></span><br> <!-- add HH + MM (15 increment) dropdowns, radio AM/default PM -->
                      <span>Site: <input type="text" name="Location" placeholder="Location, Bldg/Rm"></span><br><br>
                      <input type="submit" value="Submit">
-                     <input type="hidden" name="Committee" value="1">
                   </form><br><br>
 
                </div>
                <div class="formWrapper" id="oneTime" style="display: none;">
                   <h3>One-Time</h3>
-                  <form action="addEvent.php" method="post">
+                  <form action="//insert URL of backend section//">
                      <span>Title: <input type="text" name="Title" placeholder="Event Name"></span><br>
-                     <span>Date: <input type="text" name="Date" placeholder="yyyy-mm-dd"></span><br>
+                     <span>Date: <input type="text" name="Date" placeholder="mm/dd/yyyy"></span><br>
                      <span>Time: <input type="text" name="Time" placeholder="HH:MM"></span><br>
                      <span>Site: <input type="text" name="Location" placeholder="City, Location, Bldg, Rm"></span><br><br>
                      Description: <textarea rows="10" cols="100" name="Description" placeholder="Describe your event here..."></textarea><br><br>
@@ -53,10 +51,10 @@
                </div>
                <div class="formWrapper" id="recurring" style="display: none;">
                   <h3>Recurring</h3>
-                  <form action="addEvent.php" method="post">
+                  <form action="//insert URL of backend section//">
                      <span>Title: <input type="text" name="Title" placeholder="Event Name"></span>
-                     <span>Start Date: <input type="text" name="Date" placeholder="yyyy-mm-dd"></span>
-                     <span>End Date: <input type="text" name="endDate" placeholder="yyyy-mm-dd"></span><br><br>
+                     <span>Start Date: <input type="text" name="startDate" placeholder="mm/dd/yyyy"></span>
+                     <span>End Date: <input type="text" name="startDate" placeholder="mm/dd/yyyy"></span><br><br>
                      Description: <textarea rows="10" cols="100" name="Description" placeholder="Describe your event here..."></textarea><br><br>
                      <input type="submit" value="Submit">
                   </form><br><br>
@@ -83,5 +81,5 @@
       {
          showPostBlock ();
       });
-      </script>
-      </html>
+   </script>
+</html>
