@@ -3,11 +3,31 @@
 <html>
 <head>
    <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/head.php"); ?>
-   <style>
-   span {
-      padding-right: 15px;
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/start/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="/_layout/stylesheets/members_bulletin_datepicker.css">
+<script>
+   $(function() {
+   $("#commDatepicker").datepicker();
+   $("#oneDatepicker").datepicker();
+   $("#startDatepicker").datepicker();
+   $("#endDatepicker").datepicker();
+   });
+</script>
+<style>
+   .left {
+       width: 30%;
+       float: left;
+       text-align: right;
    }
-   </style>
+   .right {
+       width: 65%;
+       margin-left: 10px;
+       float:left;
+   }
+</style>
 </head>
 <body>
    <div id="wrapper">
@@ -25,36 +45,81 @@
                   </select>
                </p>
                <div class="formWrapper" id="cancel" style="display: block;">
-                  <h6><i>None selected...</i></h6>
+                  <h5><i>None selected...</i></h5>
                </div>
                <div class="formWrapper" id="committee" style="display: none;">
                   <h3>Committee</h3>
-                  <form action="databaseFile"> /*insert name of Evan's php*/
-                     <span>Committee: <input type="text" name="Title" placeholder="Name"></span><br>
-                     <span>Date: <input type="text" name="Date" placeholder="mm/dd/yyyy"></span><br> <!-- jQuery UI datepickers: add library to script + call it here or... -->
-                     <span>Time: <input type="text" name="Time" placeholder="HH:MM"></span><br> <!-- add HH + MM (15 increment) dropdowns, radio AM/default PM -->
-                     <span>Site: <input type="text" name="Location" placeholder="Location, Bldg/Rm"></span><br><br>
+                  <form action="compile.php">
+                     <div class="left"><span>Committee: </div><div class="right"><input type="text" name="Title" placeholder="Name"></span></div><br>
+                     <div class="left"><span>Date: </div><div class="right"><input type="text" name="Date" id="commDatepicker" placeholder="mm/dd/yyyy"></span></div><br>
+                     <div class="left"><span>Time: </div>
+                        <div class="right"><select id="timeHour">
+                           <option value="none" selected>--</option>
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9">9</option>
+                           <option value="10">10</option>
+                           <option value="11">11</option>
+                           <option value="12">12</option></select>:
+                           <select id="timeMinute">
+                              <option value="none" selected>--</option>
+                              <option value="00">00</option>
+                              <option value="15">15</option>
+                              <option value="30">30</option>
+                              <option value="45">45</option></select></span>
+                     <input type ="radio" name="AMPM" value="AM">AM<input type ="radio" name="AMPM" value="PM">PM</div><br>
+                     <div class="left"><span>Site: </div><div class="right"><input type="text" name="Location" placeholder="Location, Bldg/Rm"></span></div><br>
+                     <div class="left"><span>Contact: </div><div class="right"><input type="text" name="Contact" placeholder="name@domain.com"></span></div><br><br>
                      <input type="submit" value="Submit">
                   </form><br><br>
 
                </div>
                <div class="formWrapper" id="oneTime" style="display: none;">
                   <h3>One-Time</h3>
-                  <form action="//insert URL of backend section//">
-                     <span>Title: <input type="text" name="Title" placeholder="Event Name"></span><br>
-                     <span>Date: <input type="text" name="Date" placeholder="mm/dd/yyyy"></span><br>
-                     <span>Time: <input type="text" name="Time" placeholder="HH:MM"></span><br>
-                     <span>Site: <input type="text" name="Location" placeholder="City, Location, Bldg, Rm"></span><br><br>
+                  <form action="compile.php">
+                     <div class="left"><span>Title: </div><div class="right"><input type="text" name="Title" placeholder="Event Name"></span></div><br>
+                     <div class="left"><span>Date: </div><div class="right"><input type="text" name="Date" id="oneDatepicker" placeholder="mm/dd/yyyy"></span></div><br>
+                     <div class="left"><span>Time: </div>
+                        <div class="right"><select id="timeHour">
+                           <option value="none" selected>--</option>
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9">9</option>
+                           <option value="10">10</option>
+                           <option value="11">11</option>
+                           <option value="12">12</option></select>:
+                           <select id="timeMinute">
+                              <option value="none" selected>--</option>
+                              <option value="00">00</option>
+                              <option value="15">15</option>
+                              <option value="30">30</option>
+                              <option value="45">45</option></select></span>
+                     <input type ="radio" name="AMPM" value="AM">AM<input type ="radio" name="AMPM" value="PM">PM</div><br>
+                     <div class="left"><span>Site: </div><div class="right"><input type="text" name="Location" placeholder="City, Location, Bldg, Rm"></span></div><br>
+                     <div class="left"><span>Contact: </div><div class="right"><input type="text" name="Contact" placeholder="name@domain.com"></span></div><br><br>
                      Description: <textarea rows="10" cols="100" name="Description" placeholder="Describe your event here..."></textarea><br><br>
                      <input type="submit" value="Submit">
                   </form><br><br>
                </div>
                <div class="formWrapper" id="recurring" style="display: none;">
                   <h3>Recurring</h3>
-                  <form action="//insert URL of backend section//">
-                     <span>Title: <input type="text" name="Title" placeholder="Event Name"></span>
-                     <span>Start Date: <input type="text" name="startDate" placeholder="mm/dd/yyyy"></span>
-                     <span>End Date: <input type="text" name="startDate" placeholder="mm/dd/yyyy"></span><br><br>
+                  <form action="compile.php">
+                     <div class="left"><span>Title: </div><div class="right"><input type="text" name="Title" placeholder="Event Name"></span></div><br>
+                     <div class="left"><span>Start Date: </div><div class="right"><input type="text" name="startDate" id="startDatepicker" placeholder="mm/dd/yyyy"></span></div><br>
+                     <div class="left"><span>End Date: </div><div class="right"><input type="text" name="endDate" id="endDatepicker" placeholder="mm/dd/yyyy"></span></div><br>
+                     <div class="left"><span>Contact: </div><div class="right"><input type="text" name="Contact" placeholder="name@domain.com"></span></div><br>
                      Description: <textarea rows="10" cols="100" name="Description" placeholder="Describe your event here..."></textarea><br><br>
                      <input type="submit" value="Submit">
                   </form><br><br>
@@ -68,18 +133,18 @@
    <script>
       function showPostBlock ()
       {
-         $(".formWrapper").hide();
-         $(".formWrapper#" + $("#postType").val()).show();
+      $(".formWrapper").hide();
+      $(".formWrapper#" + $("#postType").val()).show();
       }
 
       $(document).ready(function ()
       {
-         showPostBlock ();
+      showPostBlock ();
       });
-      
+
       $("#postType").change(function ()
       {
-         showPostBlock ();
+      showPostBlock ();
       });
    </script>
 </html>
