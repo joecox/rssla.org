@@ -61,6 +61,22 @@
       basicNode.setTitle("Basic Info", true);
       rootNode.addChild(basicNode);
 
+      hometownNode = new ProfileNode(70, "inner");
+      hometownNode.setTitle("Hometown", true);
+      basicNode.addChild(hometownNode);
+
+      birthplaceNode = new ProfileNode(70, "inner");
+      birthplaceNode.setTitle("Birthplace", true);
+      basicNode.addChild(birthplaceNode);
+
+      birthdayNode = new ProfileNode(70, "inner");
+      birthdayNode.setTitle("Birthday", true);
+      basicNode.addChild(birthdayNode);
+
+      contactNode = new ProfileNode(70, "inner");
+      contactNode.setTitle("Contact Info", true);
+      basicNode.addChild(contactNode);
+
       schoolNode = new ProfileNode(70, "inner");
       schoolNode.setTitle("School & Career", true);
       rootNode.addChild(schoolNode);

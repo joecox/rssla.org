@@ -21,6 +21,8 @@ function ProfileNode (radius, type)
    this.cx = undefined;
    this.cy = undefined;
    this.scalable = undefined;
+   this.ex = undefined;
+   this.ey = undefined;
 
    this.expanding = false;
    this.expanded = false;
@@ -32,6 +34,7 @@ function ProfileNode (radius, type)
    this.title = undefined;
    this.$textElem = undefined;
    this.text = undefined;
+   this.fontSize = undefined;
 
 
    this.init(type);
@@ -117,9 +120,13 @@ function ()
 
    this.$elem.on("click", function()
    {
-      if (node.parent && node.parent.expanding) return;
+      if (node.parent && node.parent.expanding)
+         return;
 
-      node.expand();
+      if (!node.expanded)
+         node.expand();
+      else
+         node.contract();
    });
 }
 
@@ -210,6 +217,8 @@ function (text, full)
          this.$titleElem.css("font-size", fontSize - 1);
       }
 
+      this.fontSize = parseInt(this.$titleElem.css("font-size"), 10);
+
       this.$textWrap.hide().css("visibility", "");
       this.$elem.hide().css("visibility", "");
    }
@@ -270,40 +279,36 @@ function (node)
 ProfileNode.prototype.expand = 
 function ()
 {
-   if (!this.expanded)
+   this.expanded = true;
+   this.expanding = true;
+
+   switch(this.type)
    {
-      this.expanded = true;
-      this.expanding = true;
-
-      switch(this.type)
+      case "root":
       {
-         case "root":
+         this.scaleTo(70, 300);
+         this.baseRadius = 60;
+
+         this.expandChildren();
+
+         this.$titleElem.hide();
+         break;
+      }
+
+      case "inner":
+      {
+         this.$elem.trigger("mouseout");
+         this.center(200);
+         this.hideParentAndSiblings();
+
+         var node = this;
+
+         setTimeout(function()
          {
-            this.scaleTo(70, 300);
-            this.baseRadius = 60;
-
-            this.expandChildren();
-
-            this.$titleElem.hide();
-            break;
-         }
-
-         case "inner":
-         {
-            this.$elem.trigger("mouseout");
-            this.center(200);
-            this.hideRest();
-
-            var node = this;
-
-            setTimeout(function()
-            {
-               node.expandChildren();
-            }, 200);
-         }
+            node.expandChildren();
+         }, 200);
       }
    }
-
 };
 
 ProfileNode.prototype.expandChildren = 
@@ -316,10 +321,10 @@ function ()
    {
       var childNode = this.children[ii];
 
-      var top = Math.round(this.cy + (this.radius + expandRadius) * Math.sin(angle));
-      var left = Math.round(this.cx + (this.radius + expandRadius) * Math.cos(angle));
+      childNode.ey = Math.round(this.cy + (this.radius + expandRadius) * Math.sin(angle));
+      childNode.ex = Math.round(this.cx + (this.radius + expandRadius) * Math.cos(angle));
 
-      childNode.move(left, top);
+      childNode.move(childNode.ex, childNode.ey);
 
       var line = draw.polyline(this.cx + "," + this.cy + " " + this.cx + "," + this.cy)
                      .stroke({ width: 1 });
@@ -347,7 +352,36 @@ function ()
    }, 300);
 };
 
-ProfileNode.prototype.hideRest = 
+ProfileNode.prototype.contract =
+function ()
+{
+   this.expanded = false;
+
+   this.move(this.ex, this.ey, 100);
+   this.contractChildren();
+
+   if (this.parent)
+   {
+      this.parent.show();
+      this.parent.expand();
+   }
+};
+
+ProfileNode.prototype.contractChildren =
+function ()
+{
+   for (var ii = 0; ii < this.lines.length; ii++)
+   {
+      this.lines[ii].hide();
+   }
+
+   for (var ii = 0; ii < this.children.length; ii++)
+   {
+      this.children[ii].hide(100);
+   }
+}
+
+ProfileNode.prototype.hideParentAndSiblings = 
 function ()
 {
    this.parent.hide(100);
@@ -364,6 +398,22 @@ function ()
          continue;
       }
       this.parent.children[ii].hide(100);
+   }
+}
+
+ProfileNode.prototype.showParentAndSiblings =
+function ()
+{
+   this.parent.show(100);
+
+   for (var ii = 0; ii < this.parent.lines.length; ii++)
+   {
+      this.parent.lines[ii].show();
+   }
+
+   for (var ii = 0; ii < this.parent.children.length; ii++)
+   {
+      this.parent.children[ii].show(100);
    }
 }
 
