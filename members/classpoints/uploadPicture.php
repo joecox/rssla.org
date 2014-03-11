@@ -1,5 +1,8 @@
 <?php
-function uploadFile($firstYearCount, $secondYearCount, $thirdYearCount, $fourthYearCount)
+function uploadFile($firstYearCount, $secondYearCount, $thirdYearCount,
+					 $fourthYearCount, $submittedBy, $tagged) 
+					//tagged is an array of all people tagged in the Picture
+					//submittedBy is a memberID
 {
 if (!empty($_FILES['uploadedPicture'])) //be sure to name it uploadedPicture
 	{
@@ -25,9 +28,17 @@ if (!empty($_FILES['uploadedPicture'])) //be sure to name it uploadedPicture
 		$query = "UPDATE Pictures SET filepath = '" . $uploadfile . "' WHERE id=" . $id;
 
 		db_insert($query);
+
+		for($i = 0; $i < count($tagged); $i++)
+		{
+			$query2 = "INSERT INTO TaggedDB (pictureID, submittedBy, Tagged)" .
+				"VALUES (" . $id . ", " . $submittedBy . ", " .$tagged[$i].")";
+			db_insert($query);
+		}
+
 	}
 else
-	echo "Either the database is currently full, or something went terribly wrong.  Please contact the Communication Committee Director."
+	echo "No Photo Found.  Please try again.";
 }
 
 // function generateUnique()
