@@ -2,13 +2,16 @@
 function uploadFile($firstYearCount, $secondYearCount, $thirdYearCount,
 					 $fourthYearCount, $submittedBy, $tagged) 
 					//tagged is an array of all people tagged in the Picture
+					//should be strings.
 					//submittedBy is a memberID
 {
 if (!empty($_FILES['uploadedPicture'])) //be sure to name it uploadedPicture
 	{
 		$uploaddir = $_SERVER['DOCUMENT_ROOT'].'/resources/images/classpoints/';
     	$ext = pathinfo($_FILES['uploadedPicture'], PATHINFO_EXTENSION);
-    	$query = "INSERT INTO Pictures (firstYearPoints, secondYearPoints, thirdYearPoints, fourthYearPoints) VALUES (";
+    	$query = "INSERT INTO Pictures (submittedBy, firstYearPoints, secondYearPoints, thirdYearPoints, fourthYearPoints) VALUES (";
+    	$query .= $submittedBy;
+    	$query .= ", ";
     	$query .= $firstYearCount;
     	$query .= ", ";
     	$query .= $secondYearCount;
@@ -31,7 +34,7 @@ if (!empty($_FILES['uploadedPicture'])) //be sure to name it uploadedPicture
 
 		for($i = 0; $i < count($tagged); $i++)
 		{
-			$query2 = "INSERT INTO TaggedDB (pictureID, submittedBy, Tagged)" .
+			$query2 = "INSERT INTO TaggedDB (pictureID, submittedBy, tagged)" .
 				"VALUES (" . $id . ", " . $submittedBy . ", " .$tagged[$i].")";
 			db_insert($query);
 		}
