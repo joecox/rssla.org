@@ -103,7 +103,6 @@ class Event {
                 $this->time .= ":00";
                 // poor bugfix, but it works
                 $this->time = str_replace("::", ":", $this->time);
-                echo "<br>$this->time<br>";
             }
         }
         $this->time = ($this->time == "") ? "NULL" : "\"" . $this->time . "\""; 
