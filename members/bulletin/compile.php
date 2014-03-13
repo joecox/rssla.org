@@ -72,8 +72,17 @@ function addEvent($p) {
         }
     }
     if ($p["time"] != NULL) {
-        // strip out seconds
-        $time = " | <i>" . substr($p["time"], 0, 5) . "</i>";
+    	// convert to H:MM AM or HH:MM PM as necessary
+        $adjtime = $p["time"];
+        $hr = intval(substr($adjtime, 0, 2));
+        $pm = false;
+        if ($hr >= 12) $pm = true;
+        $hr = $hr % 12;
+        $adjtime = strval($hr) . substr($adjtime, 2, 3);
+        $time = " | <i>" . substr($adjtime, 0, 5);
+        if ($pm) $time .= " PM ";
+        else $time .= " AM ";
+        $time .= "</i>";
     }
     if ($p["place"] != NULL) {
         $place = " | <i>" . $p["place"] . "</i>";

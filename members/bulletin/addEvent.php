@@ -2,7 +2,7 @@
 /*
 Submitted events will go into bulletin_events table, 
 and their id will be added to the current bulletin
-the blob events will contain a comma-delimited list of values which
+the blob 'events' in bulletins will contain a comma-delimited list of values which
 correspon to ids of bulletin_events. Quarter, year, and week will be
 generated and added as well.
 */
@@ -11,24 +11,26 @@ include ($_SERVER['DOCUMENT_ROOT'].'/_modules/db_module.php');
 db_connect();
 
 /*
-Information from submit.php:
+Information from submit.php: (sent via post)
 Title
-Date
-Time
-endDate
+Date           MM/DD/YYYY
+timeHour       "HH"
+timeMinute     "MM"
+endDate        MM/DD/YYYY
 Description
 Location
+AMPM
 ?committee
 
 Database format:
 id
 title
 description
-date
-enddate
-time
-place
-committee
+date           YYYY-MM-DD
+enddate        YYYY-MM-DD
+time           HH:MM:SS
+place          
+committee      
 */
 
 
@@ -44,6 +46,7 @@ class Event {
     var $time;
     var $place;
     var $committee;
+    var $ampm;
 
     // initialize a value when it's given
     function set($str, $v) {
@@ -52,13 +55,20 @@ class Event {
                 $this->title = $v;
                 break;
             case "Date":
+                // MM/DD/YYYY -> YYYY-MM-DD
+                $v = substr($v, 6, 4)
+                     . "-" . substr($v, 0, 2)
+                     . "-" . substr($v, 3, 2);
                 $this->date = $v;
                 break;
             case "Description":
                 $this->description = $v;
                 break;
-            case "Time":
-                $this->time = $v;
+            case "timeHour":
+                $this->time .= $v;
+                break;
+            case "timeMinute":
+                $this->time .= ":" . $v;
                 break;
             case "endDate":
                 $this->enddate = $v;
@@ -69,6 +79,8 @@ class Event {
             case "Committee":
                 $this->committee = $v;
                 break;
+            case "AMPM":
+                $this->ampm = $v;
             default:
                 break;
         }
@@ -82,6 +94,18 @@ class Event {
         $this->description = ($this->description == "") ? "NULL" : "\"" . $this->description . "\""; 
         $this->date = ($this->date == "") ? "NULL" : "\"" . $this->date . "\""; 
         $this->enddate = ($this->enddate == "") ? "NULL" : "\"" . $this->enddate . "\""; 
+        if ($this->ampm == "PM")  {
+        	if ($this->time != "NULL")  {
+                // add 12 hours if PM
+                // HH:MM:SS
+                $hour = strval(intval(substr($this->time, 0, 2)) + 12);
+                $this->time = $hour . ":" . substr($this->time, 2);
+                $this->time .= ":00";
+                // poor bugfix, but it works
+                $this->time = str_replace("::", ":", $this->time);
+                echo "<br>$this->time<br>";
+            }
+        }
         $this->time = ($this->time == "") ? "NULL" : "\"" . $this->time . "\""; 
         $this->place = ($this->place == "") ? "NULL" : "\"" . $this->place . "\""; 
         $this->committee = ($this->committee == "") ? "NULL" : "\"" . $this->committee . "\""; 
@@ -111,10 +135,11 @@ function getLast() {
     return $dbh->lastInsertId();
 }
 
-// verigies a key is one we recognize
+// verifies a key is one we recognize
 function validKey($k) {
     return ($k == "Title" || $k == "Date" || $k == "Time" || $k == "endDate" 
-            || $k == "Description" || $k == "Location" || $k == "Committee");
+            || $k == "Description" || $k == "Location" || $k == "Committee" 
+            || $k == "AMPM" || $k == "timeHour" || $k == "timeMinute");
 }
 // sorts bulletins table to find latest bulletin
 // returns by reference

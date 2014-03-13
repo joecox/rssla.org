@@ -49,25 +49,28 @@
                </div>
                <div class="formWrapper" id="committee" style="display: none;">
                   <h3>Committee</h3>
-                  <form action="compile.php">
+                  <form id="commForm" action="addEvent.php" method="post">
                      <div class="left"><span>Committee: </div><div class="right"><input type="text" name="Title" placeholder="Name"></span></div><br>
                      <div class="left"><span>Date: </div><div class="right"><input type="text" name="Date" id="commDatepicker" placeholder="mm/dd/yyyy"></span></div><br>
+                     <!--<input type="text" name="Time" placeholder="HH:MM">
+                     	 -->
                      <div class="left"><span>Time: </div>
-                        <div class="right"><select id="timeHour">
-                           <option value="none" selected>--</option>
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
-                           <option value="6">6</option>
-                           <option value="7">7</option>
-                           <option value="8">8</option>
-                           <option value="9">9</option>
-                           <option value="10">10</option>
-                           <option value="11">11</option>
-                           <option value="12">12</option></select>:
-                           <select id="timeMinute">
+                        <div class="right">
+                            <select name="timeHour" form="commForm">
+                               <option value="none" selected>--</option>
+                               <option value="1">1</option>
+                               <option value="2">2</option>
+                               <option value="3">3</option>
+                               <option value="4">4</option>
+                               <option value="5">5</option>
+                               <option value="6">6</option>
+                               <option value="7">7</option>
+                               <option value="8">8</option>
+                               <option value="9">9</option>
+                               <option value="10">10</option>
+                               <option value="11">11</option>
+                               <option value="12">12</option></select>:
+                           <select name="timeMinute" form="commForm">
                               <option value="none" selected>--</option>
                               <option value="00">00</option>
                               <option value="15">15</option>
@@ -77,30 +80,32 @@
                      <div class="left"><span>Site: </div><div class="right"><input type="text" name="Location" placeholder="Location, Bldg/Rm"></span></div><br>
                      <div class="left"><span>Contact: </div><div class="right"><input type="text" name="Contact" placeholder="name@domain.com"></span></div><br><br>
                      <input type="submit" value="Submit">
+                     <input type="hidden" name="Committee" value="1">
                   </form><br><br>
 
                </div>
                <div class="formWrapper" id="oneTime" style="display: none;">
                   <h3>One-Time</h3>
-                  <form action="compile.php">
+                  <form id="onceForm" action="addEvent.php" method="post">
                      <div class="left"><span>Title: </div><div class="right"><input type="text" name="Title" placeholder="Event Name"></span></div><br>
                      <div class="left"><span>Date: </div><div class="right"><input type="text" name="Date" id="oneDatepicker" placeholder="mm/dd/yyyy"></span></div><br>
                      <div class="left"><span>Time: </div>
-                        <div class="right"><select id="timeHour">
-                           <option value="none" selected>--</option>
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
-                           <option value="6">6</option>
-                           <option value="7">7</option>
-                           <option value="8">8</option>
-                           <option value="9">9</option>
-                           <option value="10">10</option>
-                           <option value="11">11</option>
-                           <option value="12">12</option></select>:
-                           <select id="timeMinute">
+                        <div class="right">
+                            <select name="timeHour" form="onceForm">
+                               <option value="none" selected>--</option>
+                               <option value="1">1</option>
+                               <option value="2">2</option>
+                               <option value="3">3</option>
+                               <option value="4">4</option>
+                               <option value="5">5</option>
+                               <option value="6">6</option>
+                               <option value="7">7</option>
+                               <option value="8">8</option>
+                               <option value="9">9</option>
+                               <option value="10">10</option>
+                               <option value="11">11</option>
+                               <option value="12">12</option></select>:
+                           <select name="timeMinute" form="onceForm">
                               <option value="none" selected>--</option>
                               <option value="00">00</option>
                               <option value="15">15</option>
@@ -115,7 +120,7 @@
                </div>
                <div class="formWrapper" id="recurring" style="display: none;">
                   <h3>Recurring</h3>
-                  <form action="compile.php">
+                  <form action="addEvent.php" method="post">
                      <div class="left"><span>Title: </div><div class="right"><input type="text" name="Title" placeholder="Event Name"></span></div><br>
                      <div class="left"><span>Start Date: </div><div class="right"><input type="text" name="startDate" id="startDatepicker" placeholder="mm/dd/yyyy"></span></div><br>
                      <div class="left"><span>End Date: </div><div class="right"><input type="text" name="endDate" id="endDatepicker" placeholder="mm/dd/yyyy"></span></div><br>
