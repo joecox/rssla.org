@@ -50,7 +50,7 @@
       if (file_exists($_FILES['scan_'.$ii]['tmp_name']) && is_uploaded_file($_FILES['scan_'.$ii]['tmp_name']))
       {
          array_push($scans, $_FILES['scan_'.$ii]['tmp_name']);
-         array_push($exts, pathinfo($_FILES['scan_'.$ii]['name'], PATHINFO_EXTENSION);
+         array_push($exts, pathinfo($_FILES['scan_'.$ii]['name'], PATHINFO_EXTENSION));
       }
    }
 
