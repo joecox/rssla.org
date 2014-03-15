@@ -17,7 +17,7 @@
    });
 </script>
 <style>
-   .left {
+   /*.left {
        width: 30%;
        float: left;
        text-align: right;
@@ -26,7 +26,7 @@
        width: 65%;
        margin-left: 10px;
        float:left;
-   }
+   }*/
 </style>
 </head>
 <body>
