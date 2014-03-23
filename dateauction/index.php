@@ -15,6 +15,9 @@
          </a>
 
          <div class="cont">
+               <div class="ho">
+               <span class="auctionee" meta="0"></span>
+               </div>
                <div class="navi">
                <span class="auctionee" meta="1"></span>
                <span class="auctionee" meta="2"></span>
@@ -39,12 +42,11 @@
                         Everyone has a swell time - and it's a great way to start off your new quarter with us!
                      </p>
                      <p class="intro">Hosted by: Gayan Seneviratna</p>
-                     <!--<div class="hostpic"></div>-->
                      <p class="intro">
                         Where: Ackerman 3517
                         <br>When: April 9th, 2014, 7:00 PM</br>
                      </p>
-                     <p class="intro">Click on a picture above or the arrow to check out our auctionees!</p>
+                     <p class="intro">Click on a picture above to check out our auctionees!</p>
                   </div>
                </div>
             

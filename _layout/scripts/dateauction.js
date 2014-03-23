@@ -1,6 +1,6 @@
 $(document).ready(function () 
 {
-   var names = ["host",
+   var names = ["hosts",
                 "Crystal",
                 "DylanB",
                 "Jordan",
@@ -12,64 +12,78 @@ $(document).ready(function ()
    
    var currentframe = 0;
 
-   /*$(".auctionee").hover(function(){$(this).append($("<p>Name</p>"));});*/
-   
    // frame selection
    $(".auctionee").click(function ()
    {
-      $("#currentframe").animate({left: 0}, 200);
-      $("#currentframe").attr("id", "frame" + currentframe);
+      var auctionee = this;
+
+      $("#currentframe").fadeOut(200,function(){
+
+         $("#currentframe").attr("id", "frame" + currentframe);
       
-      currentframe = Number($(this).attr("meta"));
+      currentframe = Number($(auctionee).attr("meta"));
       var prevframe = currentframe - 1;
       var nextframe = currentframe + 1;
       
+     
       
-      $("#frame" + currentframe).animate({left: "380px"}, 200);
+      $("#frame" + currentframe).fadeIn(200);
       $("#frame" + currentframe).attr("id", "currentframe");
-      
+  
+
       $(".prevframe").show();
       $(".nextframe").show();
+
+      if (!($("#frame"+prevframe).length))
+        $(".prevframe").hide();
+      if (!($("#frame"+nextframe).length))
+        $(".nextframe").hide();
+     
+      });
+
       
-      if (!($("#frame" + prevframe).length))
-         $(".prevframe").hide();
-      if (!($("#frame" + nextframe).length))
-         $(".nextframe").hide();
    });
 
    // frame sliding
    $(".nextframe").click(function() 
    {
-      $("#currentframe").animate({left: 0}, 200);
-      $("#currentframe").attr("id", "frame" + currentframe);
+      $("#currentframe").fadeOut(200,function(){
+
+        $("#currentframe").attr("id", "frame" + currentframe);
 
       currentframe = currentframe + 1;
       var nextframe = currentframe + 1;
 
-      $("#frame" + currentframe).animate({left: "380px"}, 200);
+      $("#frame" + currentframe).fadeIn(200);
       $("#frame" + currentframe).attr("id", "currentframe");
 
       $(".prevframe").show();
-
       if (!($("#frame" + nextframe).length))
          $(".nextframe").hide();
+      });
+
    });
 
    $(".prevframe").click(function() 
    {
-      $("#currentframe").animate({left: 0}, 200);
+      $("#currentframe").fadeOut(200,function(){
+      
       $("#currentframe").attr("id", "frame" + currentframe);
 
       currentframe = currentframe - 1;
       var prevframe = currentframe - 1;
       
+      $("#frame" + currentframe).fadeIn();
+   
 
-      $("#frame" + currentframe).animate({left: "380px"}, 200);
       $("#frame" + currentframe).attr("id", "currentframe");
 
       $(".nextframe").show();
 
       if (!($("#frame" + prevframe).length))
          $(".prevframe").hide();
+      });
+    
+      
    });
 });
