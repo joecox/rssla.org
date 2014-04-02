@@ -43,7 +43,7 @@
                      </p>
                      <p class="intro">Hosted by: Gayan Seneviratna</p>
                      <p class="intro">
-                        Where: Ackerman 3517
+                        Where: Bunche 3164
                         <br>When: April 9th, 2014, 7:00 PM</br>
                      </p>
                      <p class="intro">Click on a picture above to check out our auctionees!</p>
@@ -53,43 +53,39 @@
                <div class="profileframe" id="frame1">
                   <div class="profile">
                      <span class = "pic"></span>
-                     <div class="frametitle">CRYSTAL LIN</div>
+                     <div class="frametitle">URMILA JANARDAN</div>
                      <div class="basicinfo">
                         Year: Freshman</br>
-                        Major: Biology
                      </div>
                     
-                     <div class="highlight">Which Hogwarts house do you belong in? Why?</div>
-                     <p>Ravenclaw, the Hogwarts equivalent of RSS.</p>
-                     <div class="highlight">What is your secret for being attractive?</div>
-                     <p>Bathing in the milk of unicorns and drinking orphan's tears.</p>
-                     <div class="highlight">Why did the chicken cross the road?</div>
-                     <p>To get to the other side! Get it? Because he died and he crossed over to the other side.</p>
-                     <div class="highlight">What is something you look for in a romantic partner?</div>
-                     <p>Piercing eyes and the Body of Adonis... Or you know, someone who's sweet and kind and smart and good-looking and athletic and saves puppies and works for a non-profit and has money and loves kids.</p>
+                     <div class="highlight">What's your favorite pick up line?</div>
+                     <p>I seem to have lost my phone number. Can I have yours?</p>
+                     <div class="highlight">Would you rather fight one-thousand duck-sized horse, or ONE horse-sized duck?</div>
+                     <p>One duck sized horse! And you got the reference wrong smh.</p>
+                     <div class="highlight">What is your biggest pet peeve?</div>
+                     <p>People who walk side by side down small aisles or walk slowly at just the right angle so you can't pass them and are totally oblivious of anyone around them. Don't be those people.</p>
+                     <div class="highlight">If you could go on a date with anyone (dead or alive), who would it be? To where?</div>
+                     <p>Chris Pine. Anywhere (preferably in the past when he's young and spry but I don't judge).</p>
                      
                   </div>
                </div>
          
                <div class="profileframe" id="frame2">
                   <div class="profile">
-                     <span class = "pic"></span>
-                     <div class="frametitle">DYLAN BLACK</div>
+                     <span class = "pic"><img src="C:\Users\Jenny\Downloads\CirclePics\CirclePics\AustinCircle.png"></span>
+                     <div class="frametitle">AUSTIN PARK</div>
                      <div class="basicinfo">
                         Year: Freshman</br>
-                        Major: Biophysics</br>
-                        Nickname: Black Savage
                      </div>
                     
-                     <div class="highlight">What is your favorite quote?</div>
-                     <p>"I think Bigfoot IS blurry, that's the problem. It's not the photographer's fault.
-                      And that's extra scary to me, because there's a large, out-of-focus monster roaming the countryside." - Mitch Hedberg</p>
-                     <div class="highlight">If you HAD to get a tattoo, what would you get? Where?</div>
-                     <p>If I'm going to get one, I might as well do it properly and get a full-on face tattoo.</p>
-                     <div class="highlight">What is your favorite pick-up line?</div>
-                     <p>Did you know that chemists do it periodically on the table?</p>
-                     <div class="highlight">Which actor would play you in the movie of your life?</div>
-                     <p>Arnold Schwarzenegger.</p>
+                     <div class="highlight">What is your spirit animal and why?</div>
+                     <p>A sea otter, because it loves frolicking, it lives in the ocean, and it's always either eating, sleeping, or preening. Okay, maybe not that last part so much.</p>
+                     <div class="highlight">If you could live anywhere, where would it be, and why?</div>
+                     <p>Santa Cruz, my hometown! The people are kind and accepting, the weather is wonderful, there's picturesque natural beauty around every corner, the waves are great year-round, and my family and two best friends live there.</p>
+                     <div class="highlight">What's your favorite pick up line?</div>
+                     <p>If I said you had a nice body, would you hold it against me?</p>
+                     <div class="highlight">Which actor would play you, in a movie of your life?</div>
+                     <p>Morgan Freeman.</p>
                   
                   </div>
                </div>
@@ -98,117 +94,116 @@
                 <div class="profileframe" id="frame3">
                   <div class="profile">
                      <span class = "pic"></span>
-                     <div class="frametitle">JORDAN BERES</div>
+                     <div class="frametitle">APRIL PAN</div>
                      <div class="basicinfo">
                         Year: Sophomore</br>
-                        Major: Psychology
                      </div>
-                     <div class="highlight">What is your secret for being attractive?</div>
-                     <p>What do you mean? I roll out of bed looking this good.</p>
-                     <div class="highlight">What is your favorite extracurricular activity?</div>
-                     <p>Watching, talking about, or doing anything related to movies and TV.</p>
-                     <div class="highlight">Why did the chicken cross the road?</div>
-                     <p>To get at me, obviously.</p>
-                     <div class="highlight">What is something you look for in a romantic partner?</div>
-                     <p>A good sense of humor.</p>
+                     <div class="highlight">What is your biggest pet peeve?</div>
+                     <p>"your welcome" </br>
+                        *stifles sob*
+                     </p>
+                     <div class="highlight">What is your spirit animal and why?</div>
+                     <p>Buzzfeed quizzes tells me I'm a shiba inu because I'm friendly, loyal, and have a certain fondness for misspellings. Wow such accurate.</p>
+                     <div class="highlight">ZOMBIE APOCALYPSE. What is your plan for survival?</div>
+                     <p>Can zombies swim? I'll captain a ship and knock those suckers off into the ocean with a baseball bat. Then I'll live off of fish. Yeah. That works right?</p>
+                     <div class="highlight">If McDonald's made a Mc[Your Name Here], what would it be in it?</div>
+                     <p>"10% luck, 20% skill, 
+                        15% concentrated power of will, 
+                        5% pleasure, 50% pain,
+                        and 100% reason to get it again"
+                     </p>
                   </div>
                </div>
 
                <div class="profileframe" id="frame4">
                   <div class="profile">
                      <span class = "pic"></span>
-                     <div class="frametitle">DYLAN REDOR</div>
+                     <div class="frametitle">ANAY DATTAWADKAR</div>
                      <div class="basicinfo">
                         Year: Sophomore</br>
-                        Major: Neuroscience
                      </div>
                     
-                     <div class="highlight">If you had one super-power, what would it be?</div>
-                     <p>This is an easy one: flying, hands down. Who doesn't want to see the world? Also I'm sure it would be damn fun.</p>
-                     <div class="highlight">Which actor would play you in the movie of your life?</div>
-                     <p>I've been told that I share a resemblance with <a class="norm" href="http://images5.fanpop.com/image/photos/31600000/Chris-O-Dowd-in-Bridesmaids-chris-odowd-31694604-550-294.jpg">the cop from Bridesmaids</a>, so he would probably be a good choice.</p>
-                     <div class="highlight">What is your favorite extra-curricular activity?</div>
-                     <p>Well, since I can't actually fly, I would have to say skiing; it's probably the closest I'll ever get.</p>
-                     <div class="highlight">If you HAD to get a tattoo, what would you get? Where?</div>
-                     <p>A tattoo of a mustache on the side of my finger. Not only is it easy to hide, but I have an instant disguise anytime I need one.</p>
+                     <div class="highlight">If you could go on a date with anyone (dead or alive), who would it be? To where?</div>
+                     <p>John Legend, on a six-month backpacking trip through the heart of Europe.</p>
+                     <div class="highlight">If you could live anywhere, where would it be, and why?</div>
+                     <p>A cozy little studio apartment in downtown Boston. That way I could walk or take public transport everywhere while also being in the middle of everything. Also, I could then use my money to travel around the world!</p>
+                     <div class="highlight">What is your spirit animal and why?</div>
+                     <p>Otter. At once a ferocious predator and a quiet, dedicated friend. Sleek, quick, and clever, just like me. Plus otters holds hands when they sleep--that's cute, yo.</p>
+                     <div class="highlight">If McDonald's made a Mc[Your Name Here], what would it be in it?</div>
+                     <p>Lettuce, tomatoes, fried chicken, avocado, jalapenos, slice of cheese, pickle on the side--and lots of love.</p>
                   </div>
                </div>
 
                 <div class="profileframe" id="frame5">
                   <div class="profile">
                      <span class = "pic"></span>
-                     <div class="frametitle">JULIE WANG</div>
+                     <div class="frametitle">MAGGIE SU</div>
                      <div class="basicinfo">
                         Year: Junior</br>
-                        Major: Music/MIMG
                      </div>
-                     <div class="highlight">What is your favorite quote?</div>
-                     <p>A percussionist who unsuccessfully auditioned for a position with the Boston Symphony Orchestra once said, "Give me success or take this desire away from me. One of the two." Having similarly devoted my life to music, this quote really struck a chord within me (no pun intended).</p>
-                     <div class="highlight">If you had one super power, what would it be?</div>
-                     <p>I'd be super good at cooking, that way, I could always eat delicious foods without having to leave my house.</p>
-                     <div class="highlight">What is your favorite pick-up line?</div>
-                     <p>Are you from Korea? Because I think you're my Seoul-mate :)</p>
-                     <div class="highlight">Why did the chicken cross the road?</div>
-                     <p>To prove it wasn't a chicken.</p>
+                     <div class="highlight">If you could go on a date with anyone (dead or alive), who would it be? To where?</div>
+                     <p>Jillian Michaels, to the gym, because I need that beach bod.</p>
+                     <div class="highlight">Would you rather fight one-thousand duck-sized horse, or ONE horse-sized duck?</div>
+                     <p>I'd fight the horse-sized duck just for the story. Then keep the duck-sized horse as a pet. Boom.</p>
+                     <div class="highlight">If McDonald's made a Mc[Your Name Here], what would it be in it?</div>
+                     <p>Kahlua coffee - my morning pick me up!</p>
+                     <div class="highlight">If you could live anywhere, where would it be, and why?</div>
+                     <p>By your side because anywhere else would be pointless.</p>
                   </div>
                </div>
 
                <div class="profileframe" id="frame6">
                   <div class="profile">
                      <span class = "pic"></span>
-                     <div class="frametitle">JON HAN</div>
+                     <div class="frametitle">ETHAN ROSENBERG</div>
                      <div class="basicinfo">
                         Year: Junior</br>
-                        Major: MCDB</br>
-                        Nickname: Jon Han Dog
                      </div>
                      
-                     <div class="highlight">What is your favorite quote?</div>
-                     <p>"In the game of chess, you must never let your opponents see your pieces." - Zapp Brannigan, Futurama.</p>
-                     <div class="highlight">What is your secret for being attractive?</div>
-                     <p>My firm belief in democracy and the American way.</p>
-                     <div class="highlight">Why did the chicken cross the road?</div>
-                     <p>Because no one would let him walk into the bar.</p>
-                     <div class="highlight">What is something you look for in a romantic partner?</div>
-                     <p>I want a girl who is unlike any other. She don't got a lot to say, but there's just something about her. She'll definitely be a girl worth fighting for.</p>
+                     <div class="highlight">Which actor would play you, in a movie of your life?</div>
+                     <p>Nobody - I would be completely remade in CGI. Of course, I would be the voice actor.</p>
+                     <div class="highlight">If you could live anywhere, where would it be, and why?</div>
+                     <p>Probably a small college town because I don't like big cities.</p>
+                     <div class="highlight">What is your spirit animal and why?</div>
+                     <p>The Wub from Philip K Dick's "Beyond Lies the Wub" because it is a very spiritual animal.</p>
+                     <div class="highlight">ZOMBIE APOCALYPSE. What is your plan for survival?</div>
+                     <p>To not bother trying. I want to be on the winning side.</p>
                   </div>
                </div>
 
                <div class="profileframe" id="frame7">
                   <div class="profile">
                      <span class = "pic"></span>
-                     <div class="frametitle">SERENA LEE</div>
+                     <div class="frametitle">LAURA DANG</div>
                      <div class="basicinfo">
                         Year: Senior</br>
-                        Major: Communications
                      </div>
-                     <div class="highlight">What is your favorite pick-up line?</div>
-                     <p>If I were a Seeker and you were a Snitch, would you let me catch you?</p>
-                     <div class="highlight">What is your secret for being attractive?</div>
-                     <p>Talking on the phone, real loud, in the library. At least that's what Alexandra Wallace thinks.</p>
-                     <div class="highlight">Why did the chicken cross the road?</div>
-                     <p>Clearly, the chicken saw an El Pollo Loco across the street and wants to join its family. Too morbid? Maybe.</p>
-                     <div class="highlight">What one word describes you best?</div>
-                     <p>Senioritis</p>
+                     <div class="highlight">Which actor would play you, in a movie of your life?</div>
+                     <p>Lizzie Mcguire and her conscience... or Amanda Bynes.</p>
+                     <div class="highlight">ZOMBIE APOCALYPSE. What is your plan for survival?</div>
+                     <p>Kill the governor and marry Daryl or Glenn.</p>
+                     <div class="highlight">Would you rather fight one-thousand duck-sized horse, or ONE horse-sized duck?</div>
+                     <p>Neither. I'd make peace with both.</p>
+                     <div class="highlight">If you could live anywhere, where would it be, and why?</div>
+                     <p>Spain so I can party, eat tapas, drink Sangria, and practice my Spanish.</p>
                   </div> 
                </div>
 
                <div class="profileframe" id="frame8">
                   <div class="profile">
                      <span class = "pic"></span>
-                     <div class="frametitle">ANGEL BARAJAS</div>
+                     <div class="frametitle">BOBBY VANMALI</div>
                      <div class="basicinfo">
-                        Year: Senior</br>
-                        Major: Neuroscience
+                        Year: Senior</br> 
                      </div>
-                     <div class="highlight">What is your favorite extra-curricular activity?</div>
-                     <p>Watching movies, big movie fanatic, must watch the trailers before the feature film starts.</p>
-                     <div class="highlight">Which Hogwarts house do you belong in?</div>
-                     <p>Pottermore says Gryffindor...but I want to be in Slytherin.</p>
-                     <div class="highlight">What is your secret for being attractive?</div>
-                     <p>Genetics, sorry about that. Not many of us can be Mexican with a hint of Japanese now can we?</p>
-                     <div class="highlight">What one word describes you best?</div>
-                     <p>Gentleman</p>
+                     <div class="highlight">What is your spirit animal and why?</div>
+                     <p>My spirit animal is the monkey because I'm playful, adventurous and I like hanging around >_<</p>
+                     <div class="highlight">What is your favorite pick-up line?</div>
+                     <p>If you were a Dementor, I'd become a criminal just to get your kiss.</p>
+                     <div class="highlight">ZOMBIE APOCALYPSE. What is your plan for survival?</div>
+                     <p>Build a house surrounded with flamethrowers, shotguns, flood lights and grow my own food in a garden.</p>
+                     <div class="highlight">If you could go on a date with anyone (dead or alive), who would it be? To where?</div>
+                     <p>I would go on a date with Beyonce. I would want to be able to see how her mind and brain functions and works.</p>
                   </div> 
                </div>
       </div>
