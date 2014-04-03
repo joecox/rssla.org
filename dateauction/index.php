@@ -2,8 +2,8 @@
 <html>
 <head>
    <?php include($_SERVER['DOCUMENT_ROOT']."/_layout/head.php"); ?>
-   <link rel="stylesheet" type="text/css" href="/_layout/stylesheets/dateauction_styles.css">
-   <script src="/_layout/scripts/dateauction.js"></script>
+   <link rel="stylesheet" type="text/css" href="dateauction.css">
+   <script src="dateauction.js"></script>
 </head>
    <body>
    <div id="wrapper">
@@ -61,7 +61,7 @@
                     
                      <div class="highlight">What's your favorite pick up line?</div>
                      <p>I seem to have lost my phone number. Can I have yours?</p>
-                     <div class="highlight">Would you rather fight one-thousand duck-sized horse, or ONE horse-sized duck?</div>
+                     <div class="highlight">Would you rather fight one-thousand duck-sized horses, or ONE horse-sized duck?</div>
                      <p>One duck sized horse! And you got the reference wrong smh.</p>
                      <div class="highlight">What is your biggest pet peeve?</div>
                      <p>People who walk side by side down small aisles or walk slowly at just the right angle so you can't pass them and are totally oblivious of anyone around them. Don't be those people.</p>
@@ -144,7 +144,7 @@
                      </div>
                      <div class="highlight">If you could go on a date with anyone (dead or alive), who would it be? To where?</div>
                      <p>Jillian Michaels, to the gym, because I need that beach bod.</p>
-                     <div class="highlight">Would you rather fight one-thousand duck-sized horse, or ONE horse-sized duck?</div>
+                     <div class="highlight">Would you rather fight one-thousand duck-sized horses, or ONE horse-sized duck?</div>
                      <p>I'd fight the horse-sized duck just for the story. Then keep the duck-sized horse as a pet. Boom.</p>
                      <div class="highlight">If McDonald's made a Mc[Your Name Here], what would it be in it?</div>
                      <p>Kahlua coffee - my morning pick me up!</p>
@@ -183,7 +183,7 @@
                      <p>Lizzie Mcguire and her conscience... or Amanda Bynes.</p>
                      <div class="highlight">ZOMBIE APOCALYPSE. What is your plan for survival?</div>
                      <p>Kill the governor and marry Daryl or Glenn.</p>
-                     <div class="highlight">Would you rather fight one-thousand duck-sized horse, or ONE horse-sized duck?</div>
+                     <div class="highlight">Would you rather fight one-thousand duck-sized horses, or ONE horse-sized duck?</div>
                      <p>Neither. I'd make peace with both.</p>
                      <div class="highlight">If you could live anywhere, where would it be, and why?</div>
                      <p>Spain so I can party, eat tapas, drink Sangria, and practice my Spanish.</p>
