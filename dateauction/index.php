@@ -47,12 +47,13 @@
                         <br>When: April 9th, 2014, 7:00 PM</br>
                      </p>
                      <p class="intro">Click on a picture above to check out our auctionees!</p>
+                     <p class="intro">Note: If bidding in a group, we ask that it not exceed three people.</p>
                   </div>
                </div>
             
                <div class="profileframe" id="frame1">
                   <div class="profile">
-                     <span class = "pic"></span>
+                     <span class = "pic" meta = "a"></span>
                      <div class="frametitle">URMILA JANARDAN</div>
                      <div class="basicinfo">
                         Year: Freshman</br>
@@ -72,7 +73,7 @@
          
                <div class="profileframe" id="frame2">
                   <div class="profile">
-                     <span class = "pic"><img src="C:\Users\Jenny\Downloads\CirclePics\CirclePics\AustinCircle.png"></span>
+                     <span class = "pic" meta = "b"></span>
                      <div class="frametitle">AUSTIN PARK</div>
                      <div class="basicinfo">
                         Year: Freshman</br>
@@ -93,7 +94,7 @@
 
                 <div class="profileframe" id="frame3">
                   <div class="profile">
-                     <span class = "pic"></span>
+                     <span class = "pic" meta = "c"></span>
                      <div class="frametitle">APRIL PAN</div>
                      <div class="basicinfo">
                         Year: Sophomore</br>
@@ -110,14 +111,14 @@
                      <p>"10% luck, 20% skill, 
                         15% concentrated power of will, 
                         5% pleasure, 50% pain,
-                        and 100% reason to get it again"
+                        and 100% reason to get it again."
                      </p>
                   </div>
                </div>
 
                <div class="profileframe" id="frame4">
                   <div class="profile">
-                     <span class = "pic"></span>
+                     <span class = "pic" meta="d"></span>
                      <div class="frametitle">ANAY DATTAWADKAR</div>
                      <div class="basicinfo">
                         Year: Sophomore</br>
@@ -136,7 +137,7 @@
 
                 <div class="profileframe" id="frame5">
                   <div class="profile">
-                     <span class = "pic"></span>
+                     <span class = "pic" meta="e"></span>
                      <div class="frametitle">MAGGIE SU</div>
                      <div class="basicinfo">
                         Year: Junior</br>
@@ -154,7 +155,7 @@
 
                <div class="profileframe" id="frame6">
                   <div class="profile">
-                     <span class = "pic"></span>
+                     <span class = "pic" meta="f"></span>
                      <div class="frametitle">ETHAN ROSENBERG</div>
                      <div class="basicinfo">
                         Year: Junior</br>
@@ -173,7 +174,7 @@
 
                <div class="profileframe" id="frame7">
                   <div class="profile">
-                     <span class = "pic"></span>
+                     <span class = "pic" meta="g"></span>
                      <div class="frametitle">LAURA DANG</div>
                      <div class="basicinfo">
                         Year: Senior</br>
@@ -191,7 +192,7 @@
 
                <div class="profileframe" id="frame8">
                   <div class="profile">
-                     <span class = "pic"></span>
+                     <span class = "pic" meta="h"></span>
                      <div class="frametitle">BOBBY VANMALI</div>
                      <div class="basicinfo">
                         Year: Senior</br> 

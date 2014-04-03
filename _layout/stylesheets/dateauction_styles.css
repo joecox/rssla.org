@@ -26,14 +26,13 @@ h1{
 }
 
 .auctionee{
-   background-image: url("");
-   background-color: #a8ea49;
    position: relative;
    display: inline-block;
+   background-size: contain;
    height: 80px;
    width: 80px;
    border-radius: 40px;
-   border: 2px solid black;
+   border: 1px solid black;
    margin-left: 20px;
    margin-right: 20px;
    margin-top: 10px;
@@ -41,9 +40,40 @@ h1{
    cursor: pointer;   
 }
 
+.auctionee[meta="0"]{
+   background-image: url(/resources/images/dateauction/Gayan.jpg);
+}
 
-.auctionee:hover {
-   background-color: #dadada;
+.auctionee[meta="1"]{
+   background-image: url(/resources/images/dateauction/UrmillaSquare.png);
+}
+
+.auctionee[meta="2"]{
+   background-image: url(/resources/images/dateauction/AustinSquare.png);
+}
+
+.auctionee[meta="3"]{
+   background-image: url(/resources/images/dateauction/AprilSquare.png);
+}
+
+.auctionee[meta="4"]{
+   background-image: url(/resources/images/dateauction/AnaySquare.png);
+}
+
+.auctionee[meta="5"]{
+   background-image: url(/resources/images/dateauction/MaggieSquare.png);
+}
+
+.auctionee[meta="6"]{
+   background-image: url(/resources/images/dateauction/EthanSquare.png);
+}
+
+.auctionee[meta="7"]{
+   background-image: url(/resources/images/dateauction/LauraSquare.png);
+}
+
+.auctionee[meta="8"]{
+   background-image: url(/resources/images/dateauction/BobbySquare.png);
 }
 
 .frametitle{
@@ -85,7 +115,6 @@ h1{
    clear:right;
    margin-right: 150px;
    margin-bottom: 100px;
-   background-color: #a8ea49;
    padding: 5px 5px 5px 5px;
    float: right;
    display: inline;
@@ -94,6 +123,38 @@ h1{
    width: 300px;
    border-radius: 100%;
    border: 2px solid black;
+}
+
+.pic[meta="a"]{
+   background-image: url(/resources/images/dateauction/UrmillaSquare.png);
+}
+
+.pic[meta="b"]{
+   background-image: url(/resources/images/dateauction/AustinSquare.png);
+}
+
+.pic[meta="c"]{
+   background-image: url(/resources/images/dateauction/AprilSquare.png);
+}
+
+.pic[meta="d"]{
+   background-image: url(/resources/images/dateauction/AnaySquare.png);
+}
+
+.pic[meta="e"]{
+   background-image: url(/resources/images/dateauction/MaggieSquare.png);
+}
+
+.pic[meta="f"]{
+   background-image: url(/resources/images/dateauction/EthanSquare.png);
+}
+
+.pic[meta="g"]{
+   background-image: url(/resources/images/dateauction/LauraSquare.png);
+}
+
+.pic[meta="h"]{
+   background-image: url(/resources/images/dateauction/BobbySquare.png);
 }
 
 .home p{
