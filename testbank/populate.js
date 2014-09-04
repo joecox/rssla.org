@@ -18,6 +18,9 @@ var examples =
 //	the subjects.  Maybe we can add in schools? Or maybe even
 //	syllabuses or notes, if we want to incorporate that into
 // 	the testbank.  This is going to be a doozy
+
+//Problem is that this will all be AJAX requests to fill the vars.
+// 
 var ComputerScience = [
 	"CS 31",
 	"CS 32",
