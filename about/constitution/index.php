@@ -77,6 +77,8 @@
       						</li>
       						<li><b>LAMP Director</b>: The LAMP Director is responsible for recruiting and training volunteer Society members for the Los Angeles Mentorship Program (LAMP). LAMP partners the Regents Scholar Society at UCLA with University High School in Santa Monica to provide tutoring, college preparation, and mentorship services to high school students from a variety of backgrounds. The LAMP Director works with the staff of University High School to organize AVID one-on-one tutorials, the SAT program, and academic workshops. The LAMP director may appoint LAMP Coordinators for each of the three branches and serves as the support system/general organizer for these Coordinators. Additional duties may inlude applying for grants and buying materials necessary for running the program. Finally, the LAMP director is responsible for the continual expansion and improvement of LAMP.
       						</li>
+                        <li><b>Community Service Director</b>: The Community Service Director is responsible for organizing long-term and short-term community service events for the general membership.  He or she is charged with engaging in partnerships with other community service organizations on the UCLA campus and in the community at large in order to increase the presence of the Regents Scholar Society as a service-oriented organization. The Community Service Director may appoint volunteer coordinators and addresses issues of service in conjunction with the LAMP Director in the Community Service Committee. 
+                        </li>
       					</ol>
       				<li><b>Signatory</b>: The President shall hold Primary Signatory for all accounts. The Secretary and Treasurer comprise the remaining Signatories.
       				</li>
@@ -87,7 +89,7 @@
       		<div>
                <header><h2>IV. Meeting Procedures</h2></header>
       			<ol class="listA">
-      				<li><b>General Meetings</b>: Plans for two general meetings per quarter are made by the Executive Board. General Meetings are open to current Members, Alumni Members, and invited guests.
+      				<li><b>General Meetings</b>: Plans for at least one general meeting per quarter are made by the Executive Board. General Meetings are open to current Members, Alumni-Members, and invited guests.
       				</li>
       				<li><b>Executive Board Meetings</b>: During the meetings of the Executive Board, events are discussed and planned for the Society, progress is updated, and attention is given to problems. Board members report on the status of their programs and committees, whose actions are subject to Board approval. A two-thirds majority of the Board Members shall constitute a quorum for the transaction of business; however, all acts still require a two-thirds majority of all Executive Board members, regardless of the number of Board Members in attendance. The Executive Board meets once over the summer during the Summer Executive Board Retreat and twice per quarter a short time prior to each General Meeting. Additional Executive Board Meetings may be proposed by any Board member and set with two-thirds approval of the Executive Board. All procedural votes require two-thirds approval. Votes via electronic communication are allowed, as per &sect 4.03.
       				</li>
@@ -160,7 +162,7 @@
       				</li>
       				<li><b>Most Recent Amendment</b>: The date of the most recent amendment to these Constitutional Bylaws is to be published below.
       				</li>
-      				<ul><li>Last amended January 8, 2011</li></ul>
+      				<ul><li>Last amended September 14, 2014</li></ul>
       			</ol>
       		</div>
       		
