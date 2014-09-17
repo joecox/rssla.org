@@ -7,7 +7,7 @@
                <img src="/resources/images/sponsors/kaplan_transparent.png">
             </a>
             <a href="http://blueprintlsat.com/">
-               <img src="/resources/images/sponsors/blueprint_transparent.png" style = "height: 55px">
+               <img src="/resources/images/sponsors/blueprint_transparent.png" style = "height: 50px">
             </a>
             <a href="http://www.uprinting.com" alt="online printing" >
                <img class="right" src="/resources/images/sponsors/uprinting_transparent.png"  style = "height: 40px">
