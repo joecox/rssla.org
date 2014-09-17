@@ -508,8 +508,8 @@ form#login select {
   margin-bottom: 15px;
   text-align: center;
 }
-.sponsor-logos img {height: 45px; margin-right: 60px;}
-.sponsor-logos#circular img {height: 75px; margin-right: 100px;}
+.sponsor-logos img {height: 45px; margin-right: 50px;}
+.sponsor-logos#circular img {height: 75px; margin-right: 80px;}
 
 .social-link {margin-bottom: 5px; position: relative;}
 .social-link img {width: 25px;}

@@ -6,11 +6,11 @@
             <a href="http://www.kaplan.com">
                <img src="/resources/images/sponsors/kaplan_transparent.png">
             </a>
-            <a href="http://www.ralphs.com">
-               <img src="/resources/images/sponsors/ralphs_transparent.png">
+            <a href="http://blueprintlsat.com/">
+               <img src="/resources/images/sponsors/blueprint_transparent.png" style = "height: 55px">
             </a>
-            <a href="http://www.uprinting.com" alt="online printing">
-               <img class="right" src="/resources/images/sponsors/uprinting_transparent.png">
+            <a href="http://www.uprinting.com" alt="online printing" >
+               <img class="right" src="/resources/images/sponsors/uprinting_transparent.png"  style = "height: 40px">
             </a>
          </div>
          <div class="sponsor-logos" id="circular">
@@ -20,8 +20,8 @@
             <a href="http://www.coffeebean.com">
                <img src="/resources/images/sponsors/coffeebean_transparent.png">
             </a>
-            <a href="http://www.barneysbeanery.com/">
-               <img src="/resources/images/sponsors/barneys_transparent.png">
+            <a href="http://www.ralphs.com">
+               <img src="/resources/images/sponsors/ralphs_transparent.png" style="height: 60px">
             </a>
          </div>
       </div>
