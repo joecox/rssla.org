@@ -29,14 +29,14 @@
       echo '<span class="topnavitem"><a href="/about/society/">Society</a></span>';
    }
 
-   if ($selected == "leadership")
-   {
-      echo '<span class="topnavitem selected"><a href="/about/leadership">Leadership</a></span>';
-   }
-   else
-   {
-      echo '<span class="topnavitem"><a href="/about/leadership">Leadership</a></span>';
-   }
+   // if ($selected == "leadership")
+   // {
+   //    echo '<span class="topnavitem selected"><a href="/about/leadership">Leadership</a></span>';
+   // }
+   // else
+   // {
+   //    echo '<span class="topnavitem"><a href="/about/leadership">Leadership</a></span>';
+   // }
 
    if ($selected == "constitution")
    {

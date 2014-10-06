@@ -16,9 +16,9 @@
                <span class="navtext">Events</span>
             </a>
          </td>
-         <td class="navbutton coming" id="outreach" onclick="goTo('#');">
-            <a href="#">
-               <span class="navtext">Outreach</span>
+         <td class="navbutton" id="leadership" onclick="goTo('/leadership/');">
+            <a href="/leadership/">
+               <span class="navtext">Leadership</span>
             </a>
          </td>
          <td class="navbutton" id="members" onclick="goTo('/members/');">
@@ -59,9 +59,9 @@
                <a href="/about/society/">
                   <li>Society</li>
                </a>
-               <a href="/about/leadership/">
+               <!-- <a href="/about/leadership/">
                   <li>Leadership</li>
-               </a>
+               </a> -->
                <a href="/about/constitution/">
                   <li>Constitution</li>
                </a>
@@ -77,13 +77,13 @@
                </a>
             </ul> -->
          </td>
-         <td class="nav-list" id="outreach">
+         <td class="nav-list" id="leadership">
             <!-- <ul class="nav-list">
-               <a href="/volunteer/">
-                  <li>Volunteering</li>
+               <a href="/about/leadership/">
+                  <li>Executive Board</li>
                </a>
-               <a href="/lamp/">
-                  <li>LAMP</li>
+               <a href="/leadership/committees/">
+                  <li>Committees</li>
                </a>
             </ul> -->
          </td>
@@ -94,6 +94,51 @@
          <td class="nav-list" id="store"></td>
       </tr>
    </table>
+
+   <table class="dropdown-bar" id="leadership">
+      <tr>
+         <td class="nav-list"></td>
+         <td class="nav-list" id="about"></td>
+         <td class="nav-list" id="events">
+            <!-- <ul class="nav-list">
+               <a href="/events/">
+                  <li>Featured</li>
+               </a>
+               <a href="/events/calendar">
+                  <li>Calendar</li>
+               </a>
+            </ul> -->
+         </td>
+         <td class="nav-list" id="leadership">
+             <ul>
+               <a href="/leadership/">
+                  <li>E-Board</li>
+               </a>
+               <a href="/leadership/committees/">
+                  <li>Committees</li>
+               </a>
+            </ul> 
+         </td>
+         <td class="nav-list" id="members">
+            <!-- <ul>
+               <a href="/members/profiles/">
+                  <li>Profiles</li>
+               </a>
+               <a href="/members/classpoints/">
+                  <li>Class Points</li>
+               </a>
+               <a href="/members/committees/">
+                  <li>Committees</li>
+               </a>
+            </ul> -->
+         </td>
+         <td class="nav-list" id="prospective"></td>
+         <td class="nav-list" id="alumni"></td>
+         <td class="nav-list" id="sponsors"></td>
+         <td class="nav-list" id="store"></td>
+      </tr>
+   </table>
+
    <table class="dropdown-bar" id="members">
       <tr>
          <td class="nav-list"></td>
@@ -108,15 +153,15 @@
                </a>
             </ul> -->
          </td>
-         <td class="nav-list" id="outreach">
-            <!-- <ul class="nav-list">
-               <a href="/volunteer/">
-                  <li>Volunteering</li>
+         <td class="nav-list" id="leadership">
+             <!-- <ul class="nav-list">
+               <a href="/about/leadership/">
+                  <li>Executive Board</li>
                </a>
-               <a href="/lamp/">
-                  <li>LAMP</li>
+               <a href="/leadership/committees/">
+                  <li>Committees</li>
                </a>
-            </ul> -->
+            </ul>  -->
          </td>
          <td class="nav-list" id="members">
             <ul>
@@ -125,6 +170,9 @@
                </a>
                <a href="/members/classpoints/">
                   <li>Class Points</li>
+               </a>
+               <a href="/members/committees/">
+                  <li>Committees</li>
                </a>
             </ul>
          </td>
@@ -146,7 +194,7 @@
    var hovered = {
       "about" : false,
       "events" : false,
-      "outreach" : false,
+      "leadership" : false,
       "members" : false,
       "prospective" : false,
       "alumni" : false,
